@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 폰트 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 카드 */
+.card{
+      width: 320px;
+      height:auto;
+      border: 1px solid white;
+      flex-direction: column;
+      margin: 200px 30px;
+      float: left;      
+}
+
+.card-img {
+      height: auto;
+      display: flex;
+    }
+    
+.card-img-top{
+	 border-radius:5px;
+	 width: 100%;	 
+}
+
+.card-head{
+	 height: 60px;
+    }
+    
+.card-main{
+     height: 80px;
+     margin-top: 40px;
+     font-size: 1.2rem;
+    }

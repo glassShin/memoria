@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+/* 폰트 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html,body{
+    width:1920px;
+    height:1300px;
+    margin: 0 auto;
+    background-color: #f5ecec;
+}
+
+/* 이중 클래스(섹션) */
+main>.box{
+    position: relative;
+    float: left;
+    top:30em;
+}
+
+ul>li{
+    padding-top: 3px;
+    padding-bottom:5px; 
+}
+
+li{	
+}
+
+/* 마이페이지 */
+.mypage{
+	font-family: 'BookkMyungjo-Bd';
+	position: relative;
+	top: 320px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 2.5rem;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+/* 회원가입 구역 */
+.join_area{
+    margin-left:20px;
+}
+
+.u_join{
+	position: relative;
+    left: 40px;
+}
+
+.u_join>ul{
+    list-style: none;
+}
+
+.newuser{
+	position: relative;
+	left: 25px;
+	margin: 10px;
+}
+
+/* 회원가입 버튼 */
+ul>li>.join_btn{
+    position: relative;
+    top: 100px;
+    right: 15px;
+    width: 630px;
+    height: 70px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: black;    
+}
+
+/* 로그인 구역 */
+.login_area{
+    margin-left: 220px;
+    margin-bottom: 50px; 
+}
+
+.u_login{
+    position: relative;
+    right: 20px;
+}
+
+.u_login>ul{
+    list-style: none;
+}
+
+.user{
+	position: relative;
+	left: 25px;
+	margin: 10px;
+	
+}
+
+/* 비밀번호 찾기  */
+.u_login>ul>li:nth-child(5){
+    margin-top: 50px;
+    margin-left: 270px;
+    font-weight: bold;
+}
+
+/* 에러메세지 */
+#err {
+	color : red;
+	margin-top : 1px;
+}
+
+
+/* 회원가입 & 로그인 입력란 */
+.u_line{
+    width:600px;  
+    height:50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:1px solid balck;
+    background-color: #f5ecec;
+}
+
+/* 로그인 버튼 위치조정 & 모양 */
+ul>li>.login_btn{
+    position: relative;
+    top: 100px;
+    right: 15px;
+    width: 620px;
+    height:70px;
+    /* text-align: center; */
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+   
+}
+

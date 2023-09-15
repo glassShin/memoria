@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/* 폰트 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+html {
+   height: 100%;
+}
+body {
+   min-height: 100vh;
+   margin:0 auto;
+}
+
+main{
+   position: relative;
+}
+ul>li{
+   list-style: none;
+}
+
+.circle-button>ul{
+   float:left;
+   margin:-20px;
+}
+
+
+
+.real_img{
+   width:200px;
+   height:100px;
+   background-color: #B57FB3;
+}
+
+
+#DIYcard_set{
+   position: relative;
+   display: inline-block;
+   width: 1200px;
+   height: 600px;
+   left:11%;
+   /*margin:inherit;*/
+   margin-top:100px;
+   
+
+}
+
+.DIYcard{
+   display:block;
+   float: left;
+   width:300px;
+   height:300px;
+   margin-bottom:3%;
+}
+
+/* .DIYcard_ul{
+   display: inline-block;
+   width:300px;
+   height:300px;
+   margin:0;
+} */
+
+/* 노트설명 */
+.card_text{
+   display: block;
+   width:200px;
+   margin:0;
+}
+
+
+
+/* 버튼 위치 */
+#circle-button{
+position: relative;
+bottom:200px;
+left:800px;
+display: inline-block;
+width: 500px;
+height: 400px;
+} 
+
+
+
+.Lavender_ul{
+display: flex;
+}
+
+.Lavender-btn{
+   background-color: #B57FB3;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    margin:10px;
+    width: 80px;
+   height: 80px;
+   float: left;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-size:small;
+    
+ }   
+
+
+
+ /* 탑, 미들 ,바텀선택 */
+ #perfuem_container{
+   position: relative;
+   top:200px;
+   right:300px;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+  
+
+ }
+
+
+#prefuem_box{
+   display: inline-flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+.p_box{
+   /* display: inline-block; */
+   width:300px;
+   height: 150px;
+   color: white;
+   font-size: large;
+   font-weight: bold;
+   margin:0;
+}
+
+.top{
+ background-color: lightpink;
+}
+
+.middle{
+   background-color: lightblue;
+}
+
+.bottom{
+   background-color: lightsalmon;
+}

@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+/* 폰트 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    background-color: #f5ecec;
+}
+
+/* section */
+#sec-img-all{
+	order: 1;		
+}
+
+/* 오른쪽 */
+/* 커서 올려놓으면 배경 변함 */
+.sec-img-r:hover{
+	background:url("../Main-image/꽃4.jpg")fixed; 
+	background-size : 100%;
+}
+.sec-img-r{
+	background:url("../Main-image/꽃메인.jpg")fixed; 
+    box-sizing: border-box;
+    background-size : contain;
+    background-size : 100%;
+    position:absolute;
+    left:50%;
+	height: 43em;
+	width: 50%;
+	top: 150px;
+}
+
+/* 왼쪽 */
+/* 커서 올려놓으면 배경 변함 */
+.sec-img-l:hover{
+	background:url("../Main-image/향수3.jpg")fixed; 
+	background-size : contain;
+}
+.sec-img-l{
+	background:url("../Main-image/향수메인2.jpg")fixed; 
+    box-sizing: border-box;
+    background-size : contain;
+    position:absolute;
+    right:50%;
+	height: 43em;
+	width: 50%;
+	top: 150px;
+}
+
+/* div요소 */
+.r-element{
+	position: absolute;
+	top: 300px;
+	right: 350px;
+}
+
+.l-element{
+	position: absolute;
+	top: 300px;
+	left: 350px;
+}
+
+/* button */
+.btn-r{
+	 border: 1px solid #fff;
+	 background-color:transparent;
+	 position: relative;
+	 color: #fff;
+	 height: 50px;
+	 width: 200px;
+	 display : flex;
+  	 justify-content : center;
+  	 align-items : center;
+	 
+}
+.btn-l{
+	 border: 1px solid #fff;
+	 background-color:transparent;
+	 position: relative;
+	 color: #fff;
+	 height: 50px;
+	 width: 200px;
+	 display : flex;
+  	 justify-content : center;
+  	 align-items : center;	 
+}
+
+h2{
+	color: white;
+	text-align: center;
+}
+
+/* 멘트 */
+#moonjang {
+	font-family: 'BookkMyungjo-Bd';
+  	font-size: 1.5rem;
+  	position: relative;
+  	text-align: center;
+  	top: 37em;
+  	order: 3; 
+}
+
+/* 비디오 */
+#perfume-video{
+	position: relative;
+	display: block;
+	background-color: white;
+	height: 450px; 
+	top: 62em;
+	width: 100%;
+	order: 4; 
+}
+
+/* 회원 추천향수 */
+#Perfume-recommend {
+	font-family: 'BookkMyungjo-Bd';
+	font-size: 1.5rem;
+  	position: relative;
+  	top: 46em;
+  	text-align: center;
+  	order: 5; 
+}
+
+/* 추천향수 박스  */
+.user-recommend{
+	position: relative;
+	left: 5em;
+	top: 1rem;
+	height: 450px;
+	width: 330px;
+	background-color: white;
+	
+}
+.card-img{
+	height: 350px;
+	width: 330px;
+	background-color: black;
+}
+.card-head > h3{
+	font-size: 1.2rem;
+	margin: 4px;
+}
+
+.price{
+	font-size: 1.2rem;
+	margin: 4px 0 2px;
+}
