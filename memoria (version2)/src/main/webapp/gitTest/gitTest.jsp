@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  연결되나?
+test�Դϴ�.
 </body>
 </html>
