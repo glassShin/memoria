@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  연결된건가?
+test입니다.
 </body>
 </html>
