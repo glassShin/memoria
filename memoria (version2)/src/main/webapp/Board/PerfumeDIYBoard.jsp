@@ -5,23 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>PerfumeDIYBoard</title>
-<link href="PerfumeDIYBoard.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="PerfumeDIYBoard.css">
 </head>
 <body>
 <!-- 공통 상단메뉴-->
-<header>
+
 	<%@include file = "../../header/Header.jsp" %>	
-     
+   
+	</header>
 
-<%--<%
-String[] name = {"라벤더.jpg","자몽.jpg","장미.jpg"};
-
-for(int i = 0; i < name.length; i++) {
-
---%>
 	<main>
 
-<div id="DIYcard_set">	
+	<div id="DIYcard_set">	
 					<div class="DIYcard">
 							<ul class="DIYcard_ul">
 								<li class=""><img src="" class="real_img"></li>
@@ -136,41 +131,55 @@ for(int i = 0; i < name.length; i++) {
 			<div id="perfuem_container">
 					<div id="perfuem_box">
 						<!-- 버튼으로 수정? -->
-						<div class="p_box top"></div>
-						<div class="p_box middle"></div>
-						<div class="p_box bottom"></div>
+						<div class="p_box top">
+							<div class="inner-top"></div>
+						</div>
+						<div class="p_box middle">
+							<div class="inner-middle"></div>
+						</div>
+						<div class="p_box bottom">
+							<div class="inner-bottom"></div>
+						</div>
 					</div>
 				</div>
 
 
 		<div id="circle-button">
+		
+					<p>TOP</p>
 					<ul class="Lavender_ul">
-						<li><button class="Lavender-btn"> Lavender1 </button></li>
-						<li><button class="Lavender-btn"> Lavender1 </button></li>
-						<li><button class="Lavender-btn"> Lavender1 </button></li>
-						<li><button class="Lavender-btn"> Lavender1 </button></li>
+						<li><button class="Lavender-btn b-top1"> Lavender1 </button></li>
+						<li><button class="Lavender-btn b-top2"> Lavender1 </button></li>
+						<li><button class="Lavender-btn b-top3"> Lavender1 </button></li>
+						<li><button class="Lavender-btn b-top4"> Lavender1 </button></li>
 					</ul>
 
+
+					<p>MIDDLE</p>
 					<ul class="Lavender_ul">
-						<li><button class="Lavender-btn"> Lavender2 </button></li>
-						<li><button class="Lavender-btn"> Lavender2 </button></li>
-						<li><button class="Lavender-btn"> Lavender2 </button></li>
-						<li><button class="Lavender-btn"> Lavender2 </button></li>
+						<li><button class="Lavender-btn  b-middle1"> Lavender2 </button></li>
+						<li><button class="Lavender-btn  b-middle2"> Lavender2 </button></li>
+						<li><button class="Lavender-btn  b-middle3"> Lavender2 </button></li>
+						<li><button class="Lavender-btn  b-middle4"> Lavender2 </button></li>
 					</ul>
 
+					
+					<p>BOTTOM</p>
 					<ul class="Lavender_ul"> 
-						<li><button class="Lavender-btn"> Lavender3 </button></li>
-						<li><button class="Lavender-btn"> Lavender3 </button></li>
-						<li><button class="Lavender-btn"> Lavender3 </button></li>
-						<li><button class="Lavender-btn"> Lavender3 </button></li>
+						<li><button class="Lavender-btn b-bottom1"> Lavender3 </button></li>
+						<li><button class="Lavender-btn b-bottom2"> Lavender3 </button></li>
+						<li><button class="Lavender-btn b-bottom3"> Lavender3 </button></li>
+						<li><button class="Lavender-btn b-bottom4"> Lavender3 </button></li>
 					</ul>
 		</div>
 
+	
+
 </main> 
-<%-- 	<%
-	}
-	%>--%>
+
+
 <!-- 공통footer -->
 <%@include file = "../../Footer/Footer.jsp" %>	
+
 </body>
 </html>
