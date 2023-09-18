@@ -22,6 +22,7 @@ ul>li{
    list-style: none;
 }
 
+
 .circle-button>ul{
    float:left;
    margin:-20px;
@@ -42,8 +43,7 @@ ul>li{
    width: 1200px;
    height: 600px;
    left:11%;
-   margin:inherit;
-   margin-top:300px;
+   margin-top:20%;
    
 
 }

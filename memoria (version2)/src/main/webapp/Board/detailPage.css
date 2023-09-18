@@ -59,7 +59,7 @@ main{
 }
 
 .buy_btn{
-    margin-top:24px;
+    margin-top:8%;
     width:300px;
     height:80px;
     color:white;
@@ -81,9 +81,7 @@ main{
 .note_ul{
   display: flex;
   gap:10%;
-  /* float:left; */
   margin-top:10%;
-  /* margin-left:25px; */
   padding:4%;
   border-top:2px solid lightgray;
   border-bottom:2px solid lightgray;
@@ -136,6 +134,7 @@ main{
     margin:0 auto;
     margin-top:-50px;
     margin-bottom:5%;
+    border-bottom: 2px solid lightgray;
 }
 
 .best_ul{
@@ -189,19 +188,83 @@ main{
 
 
 
-/* 리뷰 */
 
-.review_box{
-	position:relative;
+/* 향수 메뉴얼*/
+#perfuem-manual{
+    width:1300px;
+    margin:0 auto;
+    margin-top:-50px;
+    margin-bottom:5%;
+    border-bottom: 2px solid lightgray;
 }
 
+.manual_ul{
+  display: flex;
+  gap:8%;
+  margin-top:5%;
+  padding:4%;
+}
+
+
+.common_manual{
+    display: inline-block;
+    width:230px;
+    height:400px;
+    background-color: lightpink
+}
+
+.common_manual>p{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content:center;
+    /* gap:0 20px; */
+}
+
+.best_name{
+    margin-top:10%;
+}
+
+
+
+
+.best_img{
+    background-color: lightcyan;
+    width:335px;
+    height:250px;
+}
+
+.img-manual{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+/* 리뷰 */
+
 .review_header{
-padding-top:30px;
+    padding-top:30px;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.review_content{
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.review_footer{
+    padding-right: 1%;
+    padding-left: 1%;
 }
 
 .r_title{
-   width:100px;
-   margin:100px auto;
+    width:100px;
+    margin:100px auto;
 }
 
 .emotion_area{

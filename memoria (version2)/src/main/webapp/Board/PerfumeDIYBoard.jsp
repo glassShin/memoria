@@ -179,7 +179,7 @@
 
 
 <!-- 공통footer -->
-<%@include file = "../../Footer/Footer.jsp" %>	
+ <!--%@include file = "../../Footer/Footer.jsp" %>-->	
 
 </body>
 </html>

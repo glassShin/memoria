@@ -12,6 +12,7 @@
     <!-- 공통 상단메뉴-->
 	<jsp:include page="../header/Header.jsp"/>
 	
+   
     <main>
             <div id="product">
                 <li class="p1 pbox_li"></li>
@@ -35,7 +36,7 @@
                         </ul>
                     </li>
                 </ul>
-            <div/>
+            </div>
 
             <div id="tasting_note">
                 <ul class="note_ul">
@@ -57,6 +58,35 @@
                     </li>
                 </ul>
             </div>
+
+
+
+
+            <div id="perfuem-manual">
+                <ul class="manual_ul">
+                    <li class="manual1 common_manual">
+                     <img src="../image2/001.png" alt="메뉴얼1"
+                     class="img-manual">
+                    </li>
+
+                    <li class="manual2 common_manual">
+                        <img src="../image2/002.png" alt="메뉴얼2"
+                        class="img-manual">
+                    </li>
+
+                    <li class="manual3 common_manual">
+                        <img src="../image2/003.png" alt="메뉴얼3"
+                        class="img-manual">
+                    </li>
+
+                    <li class="manual4 common_manual">
+                        <img src="../image2/004.png" alt="메뉴얼4"
+                        class="img-manual">
+                    </li>
+                </ul>
+        
+            </div>
+
 
             <div id="best_list">
                 <ul class="best_ul">
@@ -84,6 +114,10 @@
         
             </div>
 
+
+
+
+
             <div id="review">
                 <h1 class="r_title">리뷰</h1>
                     <!-- 댓글창 -->
@@ -107,8 +141,8 @@
                     
                         <div class="user_log">
                             <ul>
-                                <li>작성자:</li>
-                                <li>작성날짜:</li>
+                                <li>작성자: <span>흰둥이</span></li>
+                                <li>작성날짜: <span>연도</span>-<span>월</span>-<span></span>일</li>
                             </ul>
                         </div>
                     </footer>
@@ -135,8 +169,8 @@
                            
                             <div class="user_log">
                                 <ul>
-                                    <li>작성자:</li>
-                                    <li>작성날짜:</li>
+                                    <li>작성자:<span>흰둥이</span></li>
+                                    <li>작성날짜:<span>연도</span>-<span>월</span>-<span></span>일</li>
                                 </ul>
                             </div>
 
@@ -147,5 +181,7 @@
                 </div>
           
         </main>
+        
+      <!--%@include file = "../../Footer/Footer.jsp" %>	 -->
 </body>
 </html>

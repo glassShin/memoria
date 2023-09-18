@@ -63,7 +63,7 @@ footer{
     position: absolute;  
     bottom: 0;
     left: 0;
-    margin-top:50%;
+    margin-top:80%;
 }
 .company{
    	background-color: white;
