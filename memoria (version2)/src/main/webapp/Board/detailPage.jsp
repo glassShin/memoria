@@ -15,7 +15,10 @@
    
     <main>
             <div id="product">
-                <li class="p1 pbox_li"></li>
+                <div class="p1 pbox_li">
+                	<img src="">
+                </div>
+                
                 <ul class="pbox_ul">
                     <li class="p2 pbox_li">
                         <ul class="p2_ul">
