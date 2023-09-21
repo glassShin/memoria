@@ -181,7 +181,8 @@
                 </div>
           
         </main>
-        
-      <!--%@include file = "../../Footer/Footer.jsp" %>	 -->
+       
+     <%--  <% request.setAttribute("margin_top", 220); %> 
+      <%@include file = "../../Footer/Footer.jsp" %> --%>	
 </body>
 </html>
