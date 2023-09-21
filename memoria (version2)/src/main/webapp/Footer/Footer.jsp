@@ -63,8 +63,10 @@ footer{
     position: absolute;  
     bottom: 0;
     left: 0;
-    margin-top:80%;
-}
+   /* 	margin-top:200%; */
+   	margin-top: <%= request.getAttribute("margin_top") %>
+  
+} 
 .company{
    	background-color: white;
     padding: 20px 0px 10px;
@@ -72,9 +74,10 @@ footer{
    	min-height: 100%;
    	font-size: 1.2rem;
    	color: black;
-
+   	margin-top:75%;
 
 }
+   
 .company-info{
    margin-left: 10px; 
    color: rgba(0, 0, 0, 0.5);
@@ -83,6 +86,8 @@ footer{
 </style>
 </head>
 <body>
+
+	<%-- margin-top: <%= request.getAttribute("margin_top") %> --%>
 <footer>
    <div class="company">
 
@@ -124,5 +129,37 @@ footer{
       </div>
    </div>
 </footer>
+
+
+<script>
+    // margin-top 값을 동적으로 설정
+    //페이지별로 푸터 margin-top 조정
+    var marginValue = <%= request.getAttribute("margin_top") %> + "%";
+    document.addEventListener("DOMContentLoaded", function () {
+        var companyElements = document.querySelectorAll(".company");
+        for (var i = 0; i < companyElements.length; i++) {
+            companyElements[i].style.marginTop = marginValue;
+        }
+    });
+    
+    // 페이지 로드될 때와 요소 추가될 때 스크립트 실행
+    //페이지별로 푸터 margin-top 조정
+    //예비 방편으로 남겨둠
+   <%--  function updateMargin() {
+        var marginValue = <%= request.getAttribute("margin_top") %> + "%";
+        var companyElements = document.querySelectorAll(".company");
+        for (var i = 0; i < companyElements.length; i++) {
+            companyElements[i].style.marginTop = marginValue;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", updateMargin);
+    updateMargin(); --%>
+
+    
+  
+    
+</script>
+
 </body>
 </html>
