@@ -125,9 +125,29 @@ h2{
 	font-size: 1.5rem;
   	position: relative;
   	top: 46em;
-  	text-align: center;
   	order: 5; 
+  	width : 100%
 }
+
+#Perfume-recommend > h3 {
+	text-align : center;
+}
+
+/* 추천 향수 리스트*/
+#recommendlist {
+	position : realtive;
+	overflow : hidden;
+	
+}
+.sliders {
+	position : absolute;
+	width : 80%;
+	left : 100px;
+}
+.recommend_object {
+	display: inline-block;
+}
+
 
 /* 추천향수 박스  */
 .user-recommend{
@@ -136,17 +156,24 @@ h2{
 	top: 1rem;
 	height: 450px;
 	width: 330px;
-	background-color: white;
+	display : inline-block;
+	margin-left : 30px;
+	
 	
 }
 .card-img{
 	height: 350px;
 	width: 330px;
 	background-color: black;
+	margin-bottom: 50px;
+}
+.card-head {
+	margin-bottom : 40px;
 }
 .card-head > h3{
 	font-size: 1.2rem;
 	margin: 4px;
+	text-align : center;
 }
 
 .price{

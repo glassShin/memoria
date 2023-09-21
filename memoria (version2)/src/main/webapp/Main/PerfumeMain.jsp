@@ -61,6 +61,8 @@
 </section>
 
 <!-- 공통footer -->
+<div class="login-footer">
 <%@include file = "../../Footer/Footer.jsp" %>
+</div>
 </body>
 </html>

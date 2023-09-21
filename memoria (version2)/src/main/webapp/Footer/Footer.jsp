@@ -1,4 +1,4 @@
-<%@ page language="java" 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -53,27 +53,20 @@ ul {
 b{
 	margin-left : 43px;
 }
-
-
  
 /* 기업정보 하단고정*/
 footer{
     width: 100%;
-    height: 40px; 
+    height: 30px; 
     position: absolute;  
     bottom: 0;
     left: 0;
-    margin-top:80%;
+
 }
-.company{
+.company{ 	
    	background-color: white;
-    padding: 20px 0px 10px;
-    position: relative;
-   	min-height: 100%;
    	font-size: 1.2rem;
-   	color: black;
-
-
+    padding-bottom: 20px;
 }
 .company-info{
    margin-left: 10px; 
@@ -124,5 +117,6 @@ footer{
       </div>
    </div>
 </footer>
+
 </body>
 </html>

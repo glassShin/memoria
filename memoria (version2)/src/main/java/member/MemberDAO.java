@@ -32,9 +32,10 @@ public class MemberDAO extends JDBCConnect{
 				dto.setPassward(rs.getString(2));
 				dto.setName(rs.getString(3));
 				dto.setAddr(rs.getString(4));
-				dto.setBirth(rs.getString(5));
-				dto.setSex(rs.getString(6));
-				dto.setRegidate(rs.getDate(7));
+				dto.setTel(rs.getString(5));
+				dto.setBirth(rs.getString(6));
+				dto.setSex(rs.getString(7));
+				dto.setRegidate(rs.getDate(8));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

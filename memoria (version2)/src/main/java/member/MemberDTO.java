@@ -8,6 +8,7 @@ public class MemberDTO {
 	private String passward;
 	private String name;
 	private String addr;
+	private String tel;
 	private String birth;
 	private String sex;
 	private Date regidate;
@@ -16,16 +17,35 @@ public class MemberDTO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public MemberDTO(String mail, String passward, String name, String addr, String birth, String sex, Date regidate) {
+	
+
+	public MemberDTO(String mail, String passward, String name, String addr, String tel, String birth, String sex,
+			Date regidate) {
 		super();
 		this.mail = mail;
 		this.passward = passward;
 		this.name = name;
 		this.addr = addr;
+		this.tel = tel;
 		this.birth = birth;
 		this.sex = sex;
 		this.regidate = regidate;
 	}
+
+	
+
+
+	public String getTel() {
+		return tel;
+	}
+
+
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+
 
 	public String getMail() {
 		return mail;
