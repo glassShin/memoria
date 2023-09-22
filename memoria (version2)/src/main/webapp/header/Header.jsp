@@ -153,7 +153,7 @@ margin-top : 100px;
    </li>
    </ul>
    <div class="logo">
-       <img alt="로고" src="../Main-image/로고.png">
+       <img alt="로고" src="../Main-image/로고.png" onclick="location.href='../Main/PerfumeMain.jsp'">
     </div>
 
 </div>
