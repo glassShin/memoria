@@ -11,7 +11,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 2000px;
+    height: 100%;
     background-color: #f5ecec;
 }
 
@@ -23,49 +23,51 @@ html, body {
 /* 오른쪽 */
 /* 커서 올려놓으면 배경 변함 */
 .sec-img-r:hover{
-	background:url("../Main-image/꽃4.jpg")fixed; 
-	background-size : 100%;
+	background:url("../Main-image/꽃메인3.jpg")fixed; 
+	background-size : contain; 
 }
 .sec-img-r{
-	background:url("../Main-image/꽃메인.jpg")fixed; 
+	/* background:url("../Main-image/꽃메인3.jpg")fixed;  */
+    background-color: #b27979;
     box-sizing: border-box;
-    background-size : contain;
-    background-size : 100%;
+    background-size : contain; 
     position:absolute;
-    left:50%;
-	height: 43em;
+    left: 50%;
+	height: 30em;
 	width: 50%;
-	top: 150px;
+	top: 130px;
 }
 
 /* 왼쪽 */
 /* 커서 올려놓으면 배경 변함 */
 .sec-img-l:hover{
 	background:url("../Main-image/향수3.jpg")fixed; 
-	background-size : contain;
+	background-size : contain; 
+	
 }
 .sec-img-l{
-	background:url("../Main-image/향수메인2.jpg")fixed; 
+	/* background:url("../Main-image/향수메인2.jpg")fixed;  */
+	background-color: #b27979;
     box-sizing: border-box;
-    background-size : contain;
+    background-size : contain; 
     position:absolute;
-    right:50%;
-	height: 43em;
+    right: 50%;
+	height: 30em;
 	width: 50%;
-	top: 150px;
+	top: 130px;
 }
 
 /* div요소 */
 .r-element{
 	position: absolute;
-	top: 300px;
-	right: 350px;
+	top: 30%;
+	right: 30%;
 }
 
 .l-element{
 	position: absolute;
-	top: 300px;
-	left: 350px;
+	top: 30%;
+	left: 30%;
 }
 
 /* button */
@@ -75,7 +77,7 @@ html, body {
 	 position: relative;
 	 color: #fff;
 	 height: 50px;
-	 width: 200px;
+	 width: 180px;
 	 display : flex;
   	 justify-content : center;
   	 align-items : center;
@@ -87,13 +89,13 @@ html, body {
 	 position: relative;
 	 color: #fff;
 	 height: 50px;
-	 width: 200px;
+	 width: 180px;
 	 display : flex;
   	 justify-content : center;
   	 align-items : center;	 
 }
 
-h2{
+h3{
 	color: white;
 	text-align: center;
 }
@@ -101,20 +103,20 @@ h2{
 /* 멘트 */
 #moonjang {
 	font-family: 'BookkMyungjo-Bd';
-  	font-size: 1.5rem;
+  	font-size: 1.2rem;
   	position: relative;
   	text-align: center;
-  	top: 37em;
+  	top: 36em;
   	order: 3; 
 }
 
-/* 비디오 */
-#perfume-video{
-	position: relative;
-	display: block;
+/* 중간이미지 */
+#perfume-img{
 	background-color: white;
-	height: 450px; 
-	top: 62em;
+	background-size: 100% 100%;
+	position: relative;
+	height: 400px; 
+	top: 50em;
 	width: 100%;
 	order: 4; 
 }
@@ -122,61 +124,40 @@ h2{
 /* 회원 추천향수 */
 #Perfume-recommend {
 	font-family: 'BookkMyungjo-Bd';
-	font-size: 1.5rem;
+	font-size: 1.2rem;
   	position: relative;
-  	top: 46em;
+  	top: 50em;
+  	text-align: center;
   	order: 5; 
-  	width : 100%
 }
-
-#Perfume-recommend > h3 {
-	text-align : center;
-}
-
-/* 추천 향수 리스트*/
-#recommendlist {
-	position : realtive;
-	overflow : hidden;
-	
-}
-.sliders {
-	position : absolute;
-	width : 80%;
-	left : 100px;
-}
-.recommend_object {
-	display: inline-block;
-}
-
 
 /* 추천향수 박스  */
 .user-recommend{
 	position: relative;
 	left: 5em;
-	top: 1rem;
-	height: 450px;
-	width: 330px;
-	display : inline-block;
-	margin-left : 30px;
-	
+	top: 4em;
+	height: 350px;
+	width: 260px;
+	background-color: white;
 	
 }
 .card-img{
-	height: 350px;
-	width: 330px;
+	height: 250px;
+	width: 260px;
 	background-color: black;
-	margin-bottom: 50px;
-}
-.card-head {
-	margin-bottom : 40px;
 }
 .card-head > h3{
-	font-size: 1.2rem;
+	font-size: 1rem;
 	margin: 4px;
-	text-align : center;
 }
 
 .price{
-	font-size: 1.2rem;
+	font-size: 1rem;
 	margin: 4px 0 2px;
+}
+
+/* footer */
+.footer-all{
+	position:relative;
+	top:220%;	
 }

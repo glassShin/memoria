@@ -43,7 +43,7 @@ ul>li{
    width: 1200px;
    height: 600px;
    left:11%;
-   margin-top:20%;
+   margin:15% auto 0 auto;
    
 
 }
@@ -177,3 +177,8 @@ display: flex;
    clip-path: polygon(20.5% 2%, 79.5% 2%, 95% 98%, 5% 98%);
 }
 
+/* footer */
+.footer-all{
+	position:relative;
+	top:220%;	
+}

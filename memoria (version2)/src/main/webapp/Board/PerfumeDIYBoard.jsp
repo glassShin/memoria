@@ -178,8 +178,12 @@
 </main> 
 
 
-<!-- 공통footer -->
- <!--%@include file = "../../Footer/Footer.jsp" %>-->	
+ <!-- 페이지 푸터 위치 조정(%값) -->
+ <%-- <% request.setAttribute("margin_top", 73); %> --%>
+	<!-- 공통footer -->
+	<div class="footer-all">
+		<%@include file="../../Footer/Footer.jsp"%>
+	</div>	
 
 </body>
 </html>
