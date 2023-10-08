@@ -57,9 +57,11 @@ footer {
 
 .company {
 	background-color: white;
-	min-height: 100%;
+	min-height: 50%;
 	font-size: 13px;
 	color: black;
+	height:300px;
+	
 }
 
 /* 기업정보 */

@@ -1,21 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%	String checked = "checked";
+    String errmsg = (String)session.getAttribute("loginerr");
+    if(errmsg == null) errmsg="";
+    String mail = (String)session.getAttribute("mail");
+    if(mail == null) mail="";
+    String pass = (String)session.getAttribute("pass");
+    if(pass == null) pass="";
+    String check_pass = (String)session.getAttribute("check_pass");
+    if(check_pass == null) check_pass="";
+    String name = (String)session.getAttribute("name");
+    if(name == null) name="";
+    String phoneNum = (String)session.getAttribute("phoneNum");
+    if(phoneNum == null) phoneNum="";
+    String code = (String)session.getAttribute("code");
+    if(code == null) code="";
+    String birth = (String)session.getAttribute("birth");
+    if(birth == null) birth="";
+    //String code = (String)session.getAttribute("code");
+    //if(code == null) code="";
+
+    %>
+
 <html>
 <head>
 <meta charset="EUC-KR">
 <link href="Login_join.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    const formDataJson = sessionStorage.getItem('formData');
+    if (formDataJson) {
+    	const formData = JSON.parse(formDataJson);
+
+        // Set the form fields with the stored data
+        document.forms['joinFrm'].mail.value = formData.mail;
+        document.forms['joinFrm'].pass.value = formData.pass;
+        document.forms['joinFrm'].name.value = formData.name;
+        document.forms['joinFrm'].phonenum.value = formData.phonenum;
+        document.forms['joinFrm'].birth.value = formData.birth;
+        
+        // Set the gender radio button based on the stored value
+        const genderRadio = document.querySelector('input[name="gender"][value="' + formData.gender + '"]');
+        if (genderRadio) {
+            genderRadio.checked = true;
+        }
+    }
+});
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
 <!-- 공통 상단메뉴-->
 <jsp:include page="../header/Header.jsp"/>
 
-    <%
+  <%--   <%
     String errmsg = (String)session.getAttribute("loginerr");
     if(errmsg == null) errmsg="";
     session.invalidate();
-    %>
+    %> --%>
     
     <main>
     <h1 class="mypage">마이페이지</h1>
