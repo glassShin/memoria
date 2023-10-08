@@ -1,0 +1,113 @@
+@charset "EUC-KR";
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+html,body{
+    width:1920px;
+    height:1080px;
+    margin: 0 auto;
+    background-color:white;
+}
+
+#logo{
+    background-color: white;
+    margin:0;
+    width:100%;
+    height:100px;
+    text-align: center;
+    border-bottom: 1px soild black;
+    
+    
+}
+#logo>span{
+    font-family: 'PT Serif', serif;
+    line-height:100px;
+    font-size: xx-large;
+}
+
+/* 상단 메뉴 */
+#menubar>ul{
+    width: 100%;
+    text-align: center;
+    
+    
+    
+}
+
+#menubar>ul>li{
+    background-color: white;
+    position: relative;
+    bottom:16px;
+    right: 40px;
+    width:384px;
+    height:55px;
+    float:left;
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    line-height: 50px;
+}
+
+
+
+/* 비밀번호 찾긴 */
+.find_pass{
+    border:1px solid black;
+    margin: 200px 100px 100px 350px;
+    height:400px;
+    width:1200px;
+}
+
+.find_pass>ul{
+    list-style: none;
+    margin-top:100px;
+    margin-left:60px;
+}
+
+.find_pass>ul>li{
+    margin-top:30px;
+    width: 1000px;
+}
+
+.find_pass>ul input[type="text"]{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    width: 1000px;
+    font-size: 20px;
+}
+
+.find_pass>ul input[type="button"]{
+    background-color: black;
+    color:white;
+    width: 1000px;
+    height: 60px;
+}
+
+
+
+/* 기업정보 하단고정*/
+.footer-list{
+	background-color: #A2B59F;
+    padding: 20px 0px 10px;
+    position: relative;
+	min-height: 100%;
+	font-size: 1.2rem;
+	text-align: center;
+	color: white;
+	top:-1em;
+}
+footer{
+   	width: 100%;
+    height: 40px; 
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+}
+.company{
+	text-align: center;
+}
+.company-info{
+	margin:5px; 
+} 
