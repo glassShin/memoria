@@ -140,7 +140,7 @@
 
   </main>
 
-
+	<!--  -->
 	<div class="footer-all">
 		<%@include file="../../Footer/Footer.jsp"%>
 	</div>	

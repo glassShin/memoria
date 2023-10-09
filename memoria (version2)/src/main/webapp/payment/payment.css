@@ -74,6 +74,7 @@ margin: 0 auto;
 }
 
 
+/*  */
 /* 가격, 셀렉트 박스,  총합계 위치조정 */
 .item-price, .all-price, select{
   text-align: center;
