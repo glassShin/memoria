@@ -1,7 +1,11 @@
 package member;
 
-import java.sql.Date; 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Random;
 
 import javax.servlet.ServletContext;
@@ -10,8 +14,11 @@ import common.JDBCConnect;
 import utils.Naver_Sens_V2;
 
 public class MemberDAO extends JDBCConnect{
-
+	PreparedStatement psmt = null;
+	Statement stmt = null;
+	ResultSet rs = null;
 	public boolean insertmember(String mail, String passward, String name, String phoneNum ,String birth, String sex) {
+		con = getConnection();
 		boolean result = true;
 		String sql = "insert into member values (?,?,?,NULL,?,?,?,sysdate)";
 		try {
@@ -35,6 +42,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public MemberDTO memberlogin(String mail,String pass) {
+		con = getConnection();
 		MemberDTO dto = new MemberDTO();
 		String sql = "select * from member where memberemail=? and memberpassward=?";
 		try {
@@ -62,7 +70,7 @@ public class MemberDAO extends JDBCConnect{
 	
 	public MemberDTO updateMember(String mail, String updatePart, String updateValue) {
 		MemberDTO dto = new MemberDTO();
-		
+		con = getConnection();
 		String sql = "update member set " + updatePart + "= ? where memberemail = ?";
 		try {
 			psmt = con.prepareStatement(sql);
@@ -78,6 +86,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public MemberDTO deleteMember(String mail, String pass) {
+		con = getConnection();
 		MemberDTO dto = new MemberDTO();
 		String sql = "delete from member where memberemail = ? and memberpassward = ?";
 		try {
@@ -95,6 +104,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public boolean resetPassword ( String mail, String pass) {
+		con = getConnection();
 		boolean check = true;
 		MemberDTO dto = new MemberDTO();
 		
@@ -117,6 +127,7 @@ public class MemberDAO extends JDBCConnect{
 	
 	//가입한 전화번호 사용 가능하는지 확인  
 	public MemberDTO checkTel(String tel){
+		con = getConnection();
 		MemberDTO dto = new MemberDTO();
 		String sql = "select * from member where memberphonenumber = '" + tel+ "'";
 		try {
@@ -141,6 +152,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public Boolean checkCode(String sendedCode, String userInputCode) {
+		con = getConnection();
 		boolean check = true;
 	    System.out.println(sendedCode + " : " + userInputCode);
 

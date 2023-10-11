@@ -11,9 +11,6 @@ import javax.servlet.ServletContext;
 
 public class JDBCConnect {
 	public Connection con = null;
-	public PreparedStatement psmt = null;
-	public Statement stmt = null;
-	public ResultSet rs = null;
 	public Connection getConnection() {
 
 		try {

@@ -1,6 +1,10 @@
 package product;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.ServletContext;
@@ -8,8 +12,11 @@ import javax.servlet.ServletContext;
 import common.JDBCConnect;
 
 public class ProductDAO extends JDBCConnect{
-	
+	PreparedStatement psmt = null;
+	Statement stmt = null;
+	ResultSet rs = null;
 	public ProductDTO getproduct(String id) {
+		con = getConnection();
 		ProductDTO dto = new ProductDTO();
 		String sql = "select * from product where productid=?";
 		try {
@@ -33,6 +40,7 @@ public class ProductDAO extends JDBCConnect{
 	}
 	
 	public ArrayList<ProductDTO> getProductList() {
+		con = getConnection();
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
 		String sql = "select * from product";
 		try {

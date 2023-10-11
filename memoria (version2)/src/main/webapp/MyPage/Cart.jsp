@@ -25,6 +25,7 @@
 				<div class="innerList">
 					<ul class="paymentList-ul p-ul">
 						<%
+						
 						if (list != null) {
 							for (ProductDTO dto : list) {
 						%>
@@ -34,13 +35,13 @@
 								<p class="p-name">
 									<%=dto.getP_kname()%>
 								</p>
-								<span class="item-price"><%=dto.getP_price()%></span> <select
-									name="quantity" id="quantity_<%=dto.getP_id()%>">
+								<span class="item-price"><%=dto.getP_price()%></span>
+								 <select name="quantity" id="quantity_<%=dto.getP_id()%>" onchange="updateTotal('<%=dto.getP_id()%>','<%=dto.getP_price()%>')"> 
 									<option value='q-choice' selected disabled>수량</option>
-									<option value='q-one'>1</option>
-									<option value='q-two'>2</option>
-									<option value='q-three'>3</option>
-								</select> <span class="all-price" id="total_price_<%=dto.getP_id()%>"></span>
+									<option value='1'>1</option>
+									<option value='2'>2</option>
+									<option value='3'>3</option>
+								</select> <span class="all-price" id="total_price_<%=dto.getP_id()%>"><%=dto.getP_price()%></span>
 							</div>
 						</li>
 						<%
@@ -51,24 +52,18 @@
 				</div>
 			</div>
 			<script>
-			 // JavaScript를 사용하여 수량이 변경될 때 총 합계 업데이트
-		    var products = document.querySelectorAll('.p-ul li');
-
-		    products.forEach(function (product) {
-		        var select = product.querySelector('select');
-		        var price = parseFloat(product.querySelector('.item-price').textContent);
-
-		        select.addEventListener('change', function () {
-		            var quantity = parseInt(select.value.replace('q-', ''));
-		            if (isNaN(quantity)) {
-		                quantity = 0; // NaN인 경우 0으로 설정
-		            }
-		            var total = quantity * price;
-		            product.querySelector('.all-price').textContent = '총합계: ' + total;
-		        });
-		    });
+			<!-- JavaScript 코드 블록을 페이지 하단에 추가합니다. -->
+			function updateTotal(productid,price) {
+			    var quantitySelect = document.getElementById("quantity_" + productid);
+			    var totalPriceElement = document.getElementById("total_price_" + productid);
+			    var selectedQuantity = quantitySelect.options[quantitySelect.selectedIndex].value;
+			    var productPrice = price; // 제품 가격을 가져오는 방식에 따라 수정
+			    var total = selectedQuantity * productPrice;
+			    console.log(selectedQuantity +' '+ productPrice)
+			    var temp_total = total.toLocaleString();
+			    totalPriceElement.textContent = temp_total;  
+			}
 			</script>
-
 			<aside class="payGroup pgroup">
 				<div class="sticky-block">
 					<p class="order-product">주문 상품</p>
