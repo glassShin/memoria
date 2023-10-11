@@ -5,94 +5,154 @@
 
 /* 전체 기본 */
 html, body {
-	margin: 0 auto;
-	padding: 0;
-	height: 100%;
+   margin: 0 auto;
+   padding: 0;
+   height: 100%;
 }
 body{
-	overflow-x: hidden;
+   overflow-x: hidden;
 }
+
 
 /* 상품리스트 */
 .product-slide{
-	background-color: rgba(86, 92, 70, 0.2);
-	position: relative;
-	top: 6em;
-	width: 100%;
-	height: 600px;
+   background-color: rgba(86, 92, 70, 0.2);
+   position: relative;
+   top: 4.8em;
+   width: 100%;
+   height: 600px;
 }
+
+.product-slide-h1{
+   font-family: 'Nanum Myeongjo';
+   text-align: center;
+   position: relative;
+   top: 1.5em;   
+}
+
+
+/* 상품 */
+.product {
+   flex-direction: column;
+   position: absolute;
+   width: 250px;
+   height: auto;
+   border: none;
+   margin: 20px 30px;
+}
+
+/* 영어이름 + 한국어이름  */
+h3{
+   margin: 10px 0 10px;
+   font-family: 'Nanum Myeongjo';
+}
+
+.E-name{
+   font-size: 1rem;
+}
+.K-name{
+   font-size: 1rem;
+}
+
+.card-img {
+      height: auto;
+      display: flex;
+    }
+    
+.product-img{
+    border-radius:5px;
+    width: 100%;    
+}
+
+.card-head{
+    height: 60px;
+    }
+    
+.card-main{
+     height: 40px;
+     margin-top: 40px;
+     font-size: 1rem;
+    }
+.card-btn{
+   border: 2px solid #565c46; /* 테두리 설정 */
+    background-color: transparent; /* 배경색 설정 */
+    color: #565c46;
+    padding: 10px 30px;
+}  
+
 
 /* 중간이미지 + 문장 */
 .image-moonjang{
-  	background-size: 100% 100%;
-	position: relative;
-	top: 4em;
-	width: 100%;
-	height: 300px;
-	z-index: 1;
+     background-size: 100% 100%;
+   position: absolute;
+   top: 37.5em;
+   width: 100%;
+   height: 300px;
+   z-index: 1;
 }
 .image-moonjang > p {
-	/* font-family: 'Noto Sans KR'; */
-	font-family: 'Playfair Display'; 
-	color: #565c46;
-	padding-top: 100px;
-	font-size: 2rem;
-	text-align: center;
-	
+   /* font-family: 'Noto Sans KR'; */
+   font-family: 'Playfair Display'; 
+   color: #565c46;
+   padding-top: 90px;
+   font-size: 2rem;
+   text-align: center;
 }
 
 .image-moonjang::after{
-	background: url("../Main-image/숲1.jpg");
-	background-size: 100% 100%;
-	position: absolute;
-	top: 0;
-	left:0;
-	content: "";
-	width: 100%;
-	height: 300px;
-	z-index: -1;
-	opacity: 0.5;
+   background: url("../Main-image/숲1.jpg");
+   background-size: 100% 100%;
+   position: absolute;
+   top: 0;
+   left:0;
+   content: "";
+   width: 100%;
+   height: 300px;
+   z-index: -1;
+   opacity: 0.5;
 }
+
 
 /* product page*/
 .product-page{
-	position: relative;
-	height: 1000px;
+   position: relative;
+   top: 57em;
 }
+
 /* 오른쪽 */
 /* 이미지 */
-.product-img-r >img {
-	border-radius: 20px;
-	position: relative;
-	top: 10em;
-	left: 15em;
-	height: 420px;
-	width: 370px;
+.page-img-r >img {
+   border-radius: 20px;
+   position: relative;
+   left: 15%;
+   height: 420px;
+   width: 370px;
 }
 
 /* 타이틀+ 문장 +버튼 */
 .product-moonjang-r{
-	text-align: center;
-	position: relative;
-	bottom: 13em;
-	left: 12em;
+   text-align: center;
+   position: relative;
+   bottom: 22em;
+   right: 20%;
+   float: right;
 }
 /* 타이틀 */
 .r-Title{
-	font-family: 'Nanum Myeongjo';
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin: 0 0 50px;
-	color: #565c46;
+   font-family: 'Nanum Myeongjo';
+   font-size: 1.5rem;
+   font-weight: 600;
+   margin: 0 0 50px;
+   color: #565c46;
 }
 /* 문장 */
 .r-moonjang{
-	font-family: 'Nanum Myeongjo';
-	margin: 0 0 130px;
+   font-family: 'Nanum Myeongjo';
+   margin: 0 0 130px;
 }
 /* 버튼 */
 .product-btn-r{
-	border: 2px solid #565c46; /* 테두리 설정 */
+   border: 2px solid #565c46; /* 테두리 설정 */
     background-color: white; /* 배경색 설정 */
     color: #565c46; /* 텍스트 색상 설정 */
     padding: 13px 60px; /* 패딩 설정 */
@@ -103,43 +163,46 @@ body{
     background-color: #565c46; /* 배경색 변경 */
     color: white; /* 텍스트 색상 변경 */
 }
+
 /* 왼쪽  */
 /* 이미지 */
-.product-img-l > img{
-	border-radius: 20px;
-	position: relative;
-	bottom: 5em;
-	left: 40em;
-	height: 420px;
-	width: 370px;
+.page-img-l > img{
+   border-radius: 20px;
+   position: relative;
+   top: 5em;
+   left: 55%;
+   height: 420px;
+   width: 370px;
 }
 
 /* 타이틀+ 문장 +버튼 */
 .product-moonjang-l{
-	text-align: center;
-	position: relative;
-	bottom: 27em;
-	right: 13em;
+   text-align: center;
+   position: relative;
+   bottom: 15em;
+   float: left;
+   left: 23%;
 }
 /* 타이틀 */
 .l-Title{
-	font-family: 'Nanum Myeongjo';
-	font-size: 1.5rem;
-	font-weight: 600;
-	margin: 0 0 50px;
-	color: #565c46;
+   font-family: 'Nanum Myeongjo';
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: #565c46;
+   display: inline;
 }
 /* 문장 */
 .l-moonjang{
-	font-family: 'Nanum Myeongjo';
-	margin: 0px 0 150px;
-	color: #565c46;
-	
+   font-family: 'Nanum Myeongjo';
+   margin: 50px 0 100px;
+   color: #565c46;
+
+   
 }
 /* 버튼 */
 .product-btn-l{
-	font-family: 'Nanum Myeongjo';
-	border: 2px solid #565c46; /* 테두리 설정 */
+   font-family: 'Nanum Myeongjo';
+   border: 2px solid #565c46; /* 테두리 설정 */
     background-color: white; /* 배경색 설정 */
     color: #565c46; /* 텍스트 색상 설정 */
     padding: 13px 60px; /* 패딩 설정 */
@@ -150,4 +213,10 @@ body{
 .product-btn-l:hover {
     background-color: #565c46; /* 배경색 변경 */
     color: white; /* 텍스트 색상 변경 */
+}
+
+/* footer */
+.footer-all{
+   position: relative;
+   margin-top: 70%
 }
