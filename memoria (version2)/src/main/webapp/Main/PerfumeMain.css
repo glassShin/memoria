@@ -1,163 +1,153 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&family=Playfair+Display&display=swap');
 
-/* 폰트 */
-@font-face {
-    font-family: 'BookkMyungjo-Bd';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
 
+/* 전체 기본 */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #f5ecec;
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+}
+body{
+	overflow-x: hidden;
 }
 
-/* section */
-#sec-img-all{
-   order: 1;      
+/* 상품리스트 */
+.product-slide{
+	background-color: rgba(86, 92, 70, 0.2);
+	position: relative;
+	top: 6em;
+	width: 100%;
+	height: 600px;
 }
 
+/* 중간이미지 + 문장 */
+.image-moonjang{
+  	background-size: 100% 100%;
+	position: relative;
+	top: 4em;
+	width: 100%;
+	height: 300px;
+	z-index: 1;
+}
+.image-moonjang > p {
+	/* font-family: 'Noto Sans KR'; */
+	font-family: 'Playfair Display'; 
+	color: #565c46;
+	padding-top: 100px;
+	font-size: 2rem;
+	text-align: center;
+	
+}
+
+.image-moonjang::after{
+	background: url("../Main-image/숲1.jpg");
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	left:0;
+	content: "";
+	width: 100%;
+	height: 300px;
+	z-index: -1;
+	opacity: 0.5;
+}
+
+/* product page*/
+.product-page{
+	position: relative;
+	height: 1000px;
+}
 /* 오른쪽 */
-/* 커서 올려놓으면 배경 변함 */
-.sec-img-r:hover{
-   background:url("../Main-image/꽃메인3.jpg")fixed; 
-   background-size : contain; 
-}
-.sec-img-r{
-   /* background:url("../Main-image/꽃메인3.jpg")fixed;  */
-    background-color: #b27979;
-    box-sizing: border-box;
-    background-size : contain; 
-    position:absolute;
-    left: 50%;
-   height: 30em;
-   width: 50%;
-   top: 130px;
+/* 이미지 */
+.product-img-r >img {
+	border-radius: 20px;
+	position: relative;
+	top: 10em;
+	left: 15em;
+	height: 420px;
+	width: 370px;
 }
 
-/* 왼쪽 */
-/* 커서 올려놓으면 배경 변함 */
-.sec-img-l:hover{
-   background:url("../Main-image/향수3.jpg")fixed; 
-   background-size : contain; 
-   
+/* 타이틀+ 문장 +버튼 */
+.product-moonjang-r{
+	text-align: center;
+	position: relative;
+	bottom: 13em;
+	left: 12em;
 }
-.sec-img-l{
-   /* background:url("../Main-image/향수메인2.jpg")fixed;  */
-   background-color: #b27979;
-    box-sizing: border-box;
-    background-size : contain; 
-    position:absolute;
-    right: 50%;
-   height: 30em;
-   width: 50%;
-   top: 130px;
+/* 타이틀 */
+.r-Title{
+	font-family: 'Nanum Myeongjo';
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 0 0 50px;
+	color: #565c46;
 }
-
-/* div요소 */
-.r-element{
-   position: absolute;
-   top: 30%;
-   right: 30%;
+/* 문장 */
+.r-moonjang{
+	font-family: 'Nanum Myeongjo';
+	margin: 0 0 130px;
 }
-
-.l-element{
-   position: absolute;
-   top: 30%;
-   left: 30%;
+/* 버튼 */
+.product-btn-r{
+	border: 2px solid #565c46; /* 테두리 설정 */
+    background-color: white; /* 배경색 설정 */
+    color: #565c46; /* 텍스트 색상 설정 */
+    padding: 13px 60px; /* 패딩 설정 */
+    cursor: pointer; /* 커서 스타일 설정 */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
-
-/* button */
-.btn-r{
-    border: 1px solid #fff;
-    background-color:transparent;
-    position: relative;
-    color: #fff;
-    height: 50px;
-    width: 180px;
-    display : flex;
-      justify-content : center;
-      align-items : center;
-    
+.product-btn-r:hover {
+    background-color: #565c46; /* 배경색 변경 */
+    color: white; /* 텍스트 색상 변경 */
 }
-.btn-l{
-    border: 1px solid #fff;
-    background-color:transparent;
-    position: relative;
-    color: #fff;
-    height: 50px;
-    width: 180px;
-    display : flex;
-      justify-content : center;
-      align-items : center;    
+/* 왼쪽  */
+/* 이미지 */
+.product-img-l > img{
+	border-radius: 20px;
+	position: relative;
+	bottom: 5em;
+	left: 40em;
+	height: 420px;
+	width: 370px;
 }
 
-h3{
-   color: white;
-   text-align: center;
+/* 타이틀+ 문장 +버튼 */
+.product-moonjang-l{
+	text-align: center;
+	position: relative;
+	bottom: 27em;
+	right: 13em;
 }
-
-/* 멘트 */
-#moonjang {
-   font-family: 'BookkMyungjo-Bd';
-     font-size: 1.2rem;
-     position: relative;
-     text-align: center;
-     top: 36em;
-     order: 3; 
+/* 타이틀 */
+.l-Title{
+	font-family: 'Nanum Myeongjo';
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 0 0 50px;
+	color: #565c46;
 }
-
-/* 중간이미지 */
-#perfume-img{
-   background-color: white;
-   background-size: 100% 100%;
-   position: relative;
-   height: 400px; 
-   top: 50em;
-   width: 100%;
-   order: 4; 
+/* 문장 */
+.l-moonjang{
+	font-family: 'Nanum Myeongjo';
+	margin: 0px 0 150px;
+	color: #565c46;
+	
 }
-
-/* 회원 추천향수 */
-#Perfume-recommend {
-   font-family: 'BookkMyungjo-Bd';
-   font-size: 1.2rem;
-     position: relative;
-     top: 50em;
-     text-align: center;
-     order: 5; 
+/* 버튼 */
+.product-btn-l{
+	font-family: 'Nanum Myeongjo';
+	border: 2px solid #565c46; /* 테두리 설정 */
+    background-color: white; /* 배경색 설정 */
+    color: #565c46; /* 텍스트 색상 설정 */
+    padding: 13px 60px; /* 패딩 설정 */
+    cursor: pointer; /* 커서 스타일 설정 */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
-
-/* 추천향수 박스  */
-.user-recommend{
-   position: relative;
-   left: 5em;
-   top: 4em;
-   height: 350px;
-   width: 260px;
-   background-color: white;
-   
-}
-.card-img{
-   height: 250px;
-   width: 260px;
-   background-color: black;
-}
-.card-head > h3{
-   font-size: 1rem;
-   margin: 4px;
-}
-
-.price{
-   font-size: 1rem;
-   margin: 4px 0 2px;
-}
-
-/* footer */
-.footer-all{
-   position:relative;
-   top:60%;   
+.product-btn-l:hover {
+    background-color: #565c46; /* 배경색 변경 */
+    color: white; /* 텍스트 색상 변경 */
 }
