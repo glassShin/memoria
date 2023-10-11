@@ -1,19 +1,12 @@
 @charset "UTF-8";
 
-/* 폰트 */
-@font-face {
-    font-family: 'BookkMyungjo-Bd';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-
 
 html{
     height: 100%;
 }
  body{
-    height: 100vh;
+ 	margin: 0 auto;
+	padding: 0;
  }
  main{
  	width:100%;
@@ -26,7 +19,6 @@ html{
  .perfuem-img{
     width:200px;
     height:130px;
-    background-color: #B57FB3;
  }
 
  #DIYcard-set{
@@ -140,7 +132,6 @@ html{
 }
     
 .Lavender-btn{
-    background-color: #B57FB3;
     border-radius: 50%;
     border: none;
     margin:10px;
@@ -150,6 +141,8 @@ html{
     font-size: 1.5rem;
     cursor: pointer;
     font-size:small;
+    background: url("../image2/라벤더.jpg");
+    background-size: 100% 100%;
     }   
     
 /* footer */

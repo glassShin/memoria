@@ -86,6 +86,43 @@
 					널리알려진 라벤더, 꿈의 정원에
 					초대된듯한 은은한 꽃</li>
 			</ul>
+			
+			<ul class="DIYcard-ul">
+				<li class=""><img src="" class="perfuem-img"></li>
+				<li class="card-title"><h1>Lavender</h1></li>
+				<li class="card-title"><h5>라벤더</h5></li>
+				<li class="card-text">숙면효과로
+					널리알려진 라벤더, 꿈의 정원에
+					초대된듯한 은은한 꽃</li>
+			</ul>
+
+			<ul class="DIYcard-ul">
+				<li class=""><img src="" class="perfuem-img"></li>
+				<li class="card-title"><h1>Lavender</h1></li>
+				<li class="card-title"><h5>라벤더</h5></li>
+				<li class="card-text">숙면효과로
+					널리알려진 라벤더, 꿈의 정원에
+					초대된듯한 은은한 꽃</li>
+			</ul>
+
+			<ul class="DIYcard-ul">
+				<li class=""><img src="" class="perfuem-img"></li>
+				<li class="card-title"><h1>Lavender</h1></li>
+				<li class="card-title"><h5>라벤더</h5></li>
+				<li class="card-text">숙면효과로
+					널리알려진 라벤더, 꿈의 정원에
+					초대된듯한 은은한 꽃</li>
+			</ul>
+
+			<ul class="DIYcard-ul">
+				<li class=""><img src="" class="perfuem-img"></li>
+				<li class="card-title"><h1>Lavender</h1></li>
+				<li class="card-title"><h5>라벤더</h5></li>
+				<li class="card-text">숙면효과로
+					널리알려진 라벤더, 꿈의 정원에
+					초대된듯한 은은한 꽃</li>
+			</ul>
+			
 
 
 		</section>
@@ -148,34 +185,59 @@
 		let btn4 = document.querySelector('.L-btn4')
 		let btn5 = document.querySelector('.L-btn5')
 		let btn6 = document.querySelector('.L-btn6')
+		let btn7 = document.querySelector('.L-btn7')
+		let btn8 = document.querySelector('.L-btn8')
+		let btn9 = document.querySelector('.L-btn9')
+		let btn10 = document.querySelector('.L-btn10')
+		let btn11 = document.querySelector('.L-btn11')
+		let btn12 = document.querySelector('.L-btn12')
 		
 		let innerTop = document.querySelector('.inner-top')
 		let innerMiddle = document.querySelector('.inner-middle')
 		let innerBottom = document.querySelector('.inner-bottom')
 
 		btn1.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "lightcoral";
+			innerTop.style.backgroundColor = "#FFB6C1";
 		})
 
 		btn2.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "lightgray";
+			innerTop.style.backgroundColor = "#FFB4B9";
 		})
 
 		btn3.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "lightgreen";
+			innerTop.style.backgroundColor = "#FFB2AF";
 		})
 
 		btn4.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "skyblue";
+			innerTop.style.backgroundColor = "#FF98A3";
 		})
 
 		btn5.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "lightgreen";
+			innerMiddle.style.backgroundColor = "#FF82FF";
 		})
 
 		btn6.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "lightblue";
+			innerMiddle.style.backgroundColor = "#FFB4FF";
 		})
+		btn7.addEventListener('click',function(){
+			innerMiddle.style.backgroundColor = "#F4BBDE";
+		})
+		btn8.addEventListener('click',function(){
+			innerMiddle.style.backgroundColor = "#F479DF";
+		})
+		btn9.addEventListener('click',function(){
+			innerBottom.style.backgroundColor = "#FFCA9B";
+		})
+		btn10.addEventListener('click',function(){
+			innerBottom.style.backgroundColor = "#EBAF64";
+		})
+		btn11.addEventListener('click',function(){
+			innerBottom.style.backgroundColor = "#E0904C";
+		})
+		btn12.addEventListener('click',function(){
+			innerBottom.style.backgroundColor = "#E0904C";
+		})
+		
 
 	</script>
 	
