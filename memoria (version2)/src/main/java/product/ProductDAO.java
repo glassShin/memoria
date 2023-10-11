@@ -8,11 +8,6 @@ import javax.servlet.ServletContext;
 import common.JDBCConnect;
 
 public class ProductDAO extends JDBCConnect{
-
-	public ProductDAO(ServletContext application) {
-		super(application);
-		// TODO Auto-generated constructor stub
-	}
 	
 	public ProductDTO getproduct(String id) {
 		ProductDTO dto = new ProductDTO();

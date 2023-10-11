@@ -12,8 +12,7 @@
 	<%@include file = "../../header/Header.jsp" %>
 </header>
 
-  
-  
+
     <main> 
     <div class="p-box">
       <div class="productList pgroup">
@@ -22,78 +21,6 @@
           <ul class="paymentList-ul p-ul">
             
             <li>
-              <div class="li-inner">
-                <img src="" alt="이미지 준비중" class="p-img">
-                <p class="p-name">
-                 1. 상품이름
-                 2. 100ml 
-                </p>
-                  <span class="item-price">가격</span>
-                    <select name="quantity">
-                      <option value='q-choice' selected>수량</option>
-                      <option value='q-one'>1</option>
-                      <option value='q-two'>2</option>
-                      <option value='q-three'>3</option>
-                    </select>
-                <span class="all-price">총합계</span>
-              </div>
-            </li> 
-
-            <li>
-              <div class="li-inner">
-                <img src="" alt="이미지 준비중" class="p-img">
-                <p class="p-name">
-                 1. 상품이름
-                 2. 100ml 
-                </p>
-                  <span class="item-price">가격</span>
-                    <select name="quantity">
-                      <option value='q-choice' selected>수량</option>
-                      <option value='q-one'>1</option>
-                      <option value='q-two'>2</option>
-                      <option value='q-three'>3</option>
-                    </select>
-                <span class="all-price">총합계</span>
-              </div>
-            </li> 
-              
-            <li>
-              <div class="li-inner">
-                <img src="" alt="이미지 준비중" class="p-img">
-                <p class="p-name">
-                 1. 상품이름
-                 2. 100ml 
-                </p>
-                  <span class="item-price">가격</span>
-                    <select name="quantity">
-                      <option value='q-choice' selected>수량</option>
-                      <option value='q-one'>1</option>
-                      <option value='q-two'>2</option>
-                      <option value='q-three'>3</option>
-                    </select>
-                <span class="all-price">총합계</span>
-              </div>
-            </li> 
-            
-             <li>
-              <div class="li-inner">
-                <img src="" alt="이미지 준비중" class="p-img">
-                <p class="p-name">
-                 1. 상품이름
-                 2. 100ml 
-                </p>
-                  <span class="item-price">가격</span>
-                    <select name="quantity">
-                      <option value='q-choice' selected>수량</option>
-                      <option value='q-one'>1</option>
-                      <option value='q-two'>2</option>
-                      <option value='q-three'>3</option>
-                    </select>
-                <span class="all-price">총합계</span>
-              </div>
-            </li> 
-            
-              <li>
               <div class="li-inner">
                 <img src="" alt="이미지 준비중" class="p-img">
                 <p class="p-name">

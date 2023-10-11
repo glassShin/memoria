@@ -1,110 +1,132 @@
-@charset "UTF-8";
+@charset "EUC-KR";
 
-html {
-	margin: 0 auto;
-    padding: 0;
-	height: 100%;
-	overflow-x: hidden
+html{
+  height: 100%;
 }
-
-/* body {
-	min-height: 100vh;
-}
- */
-/* main {
-	height: inherit;
-}
- */
-.p-box {
-	position: relative;
-	left: 100px;
-	transform: translate(20px, 300px); 
-	margin-bottom: 10%;
+body{
+  min-height: 100vh;
 }
 
-.carte-header{
-	padding-bottom: 10px;
-	border-bottom: 2px solid black;
-	margin-bottom: 20px;
+
+main{
+ height: inherit;
 }
 
-/*productList & payGroupê³µí†µ ì†ì„±  */
-.pgroup {
-	/* float:left; */
-	/* width: 500px;
-  	/*height:400px; */
-	/* margin:0 auto; */
-	/* position: relative; */
-	/* transform: translate(30%,0%); */
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-	gap: 100px;
-	-webkit-box-pack: justify;
-	height: 100%;
+.p-box{
+position: relative;
+transform: translate(250px,30%);
+margin: 0 auto;
 }
 
-.p__ul {
-	list-style: none;
+
+/*productList & payGroup°øÅë ¼Ó¼º  */
+.pgroup{
+  /* float:left; */
+  /* width: 500px;
+  height:400px; */
+  /* margin:0 auto; */
+  /* position: relative; */
+  /* transform: translate(30%,0%); */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 100px;
+ -webkit-box-pack: justify;
+ height: 100%;
+}
+.p-ul{
+  list-style: none;
 }
 
-/* ê²Œì œìƒí’ˆ ë¦¬ìŠ¤íŠ¸ */
-.productList {
-	display: inline-block;
-	position: relative;
-	width: 900px;
-	box-sizing: border-box;
-	margin-bottom: 10%;
-}
-.basket-product {
-	font-size: 1.3rem;
-	font-weight: bold;
-	padding-bottom: 10px;
+
+/* °ÔÁ¦»óÇ° ¸®½ºÆ® */
+.productList{
+  display:inline-block;
+  /* flex:1; */
+  position: relative;
+  width: 700px;
+  /* height:100%; */
+  box-sizing: border-box;
+  /* background-color: lightcoral; */
+  border-top:3px solid black;
+  border-bottom:3px solid black;
+  
 }
 
-.innerList {
-	width: 800px;
-	height: 100%;
-	background-color: lightgray;
-	transform: translate(2px, 0%);
-	padding: 5%;
-	margin-bottom: 2%;
+/* Àå¹Ù±¸´Ï ¸®½ºÆ® li ³»ºÎ div¹Ú½º */
+.li-inner{
+  display: flex;
+  flex-direction: row;
+  gap:65px;
+}
+.li-inner img{
+  width:80px;
+  height: 80px;
+  background-color: skyblue;
+  margin:1.5%;
+}
+.li-inner select{
+  width:50px;
+  height:25px;
+}
+.p-name{
+  width:95px;
 }
 
-.paymentList-ul>li {
-	display: block;
-	width: 100%;
-	height: 120px;
-	background-color: darkgray;
-	margin: 1% auto;
+
+/*  */
+/* °¡°Ý, ¼¿·ºÆ® ¹Ú½º,  ÃÑÇÕ°è À§Ä¡Á¶Á¤ */
+.item-price, .all-price, select{
+  text-align: center;
+  transform: translate(0, 35px);
 }
 
-.carte-header{
-	border-top: 2px solid black;
-    display: inline-block;
-    border-bottom: 2px solid black;
-    width: 100%;
+
+
+
+.basket-product{
+  font-size:large;
+  font-weight:bold;
+}
+.innerList{
+  width:600px;
+  height:100%;
+  background-color: lightgray;
+  transform: translate(2%,0%);
+  padding:5%;
+  margin-bottom:2%;
 }
 
-p.carte-header-p{
-    padding-top: 3px;
-    padding-bottom: 3px;
-	float: left;
-	margin-left: 150px;
+.paymentList-ul{
+  padding:0;
 }
 
-/* ê²°ì œê¸ˆì•¡ */
+.paymentList-ul>li{
+  display: block;
+  width:100%;
+  height: 100px;
+  background-color: darkgray;
+  margin:1% auto;
+
+}
+
+
+
+
+
+/* °áÁ¦±Ý¾× */
 .payGroup{
   display:inline-block;
   position:absolute;
   width: 400px;
   height: 100%;
+  /* background-color: lightseagreen; */
   box-sizing: border-box;
-  margin-left: 6%;
+  margin-left: 2%;
   height: 100%;
-  box-sizing: border-box;  
+  box-sizing: border-box;
+  /* top:1100px; */
 }
-
 .sticky-block{
   position: sticky;
   top:0;
@@ -113,7 +135,7 @@ p.carte-header-p{
   /* position: sticky;
   top:0; */
   padding:0;
-  border-bottom:2px solid black;
+  border-bottom:3px solid black;
   padding-bottom: 5px;
 }
 .payGroup-ul>li{
@@ -123,9 +145,9 @@ p.carte-header-p{
 .order-product{
   /* position: sticky;
   top:0; */
-  border-top: 2px solid black;
+  border-top: 3px solid black;
   display: inline-block;
-  border-bottom: 2px solid black;
+  border-bottom:3px solid black;
   width: 100%;
   padding-top:5px;
   padding-bottom:5px;
@@ -142,9 +164,7 @@ p.carte-header-p{
   background-color: black;
 }
 
-/* footer */
 .footer-all{
 	position:relative;
-	top:220%;	
+	top:30%;	
 }
-

@@ -11,10 +11,6 @@ import utils.Naver_Sens_V2;
 
 public class MemberDAO extends JDBCConnect{
 
-	public MemberDAO(ServletContext application) {
-		super(application);
-	}
-	
 	public boolean insertmember(String mail, String passward, String name, String phoneNum ,String birth, String sex) {
 		boolean result = true;
 		String sql = "insert into member values (?,?,?,NULL,?,?,?,sysdate)";
