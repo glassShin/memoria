@@ -1,91 +1,36 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
-
-/* 폰트 */
-@font-face {
-    font-family: 'BookkMyungjo-Bd';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+/* 기본css */
+html, body {
+   height: 100%;
+}
+body{
+   overflow-x: hidden;
+   margin: 0 auto;
+   padding: 0;
 }
 
-html,body{
-    width:1920px;
-    height:1300px;
-    margin: 0 auto;
-    background-color: #f5ecec;
-}
 
-/* 이중 클래스(섹션) */
-main>.box{
-    position: relative;
-    float: left;
-    top:30em;
-}
+/*신규회원, 기존회원  */
 
-ul>li{
-    padding-top: 3px;
-    padding-bottom:5px; 
-}
 
-li{	
-}
-
-/* 마이페이지 */
-.mypage{
-	font-family: 'BookkMyungjo-Bd';
-	position: relative;
-	top: 320px;
-	padding-bottom: 20px;
-	text-align: center;
-	font-size: 2.5rem;
-	border-bottom: 1px solid #CCCCCC;
-}
-
-/* 회원가입 구역 */
-.join_area{
-    margin-left:20px;
-}
-
-.u_join{
-	position: relative;
-    left: 40px;
-}
-
-.u_join>ul{
-    list-style: none;
-}
-
-.newuser{
-	position: relative;
-	left: 25px;
-	margin: 10px;
-}
-
-/* 회원가입 버튼 */
-ul>li>.join_btn{
-    position: relative;
-    top: 100px;
-    right: 15px;
-    width: 630px;
-    height: 70px;
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    color: white;
-    background-color: black;    
+/* 로그인 회원가입 전체구역 */
+#login_join{
+	display:flex;
+   /* position: absolute; */
+   top: 15em;
+   width: 100%;
+   margin-top:300px;
+   margin-left:150px;
 }
 
 /* 로그인 구역 */
-.login_area{
-    margin-left: 220px;
-    margin-bottom: 50px; 
-}
-
 .u_login{
+    box-sizing: border-box;
     position: relative;
-    right: 20px;
+    top: 1em;
+    float: left;
+    width: 50%;
 }
 
 .u_login>ul{
@@ -93,10 +38,9 @@ ul>li>.join_btn{
 }
 
 .user{
-	position: relative;
-	left: 25px;
-	margin: 10px;
-	
+   position: relative;   
+   left: 34px;
+   bottom: 2em;
 }
 
 /* 비밀번호 찾기  */
@@ -108,40 +52,63 @@ ul>li>.join_btn{
 
 /* 에러메세지 */
 #err {
-	color : red;
-	margin-top : 1px;
+   color : red;
+   margin-top : 1px;
 }
 
 
 /* 회원가입 & 로그인 입력란 */
 .u_line{
-    width:600px;  
+    width:500px;  
     height:50px;
-    border-top:none;
-    border-left:none;
-    border-right:none;
-    border-bottom:1px solid balck;
-    background-color: #f5ecec;
+    border:none;
+    border-bottom:1px solid #565c46;
 }
 
 /* 로그인 버튼 위치조정 & 모양 */
-ul>li>.login_btn{
+.login_btn{
     position: relative;
     top: 100px;
     right: 15px;
-    width: 620px;
+    width: 550px;
     height:70px;
-    /* text-align: center; */
-    font-size: large;
-    font-weight: bold;
+    font-size: 1.2rem;
+    border:none;
     color: white;
-    background-color: black;
-   
+    background-color: #565c46;  
 }
 
-/* footer */
-.footer-all{
+
+/* 회원가입 구역 */
+.u_join{
 	position:relative;
-	top:80%;
-	
+   box-sizing: border-box;
+   position: relative;
+   width: 50%;
+   /* float: right; */
 }
+
+.u_join>ul{
+    list-style: none;
+}
+
+.newuser{
+   position: relative;
+   left: 35px;
+   bottom: 3em;
+
+}
+
+/* 회원가입 버튼 */
+.join_btn{
+    position: relative;
+    top: 100px;
+    width: 550px;
+    height: 70px;
+    text-align: center;
+      font-size: 1.2rem;
+    border:none;
+    color: white;
+    background-color: #565c46;    
+}
+
