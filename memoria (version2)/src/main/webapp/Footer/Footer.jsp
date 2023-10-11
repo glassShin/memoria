@@ -5,15 +5,20 @@
 <meta charset="UTF-8">
 <title>Footer</title>
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&display=swap');
+
 html, body {
-	margin: 0 auto;
 	height: 100%;
-	background-color: #f5ecec;
+}
+body{
+	overflow-x: hidden;
+	margin: 0 auto;
+	padding: 0;
 }
 
 /* 로고 및 sns */
 #logo {
-	position: absolute;
+	position: relative;
 	top: 4em;
 	left: 75px;
 }
@@ -26,17 +31,19 @@ html, body {
 /* Footer 하단고정*/
 footer {
 	width: 100%;
-	height: 250px;
-	position: relative;
+	height: 200px;
+	position: absolute;
 	bottom: 0;
+	margin-top: 50%;
 }
 
 /* Footer메뉴 */
 .menu-ul {
+	list-style: none;
 	position: relative;
 	left: 20rem;
-	list-style: none;
 	float: left;
+	margin: 20px 0 40px;
 }
 
 .menu-li {
@@ -56,22 +63,22 @@ footer {
 }
 
 .company {
-	background-color: white;
-	min-height: 50%;
+	background-color: rgba(86, 92, 70, 0.2);
+	min-height: 100%;
 	font-size: 13px;
 	color: black;
-	height:300px;
-	
+	margin-top: 60%;
 }
 
 /* 기업정보 */
 .company-info {
-	border-top: 1.5px solid #b27979;
+	border-top: 1.5px solid #565c46;
 	color: rgba(0, 0, 0, 0.5);
 	clear: both;
 }
 
 .company-ul{
+	margin: 10px 2px 10px;
 	list-style: none;
 }
 
@@ -83,7 +90,7 @@ footer {
 
 			<!-- 로고 -->
 			<div id="logo">
-				<img alt="로고" src="../Main-image/로고.png">
+				<img alt="로고" src="../Main-image/로고1.png">
 			</div>
 
 			<!-- Footer Menu  -->
@@ -110,7 +117,7 @@ footer {
 				<li class="company-li">상호: Memoria</li>
 				<li class="company-li">대표자: 메모리아</li>
 				<li class="company-li">연락처: 010-0000-0000 | 사업자등록번호: 010-1111-0000</li>
-				<li class="company-li">연이메일: Memoria@naver.com | 주소: 서울특별시 강서구 무네미로 478</li>
+				<li class="company-li">이메일: Memoria@naver.com | 주소: 서울특별시 강서구 무네미로 478</li>
 				<li class="company-li">ⓒ2023MEMORIACOMPANY</li>
 				</ul>
 			</div>
