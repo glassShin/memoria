@@ -185,7 +185,9 @@
           
         </main>
        
-     <%--  <% request.setAttribute("margin_top", 220); %> 
-      <%@include file = "../../Footer/Footer.jsp" %> --%>	
+     	<!-- 공통footer -->
+	<div class="footer-all">
+		<%@include file="../../Footer/Footer.jsp"%>
+	</div>	
 </body>
 </html>

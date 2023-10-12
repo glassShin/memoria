@@ -1,150 +1,152 @@
- <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="product.ProductDAO"%>
+<%@page import="product.ProductDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="productList_test.css">
 <title>Insert title here</title>
 </head>
 <body>
 
 <%@include file = "../../header/Header.jsp" %>	
+<%
+ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+ProductDAO dao = new ProductDAO();
 
+ProductDTO dto = dao.getproduct("test");
+%>
     
-    <main>
-<section class="section-area">
-    <div class="p-area">
-        <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
+<main>
+    <section class="section-area">
+        <div class="p-area">
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+               <p class="p-name"><%=dto.getP_kname() %></p>
+                <p class="p-price"><%=dto.getP_price() %></p>
+                <form method="post" action="../addToCart/addToCart.jsp">
+                <input type="hidden" value="<%=dto.getP_id()%>" name="productid">
+                <input type="submit" value="Ïû•Î∞îÍµ¨Îãà"/>
+                </form>
+            </div>
 
-        <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L00401_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L00401_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
 
-        <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-	
-		<div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-        
-        <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      	<div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      
-       <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      
-       <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      
-      <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-      
-      
-      <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-        
-        <div class="buy-product">
-             <a href="">
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
-        </div>
-        
-       <div class="buy-product">
-            <a href="">
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
             
-                <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-            </a>
-            <p class="p-name">¿Ã∏ß</p>
-            <p class="p-price">∞°∞›</p>
-            <a href="">¿ÂπŸ±∏¥œ</a>
+              <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+            
+            
+              <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+            
+            
+              <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+            
+            
+              <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+            
+            <div class="buy-product">
+                <a href="">
+                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
+                </a>
+                <p class="p-name">Ïù¥Î¶Ñ</p>
+                <p class="p-price">Í∞ÄÍ≤©</p>
+                <a href="">Ïû•Î∞îÍµ¨Îãà</a>
+            </div>
+
+
         </div>
-      
-    </div>
-</section>
+    </section>
 </main>
+
 	
-	<!-- ∆‰¿Ã¡ˆ «™≈Õ ¿ßƒ° ¡∂¡§(%∞™) -->
-  	<% request.setAttribute("margin_top", 50); %>
-  	<%@include file = "../../Footer/Footer.jsp" %>	
- 	
+	<!-- Í≥µÌÜµfooter -->
+	<div class="footer-all">
+		<%@include file="../../Footer/Footer.jsp"%>
+	</div>	
 
 </body>
 </html>

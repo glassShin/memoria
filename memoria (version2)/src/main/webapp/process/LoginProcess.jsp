@@ -15,7 +15,7 @@ String mail = request.getParameter("mail");
 String pass = request.getParameter("pass");
 
 MemberDTO dto = new MemberDTO();
-MemberDAO dao = new MemberDAO(application);
+MemberDAO dao = new MemberDAO();
 
 dto = dao.memberlogin(mail, pass);
 
