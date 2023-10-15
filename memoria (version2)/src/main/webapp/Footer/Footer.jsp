@@ -10,6 +10,7 @@
 html, body {
 	height: 100%;
 }
+
 body{
 	overflow-x: hidden;
 	margin: 0 auto;
@@ -34,7 +35,7 @@ footer {
 	height: 200px;
 	position: absolute;
 	bottom: 0;
-	margin-top: 50%;
+	top: 100%;
 }
 
 /* Footer메뉴 */

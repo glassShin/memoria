@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* 네비바 */
+.nav-bar {
+	background-color: white;
+	position: relative;
+	top: 15em; 
+	width: 200px;
+}
+
+.nav-myPage{
+	font-size: 15px; 
+	font-weight: bold;
+	position: relative;
+	bottom: 2em;
+}
+.logout{
+	font-size: 13px; 
+	position: relative;
+	bottom: 3em;
+}
+
+
+.nav-ul {
+	list-style: none;
+	padding: 0;
+}
+
+.nav-li {
+	background-image: url("../Main-image/오른쪽.png");
+	background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 15px 15px;
+    cursor: pointer;
+	padding: 15px;
+	text-align: left;
+}
+
+.nav-li > a{
+    color: #565c46;
+	text-decoration: none;
+}
+
+.nav-li:last-child {
+	border-bottom: none;
+}
+
+/* 컨텐츠 */
+.myPage-content {
+	flex-grow: 1;
+	padding: 15px;
+	position: relative;
+	left: 20em;
+	bottom: 7em;
+	width: 700px;
+}
+
+.myPage-ul{
+	list-style: none;
+}
