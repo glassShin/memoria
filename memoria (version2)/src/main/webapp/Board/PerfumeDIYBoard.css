@@ -132,6 +132,7 @@ html{
 }
     
 .Lavender-btn{
+	 background-color: #B57FB3;
     border-radius: 50%;
     border: none;
     margin:10px;
@@ -141,12 +142,68 @@ html{
     font-size: 1.5rem;
     cursor: pointer;
     font-size:small;
-    background: url("../image2/라벤더.jpg");
-    background-size: 100% 100%;
+    /* background: url("../image2/라벤더.jpg");
+    background-size: 100% 100%; */
     }   
+    
+.Lavender-btn:active{
+	  box-shadow: inset -.3rem -.1rem 1.4rem  #6e6f70, inset .3rem .4rem .8rem #6e6f70; 
+    cursor: pointer;
+}    
     
 /* footer */
 .footer-all{
 	position:relative;
-	top:40%;	
+	top:10%;	
+}
+html{
+   height: 100%;
+}
+body{
+   min-height:100vh ;
+}
+
+.DIYcard-area{
+   width: 1200px;
+   margin: 0 auto;
+	margin-top:120px;
+  
+}
+
+img{
+   width: 250px;
+   height:150px;
+}
+.DIYcard{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content:space-between;
+   align-items: center;
+   /* justify-content: center; */
+   gap:60px;
+   list-style: none;
+   /* background-color: lightcyan; */
+   padding:0;
+}
+.DIYcard>li{
+ width: 200px;
+}
+p{
+  width:200px;
+}
+
+
+.perfume_info img{
+   width: 500px;
+    height: 470px;
+    position: relative;
+    left: 100px;
+    z-index: -1;
+}
+
+
+.footer-all{
+	position:relative;
+	top:30%;	
 }

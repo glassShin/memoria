@@ -6,6 +6,48 @@
 <meta charset="UTF-8">
 <title>PerfumeDIYBoard</title>
 <link rel="stylesheet" href="PerfumeDIYBoard.css">
+
+<style>/*DIY박스 스타일*/
+	*{box-sizing: border-box;}
+	html, body{margin: 0;}
+	ul{margin: 0; padding: 0;}
+	ul > li{list-style: none;}
+	.inner{width: 750px; margin: 0 auto;}
+	main{margin-top: 30px;}
+	section{min-height: 100vh;}
+
+	/* 헤더 */
+	header{width: 100%; height: 60px; line-height: 60px; text-align: center; font-weight: 700; border-bottom: 1px solid #ddd; position: relative;}
+	header h1{margin: 0; display: inline-block;}
+	header .menu{display: flex; gap: 5px; position: absolute; top: 0; right: 20px;}
+
+	/* 장바구니 */
+	.product_wrap{display: flex; gap: 50px; justify-content: space-between;}
+	.product_wrap .product_cart{width: 300px;}
+	.product_wrap .product_cart ul > li{padding: 10px 0; overflow: hidden;}
+	.product_wrap .product_cart ul > li + li{border-top: 1px solid #ddd;}
+
+	/* 향수 */
+	.cont_perfume{display: flex; align-items: center; }
+	.cont_perfume .inner{height: 100%;}
+	.perfume_box{display: flex; justify-content: space-between; align-items: center;}
+	.perfume_box .purfume_choice{display: flex; flex-direction: column; background: #fff; width: 300px; height: 600px; border: 1px solid #ddd; position: relative;}
+	.perfume_box .purfume_choice:hover .choice_item{opacity: .3;}
+	.perfume_box .purfume_choice .choice_item{display: flex; flex: 1; justify-content: center; align-items: center;}
+	.perfume_box .purfume_choice .choice_item + .choice_item{border-top: 1px solid #ddd;}
+	.perfume_box .purfume_choice .choice_item ul{display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #ddd; width: 100%; height: 600px; box-shadow: 0 0 5px #ddd; box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 7%);}
+	.perfume_box .purfume_choice .choice_item ul > li{width: 25%; display: flex; justify-content: center; align-items: center;}
+	.perfume_box .purfume_choice .choice_item ul > li > a{width: 90px; height: 90px; border-radius: 50px; border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; text-align: center;}
+	.perfume_box .purfume_choice .choice_item .menu{display: none; position: absolute; left: 100%; top: 0; width: 500px; height: 600px; padding-left: 15px;}
+	.perfume_box .purfume_choice .choice_item .menu:before{content: ""; display: inline-block; background: #fff; position: absolute; top: 100px; left: 10px; width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid #ddd; border-width: 0 0 1px 1px;}
+	.perfume_box .purfume_choice .choice_item .menu2:before{top: 296px;}
+	.perfume_box .purfume_choice .choice_item .menu3:before{top: 496px;}
+	.perfume_box .purfume_choice .choice_item:hover{box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 10%); opacity: 1;}
+	.perfume_box .purfume_choice .choice_item:hover .menu{display: block;}
+
+</style>
+
+
 </head>
 <body>
 <!-- 공통 상단메뉴-->
@@ -13,159 +55,192 @@
 	<%@include file = "../../header/Header.jsp" %>	
    
 
-	<main>
-		<section id="DIYcard-set">
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+
+<!-- DIYcard-set, Diycard-ul
+section은 ul, ul은 li로 바꾸고 묶어주기  -->
+	<div class="DIYcard-area">
+		<ul class="DIYcard">
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
-			
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+					초대된듯한 은은한 꽃</p>
+			</li>
+
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
+					초대된듯한 은은한 꽃</p>
+			</li>
 
-			<ul class="DIYcard-ul">
-				<li class=""><img src="" class="perfuem-img"></li>
-				<li class="card-title"><h1>Lavender</h1></li>
-				<li class="card-title"><h5>라벤더</h5></li>
-				<li class="card-text">숙면효과로
+			<li>
+				<img src="" class="perfuem-img">
+				<h1>Lavender</h1>
+				<h3>라벤더</h3>
+				<p>숙면효과로
 					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</li>
-			</ul>
-			
+					초대된듯한 은은한 꽃</p>
+			</li>
+		</ul>
+	</div>
 
 
-		</section>
 
-
-		<section id="perfuem-choice-area">
-
-			<div id="perfuem-container">
-				<div class="perfuem-box">
-					<div class="p-box top">
-						<div class="inner-top"></div>
+	<section class="cont_perfume">
+		<div class="inner">
+			<div class="perfume_box">
+				<div class="purfume_choice">
+					<div class="choice_item">
+						<span>향수1</span>
+						<div class="menu menu1">
+							<ul>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="p-box middle">
-						<div class="inner-middle">MIDDLE</div>
+					<div class="choice_item">
+						<span>향수2</span>
+						<div class="menu menu2">
+							<ul>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="p-box bottom">
-						<div class="inner-bottom"></div>
-					</div>
+					<div class="choice_item">
+						<span>향수3</span>
+						<div class="menu menu3">
+							<ul>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;"><span>메뉴2</span></a></li>
+								<li><a href="javascript:;"><span>메뉴3</span></a></li>
+								<li><a href="javascript:;"><span>메뉴4</span></a></li>
+							</ul>
+						</div>
+				</div>
+				</div>
+				<div class="perfume_info">
+					<!-- <h2>← 마우스를 올려 향수를 정해보세요.</h2> -->
+					<img src="../image2/향수노트.jpg" alt="비어있음">
 				</div>
 			</div>
-
-			
-				<div id="circle-button">
-					<p class="TMB">TOP</p>
-						<ul class="Lavender-ul">
-							<li><button class="Lavender-btn L-btn1"> Lavender1 </button></li>
-							<li><button class="Lavender-btn L-btn2"> Lavender2 </button></li>
-							<li><button class="Lavender-btn L-btn3"> Lavender3 </button></li>
-							<li><button class="Lavender-btn L-btn4"> Lavender4 </button></li>
-							<li><button class="Lavender-btn L-btn5"> Lavender5 </button></li>
-							<li><button class="Lavender-btn L-btn6"> Lavender6 </button></li>
-							<li><button class="Lavender-btn L-btn7"> Lavender </button></li>
-							<li><button class="Lavender-btn L-btn8"> Lavender </button></li>
-							<li><button class="Lavender-btn L-btn9"> Lavender </button></li>
-							<li><button class="Lavender-btn L-btn10"> Lavender </button></li>
-							<li><button class="Lavender-btn L-btn11"> Lavender </button></li>
-							<li><button class="Lavender-btn L-btn12"> Lavender </button></li>
-						</ul>
-				</div>
-
-		</section>
-	</main>
-
+		</div>
+	</section>
 
 
  <!-- 페이지 푸터 위치 조정(%값) -->
@@ -177,69 +252,19 @@
 	
 	
 	
-	<!--애니메이션 테스트-->
+	
+	
 	<script>
-		let btn1 = document.querySelector('.L-btn1')
-		let btn2 = document.querySelector('.L-btn2')
-		let btn3 = document.querySelector('.L-btn3')
-		let btn4 = document.querySelector('.L-btn4')
-		let btn5 = document.querySelector('.L-btn5')
-		let btn6 = document.querySelector('.L-btn6')
-		let btn7 = document.querySelector('.L-btn7')
-		let btn8 = document.querySelector('.L-btn8')
-		let btn9 = document.querySelector('.L-btn9')
-		let btn10 = document.querySelector('.L-btn10')
-		let btn11 = document.querySelector('.L-btn11')
-		let btn12 = document.querySelector('.L-btn12')
-		
-		let innerTop = document.querySelector('.inner-top')
-		let innerMiddle = document.querySelector('.inner-middle')
-		let innerBottom = document.querySelector('.inner-bottom')
-
-		btn1.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "#FFB6C1";
-		})
-
-		btn2.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "#FFB4B9";
-		})
-
-		btn3.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "#FFB2AF";
-		})
-
-		btn4.addEventListener('click',function(){
-			innerTop.style.backgroundColor = "#FF98A3";
-		})
-
-		btn5.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "#FF82FF";
-		})
-
-		btn6.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "#FFB4FF";
-		})
-		btn7.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "#F4BBDE";
-		})
-		btn8.addEventListener('click',function(){
-			innerMiddle.style.backgroundColor = "#F479DF";
-		})
-		btn9.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "#FFCA9B";
-		})
-		btn10.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "#EBAF64";
-		})
-		btn11.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "#E0904C";
-		})
-		btn12.addEventListener('click',function(){
-			innerBottom.style.backgroundColor = "#E0904C";
-		})
-		
-
-	</script>
+        const lists = document.querySelectorAll('.menu > ul > li');
+        for(list of lists){
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            list.children[0].dataset.color = randomColor
+            list.children[0].addEventListener('click', function(index, obj){
+                let color = this.dataset.color;
+                this.parentNode.parentNode.parentNode.parentNode.style.backgroundColor = '#'+color;
+            })
+        }
+    </script>
 	
 
 </body>
