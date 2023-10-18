@@ -186,8 +186,8 @@
         </main>
        
      	<!-- 공통footer -->
-	<div class="footer-all">
+	<%-- <div class="footer-all">
 		<%@include file="../../Footer/Footer.jsp"%>
-	</div>	
+	</div> --%>	
 </body>
 </html>

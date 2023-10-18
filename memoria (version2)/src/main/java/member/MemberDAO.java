@@ -60,6 +60,8 @@ public class MemberDAO extends JDBCConnect{
 				dto.setBirth(rs.getString(6));
 				dto.setSex(rs.getString(7));
 				dto.setRegidate(rs.getDate(8));
+				dto.setCategory(rs.getString(9));
+				dto.setRole(rs.getString(10));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

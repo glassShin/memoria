@@ -37,7 +37,7 @@ function checkCode(){
 	if(inputCode==sendedCode){
 		codeError.style.color="green";
 		codeError.innerHTML = "확인.";
-		return false;
+		return true;
 		}
 
 }

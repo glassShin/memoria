@@ -9,7 +9,7 @@
 String phonenum = request.getParameter("phonenum");
 String action = request.getParameter("action");
 
-MemberDAO dao = new MemberDAO(application);
+MemberDAO dao = new MemberDAO();
 
 MemberDTO dto = dao.checkTel(phonenum);
 
