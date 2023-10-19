@@ -27,6 +27,10 @@ if(dto.getMail() == null) {
 	</script>
 	<%
 } else {
+	session.setAttribute("name", dto.getName());
+	session.setAttribute("role", dto.getRole());
+	session.setAttribute("user", dto.getMail());
+	
 	%>
 	<script>
 	location.href="../../Main/PerfumeMain.jsp";

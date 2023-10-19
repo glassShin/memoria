@@ -35,6 +35,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	margin-top: 50%;
+	z-index: -1;
 }
 
 /* Footer메뉴 */

@@ -18,6 +18,7 @@ function checkpass() {
 		check.style.color="green";
 		check.innerHTML = "비밀번호가 일치합니다.";
 		}
+		return true;
 }
         
 
@@ -59,6 +60,7 @@ function validEmail(){
     return false;
   } else {
     emailError.innerHTML = "";
+    return true;
   }
 }
 
@@ -79,6 +81,7 @@ function validPass(){
     return false;
   } else {
     passwordError.innerHTML = "";
+    return true;
   }
   	check.innerHTML = "";	
 }
@@ -97,6 +100,7 @@ function validName(){
     return false;
   } else {
     nameError.innerHTML = "";
+    return true;
   }
 }
 
@@ -112,6 +116,7 @@ function validPhone(){
     return false;
   } else {
     numberError.innerHTML = "";
+    return true;
   }
 }
 
@@ -121,7 +126,7 @@ function checkCode(){
 	var inputCode = document.forms["joinFrm"]["checkPhoneCode"].value;
 	var sendedCode = document.forms["joinFrm"]["code"].value;
 	var codeError = document.getElementById("check_err");
-	if(sendedCode==""){
+	if(inputCode==""){
 		codeError.innerHTML = "input the code.";
 		return false;
 	}
@@ -151,30 +156,36 @@ function postJoinProcess(){
 	birthError.style.color="red";
 	genderError.style.color="red";
 	
-	
+	console.log(isValid);
 	if(!validEmail()){
 		isValid = false;
+		console.log("email"+isValid);
 	}
 	
 	if(!validPass()){
 		isValid = false;
+		console.log("pass"+isValid);
 	}
 	
 	if(!checkpass()){
 		isValid = false;
+		console.log("checkpass"+isValid);
 	}
 	
 	
 	if(!validName()){
 		isValid = false;
+		console.log("name"+isValid);
 	}
 	
 	if(!validPhone()){
 		isValid = false;
+		console.log("phone"+isValid);
 	}
 	
 	if(!checkCode()){
 		isValid = false
+		console.log("code"+isValid);
 	}
 	
 	
@@ -217,6 +228,7 @@ function postJoinProcess(){
 	} else {
    		genderError.innerHTML = "";
 	}
+	console.log(isValid);
 
   return isValid;
 }

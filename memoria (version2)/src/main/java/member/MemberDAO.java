@@ -1,15 +1,13 @@
 package member;
 
-import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
-
-import javax.servlet.ServletContext;
-
+import java.util.Vector;
 import common.JDBCConnect;
 import utils.Naver_Sens_V2;
 
@@ -17,10 +15,12 @@ public class MemberDAO extends JDBCConnect{
 	PreparedStatement psmt = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-	public boolean insertmember(String mail, String passward, String name, String phoneNum ,String birth, String sex) {
+	public MemberDAO() {
 		con = getConnection();
+	}
+	public boolean insertmember(String mail, String passward, String name, String phoneNum ,String birth, String sex) {
 		boolean result = true;
-		String sql = "insert into member values (?,?,?,NULL,?,?,?,sysdate)";
+		String sql = "insert into member(memberemail,memberpassward,membername,memberaddress,memberphonenumber,memberbirth,membersex,regidate) values (?,?,?,NULL,?,?,?,sysdate())";
 		try {
 			psmt=con.prepareStatement(sql);
 			psmt.setString(1, mail);
@@ -42,7 +42,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public MemberDTO memberlogin(String mail,String pass) {
-		con = getConnection();
+
 		MemberDTO dto = new MemberDTO();
 		String sql = "select * from member where memberemail=? and memberpassward=?";
 		try {
@@ -72,7 +72,7 @@ public class MemberDAO extends JDBCConnect{
 	
 	public MemberDTO updateMember(String mail, String updatePart, String updateValue) {
 		MemberDTO dto = new MemberDTO();
-		con = getConnection();
+
 		String sql = "update member set " + updatePart + "= ? where memberemail = ?";
 		try {
 			psmt = con.prepareStatement(sql);
@@ -88,7 +88,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public MemberDTO deleteMember(String mail, String pass) {
-		con = getConnection();
+
 		MemberDTO dto = new MemberDTO();
 		String sql = "delete from member where memberemail = ? and memberpassward = ?";
 		try {
@@ -106,9 +106,8 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public boolean resetPassword ( String mail, String pass) {
-		con = getConnection();
+
 		boolean check = true;
-		MemberDTO dto = new MemberDTO();
 		
 		String sql = "update member set  memberpassward= ? where memberemail = ?";
 		try {
@@ -129,7 +128,7 @@ public class MemberDAO extends JDBCConnect{
 	
 	//가입한 전화번호 사용 가능하는지 확인  
 	public MemberDTO checkTel(String tel){
-		con = getConnection();
+
 		MemberDTO dto = new MemberDTO();
 		String sql = "select * from member where memberphonenumber = '" + tel+ "'";
 		try {
@@ -137,7 +136,6 @@ public class MemberDAO extends JDBCConnect{
 			rs = stmt.executeQuery(sql);
 			if(rs.next()) {
 				dto.setMail(rs.getString(1));
-				System.out.println(rs.getString(1));
 				dto.setPassward(rs.getString(2));
 				dto.setName(rs.getString(3));
 				dto.setAddr(rs.getString(4));
@@ -145,6 +143,8 @@ public class MemberDAO extends JDBCConnect{
 				dto.setBirth(rs.getString(6));
 				dto.setSex(rs.getString(7));
 				dto.setRegidate(rs.getDate(8));
+				dto.setCategory(rs.getString(9));
+				dto.setRole(rs.getString(10));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -154,7 +154,7 @@ public class MemberDAO extends JDBCConnect{
 	}
 	
 	public Boolean checkCode(String sendedCode, String userInputCode) {
-		con = getConnection();
+
 		boolean check = true;
 	    System.out.println(sendedCode + " : " + userInputCode);
 
@@ -182,6 +182,78 @@ public class MemberDAO extends JDBCConnect{
 
         return numStr;
     }
+	
+	
+	// 총 몇명의 유저정보가 있는가 ( 사용자의 경우 ) 
+    public int userCount(Map<String, Object> map) {
+
+    	int totalcount = 0;
+    	
+    	String query = "select count(*) from member";
+    	
+    	try {
+    		stmt = con.createStatement();
+    		rs = stmt.executeQuery(query);
+    		rs.next();
+    		totalcount = rs.getInt(1);
+    		
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+    	return totalcount;
+    	
+    }
+    
+    
+    
+public List<MemberDTO> selectUserinfo(Map<String, Object> map) {
+    	
+    	List<MemberDTO> bbs = new Vector<MemberDTO>();
+    	
+    	String query = "SELECT * FROM member";
+    	if (map.get("searchWord") != null) {
+    	    query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%'";
+    	}
+    	query += " ORDER BY memberemail ASC";
+    		  try {
+    			  stmt = con.createStatement();
+    			  rs = stmt.executeQuery(query);
+    			  
+    			  while (rs.next()) {
+    				  MemberDTO dto = new MemberDTO();
+    				  
+    				  dto.setMail(rs.getString(1));
+    					dto.setPassward(rs.getString(2));
+    					dto.setName(rs.getString(3));
+    					dto.setAddr(rs.getString(4));
+    					dto.setPhoneNum(rs.getString(5));
+    					dto.setBirth(rs.getString(6));
+    					dto.setSex(rs.getString(7));
+    					dto.setRegidate(rs.getDate(8));
+    					dto.setCategory(rs.getString(9));
+    					dto.setRole(rs.getString(10));
+    				  
+    				 bbs.add(dto);
+    			  }
+    		  } catch(Exception e) {
+    			  e.printStackTrace();
+    		  }
+    		  return bbs;
+    }
+
+	public void close() { 
+		try {            
+			if (rs != null) rs.close(); 
+			if (stmt != null) stmt.close();
+			if (psmt != null) psmt.close();
+			if (con != null) con.close(); 
+
+			System.out.println("JDBC 자원 해제");
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	

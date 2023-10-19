@@ -84,7 +84,7 @@ body{
 	position:relative;
    box-sizing: border-box;
    position: relative;
-   width: 50%;
+   width: 100%;
    /* float: right; */
 }
 
@@ -102,7 +102,6 @@ body{
 /* 회원가입 버튼 */
 .join_btn{
     position: relative;
-    top: 100px;
     width: 550px;
     height: 70px;
     text-align: center;

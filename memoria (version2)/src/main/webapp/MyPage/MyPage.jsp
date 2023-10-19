@@ -18,8 +18,6 @@
 			<li>생년월일</li>
 			<li><input type="date" class="u_line" name="birth"></li>
 		</div>
-
-
 	</section>
 </body>
 </html>

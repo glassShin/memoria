@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <section>
          <div id="login_join">
             <strong class="user">기존회원</strong>
-            <form method="post" action="../process/LoginProcess.jsp">
+            <form method="post" action="./process/LoginProcess.jsp">
                <div class="u_login">
                   <ul class="login-ul">
                      <li class="login-li"><span>이메일</span></li>
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <input type="radio" name="gender" class="m_chk" value = "men" ><span>남성</span></li>
                         <li id="gender_err"></li>
                             </label>
-                                <li><input type="submit" value="회원가입" class="join_btn" onclick="return postJoinProcess();"></li>
+						<li><input type="submit" value="회원가입" class="join_btn" onclick="return postJoinProcess();"></li>
                     </ul>
                 </div>
             </form>

@@ -39,6 +39,9 @@ public class MemberDTO {
 
 
 	public String getCategory() {
+		if(category==null) {
+			return "없음";
+		}
 		return category;
 	}
 
@@ -73,7 +76,6 @@ public class MemberDTO {
 	}
 
 
-
 	public String getMail() {
 		return mail;
 	}
@@ -99,6 +101,9 @@ public class MemberDTO {
 	}
 
 	public String getAddr() {
+		if(addr == null) {
+			return "없음";
+		}
 		return addr;
 	}
 
