@@ -1,5 +1,9 @@
 <%@page import="utils.JSFunction"%>
+<<<<<<< HEAD
+<%@page import="utils.JSFunction"%>
+=======
 <% %>@page import="utils.JSFunction"%>
+>>>>>>> branch 'memoria_test_branch' of https://github.com/glassShin/memoria.git
 <%@page import="member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

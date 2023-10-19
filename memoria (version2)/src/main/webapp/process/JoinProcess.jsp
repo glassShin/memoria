@@ -15,7 +15,7 @@ String name = request.getParameter("name");
 String phonenum = request.getParameter("phonenum");
 String birth = request.getParameter("birth");
 
-MemberDAO dao = new MemberDAO(application);
+MemberDAO dao = new MemberDAO();
 
 
 %>

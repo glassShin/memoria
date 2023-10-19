@@ -9,7 +9,7 @@
 /* 로고바 */
 #logobar {
 width : 100%;
-height : 70px;
+height : 60px;
 background-color : white;
 position : fixed;
 top : 0;
@@ -27,13 +27,13 @@ z-index: 1;
    margin-left : 15px;
 }
 #logobar > ul > li > i{
-width : 50px;
-height : 50px;
-cursor : pointer;
+	width : 50px;
+	height : 50px;
+	cursor : pointer;
 }
 
 .logo > img{
-   width: 120px;
+    width: 120px;
     height: 30px;
     display : block;
     margin-left : 50%;
@@ -44,7 +44,7 @@ cursor : pointer;
    position : fixed;
    background-color : white;
    width : 100%;
-   height : 70px;
+   height : 60px;
    top : 60px;
    z-index: 1;   
    border-bottom : solid 1px lightgray;
@@ -62,24 +62,23 @@ cursor : pointer;
 
 
 #navbar > #mypage {
-position : absolute;
-width : 300px;
-height : 400px;
-background-color : rgba(255,255,255,0.5);
-right : 50px;
-top : -40px;
-text-align : center;
-border : solid 2px lightgray;
-border-radius : 20px;
-display : none;
-z-index : 3;
+	position : absolute;
+	width : 300px;
+	height : 400px;
+	background-color : rgba(255,255,255,0.5);
+	right : 50px;
+	top : -40px;
+	text-align : center;
+	border : solid 2px lightgray;
+	border-radius : 20px;
+	display : none;
+	z-index : 3;
 }
 
 #loginbtn{
-
-width : 200px;
-height : 50px;
-margin-top : 100px;
+	width : 200px;
+	height : 50px;
+	margin-top : 100px;
 }
 
 #mypage > h2 {
@@ -93,13 +92,13 @@ margin-top : 100px;
    top : 0px;
    }
    to {
-   top : -70px;
+   top : -60px;
    }
 }
 
 @keyframes navsilde {
    from{
-   top : 70px;
+   top : 60px;
    }
    to{
    top : 0px;
@@ -109,7 +108,7 @@ margin-top : 100px;
 /* 스크롤업 애니메이션 */
 @keyframes logodesilde {
    from {
-   top : -70px;
+   top : -60px;
    }
    to {
    top : 0px;
@@ -121,7 +120,7 @@ margin-top : 100px;
    top : 0px;
    }
    to{
-   top : 70px;
+   top : 60px;
    }
 }
 </style>

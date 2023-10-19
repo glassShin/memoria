@@ -10,6 +10,7 @@
 html, body {
 	height: 100%;
 }
+
 body{
 	overflow-x: hidden;
 	margin: 0 auto;
@@ -34,7 +35,7 @@ footer {
 	height: 200px;
 	position: absolute;
 	bottom: 0;
-	margin-top: 50%;
+	top: 100%;
 }
 
 /* Footer메뉴 */
@@ -107,8 +108,8 @@ footer {
 				</ul>
 				<ul class="menu-ul">
 					<h2 class="menu-h2">SNS</h2><br>
-					<li class="footer-sns"><a href="#"><img src="../image2/카카오.png" alt="kakao" width="30" height="30"></a></li>
-					<li class="footer-sns"><a href="#"><img src="../image2/인스타.png" alt="insta" width="30" height="30"></a></li>
+					<li class="footer-sns"><a href="#"><img src="../image2/카카오.png" alt="kakao" clsas="sns" width="30" height="30"></a></li>
+					<li class="footer-sns"><a href="#"><img src="../image2/인스타.png" alt="insta" clsas="sns" width="30" height="30"></a></li>
 				</ul>
 			</div>
 			<!-- 회사 정보 -->

@@ -194,8 +194,8 @@ p{
 }
 
 
-.perfume_info img{
-   width: 500px;
+.perfume_info > img{
+   	width: 550px;
     height: 470px;
     position: relative;
     left: 100px;

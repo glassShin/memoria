@@ -2,7 +2,6 @@
 
 html,body{
     margin: 0 auto;
-    background-color: #f5ecec;
     position:relative;
 }
 
@@ -28,7 +27,6 @@ ul>li{
     border-left:none;
     border-right:none;
     border-bottom:1px solid balck;
-    background-color: #f5ecec;
 }
 
 .u_code{
@@ -38,7 +36,6 @@ ul>li{
     border-left:none;
     border-right:none;
     border-bottom:1px solid balck;
-    background-color: #f5ecec;
 }
 
 .code_btn{

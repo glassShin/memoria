@@ -10,9 +10,7 @@ body{
    padding: 0;
 }
 
-
 /*신규회원, 기존회원  */
-
 
 /* 로그인 회원가입 전체구역 */
 #login_join{
@@ -106,7 +104,7 @@ body{
     width: 550px;
     height: 70px;
     text-align: center;
-      font-size: 1.2rem;
+    font-size: 1.2rem;
     border:none;
     color: white;
     background-color: #565c46;    
