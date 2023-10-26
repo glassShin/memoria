@@ -128,7 +128,7 @@ public class MemberDAO extends JDBCConnect{
 	
 	//가입한 전화번호 사용 가능하는지 확인  
 	public MemberDTO checkTel(String tel){
-
+		String teet = "test";
 		MemberDTO dto = new MemberDTO();
 		String sql = "select * from member where memberphonenumber = '" + tel+ "'";
 		try {
