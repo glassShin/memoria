@@ -162,7 +162,7 @@ public class ProductDAO extends JDBCConnect{
 
 	
 	public boolean addProduct(ProductDTO dto) {
-		String sql = "";
+		
 		return false;
 	}
 	
