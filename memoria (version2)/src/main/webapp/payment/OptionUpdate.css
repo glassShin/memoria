@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+body {
+	width : 500px;
+	height : 300px;
+}
+
+.info {
+	margin : 30px;
+	font-weight: bold;	
+}
+
+.container {
+	display : flex;
+}
+
+.imglocation {
+	width : 200px;
+	height : 200px;
+}
+
+.imglocation > img {
+	width : 150px;
+	height : 200px;
+}
+
+.optionselect {
+	width : 200px;
+	margin-top : 30px;
+	
+}
+
+.cntselect {
+	width : 200px;
+	margin-top : 30px;
+}
+
+.buttongrop {
+	margin-left : 170px;
+}
+
+.buttongrop > button {
+	width : 80px;
+	height : 30px;
+}
+
+.cencelbtn {
+	border : none;
+	color : gray;
+}
+
+.updatebtn {
+	border : none;
+	background-color: #565c46;
+	color : white;
+	
+	
+}
+
+
