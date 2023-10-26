@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-가다나다라마바사dk
+확인 후
 </body>
 </html>

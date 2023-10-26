@@ -30,9 +30,17 @@ public class ProductDAO extends JDBCConnect{
 				dto.setP_kname(rs.getString(2));
 				dto.setP_ename(rs.getString(3));
 				dto.setP_price(rs.getInt(4));
-				dto.setP_stock(rs.getInt(5));
-				dto.setP_brand(rs.getString(6));
-				dto.setScentid(rs.getString(7));
+				dto.setP_brand(rs.getString(5));
+				dto.setScentid(rs.getString(6));
+				dto.setType(rs.getString(7));
+				dto.setImage(rs.getString(8));
+				dto.setTop(rs.getString(9));
+				dto.setMid(rs.getString(10));
+				dto.setBase(rs.getString(11));
+				dto.setInfomation(rs.getString(12));
+				dto.setStock75ml(rs.getInt(13));
+				dto.setStock50ml(rs.getInt(14));
+				dto.setStock25ml(rs.getInt(15));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -54,9 +62,17 @@ public class ProductDAO extends JDBCConnect{
 				dto.setP_kname(rs.getString(2));
 				dto.setP_ename(rs.getString(3));
 				dto.setP_price(rs.getInt(4));
-				dto.setP_stock(rs.getInt(5));
-				dto.setP_brand(rs.getString(6));
-				dto.setScentid(rs.getString(7));
+				dto.setP_brand(rs.getString(5));
+				dto.setScentid(rs.getString(6));
+				dto.setType(rs.getString(7));
+				dto.setImage(rs.getString(8));
+				dto.setTop(rs.getString(9));
+				dto.setMid(rs.getString(10));
+				dto.setBase(rs.getString(11));
+				dto.setInfomation(rs.getString(12));
+				dto.setStock75ml(rs.getInt(13));
+				dto.setStock50ml(rs.getInt(14));
+				dto.setStock25ml(rs.getInt(15));
 				list.add(dto);
 			}
 		} catch (SQLException e) {
@@ -104,13 +120,21 @@ public class ProductDAO extends JDBCConnect{
     			  while (rs.next()) {
     				  ProductDTO dto = new ProductDTO();
     				  
-    				  dto.setP_id(rs.getString(1));
-    				  dto.setP_kname(rs.getString(2));
-    				  dto.setP_ename(rs.getString(3));
-    				  dto.setP_price(rs.getInt(4));
-    				  dto.setP_stock(rs.getInt(5));
-    				  dto.setP_brand(rs.getString(6));
-    				  dto.setScentid(rs.getString(7));
+    				  	dto.setP_id(rs.getString(1));
+    					dto.setP_kname(rs.getString(2));
+    					dto.setP_ename(rs.getString(3));
+    					dto.setP_price(rs.getInt(4));
+    					dto.setP_brand(rs.getString(5));
+    					dto.setScentid(rs.getString(6));
+    					dto.setType(rs.getString(7));
+    					dto.setImage(rs.getString(8));
+    					dto.setTop(rs.getString(9));
+    					dto.setMid(rs.getString(10));
+    					dto.setBase(rs.getString(11));
+    					dto.setInfomation(rs.getString(12));
+    					dto.setStock75ml(rs.getInt(13));
+    					dto.setStock50ml(rs.getInt(14));
+    					dto.setStock25ml(rs.getInt(15));
     				  
     				 bbs.add(dto);
     			  }
@@ -122,7 +146,7 @@ public class ProductDAO extends JDBCConnect{
 
 	
 	public boolean deleteProduct(String id) {
-		getConnection();
+		
 		String sql = "DELETE FROM product WHERE productid = ?";
 
 		try  {
@@ -136,6 +160,11 @@ public class ProductDAO extends JDBCConnect{
 		}
 	}
 
+	
+	public boolean addProduct(ProductDTO dto) {
+		
+		return false;
+	}
 	
 	public void close() { 
 		try {            

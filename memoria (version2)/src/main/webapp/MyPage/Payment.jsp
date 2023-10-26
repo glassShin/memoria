@@ -10,7 +10,6 @@
 <body>
 	<!-- 공통 상단메뉴-->
 	<jsp:include page="../header/Header.jsp" />
-
 	<section>
 		<p>배송지 정보</p>
 		<form method="post" action="">
@@ -28,7 +27,18 @@
 					<li><input type="submit" value="결제하기" class="pay_btn"></li>
 				</ul>
 			</div>
+			<div class="">
+			
+			
+			</div>
+			<div class="">
+			
+			
+			</div>
+			
 		</form>
+		
+		
 	</section>
 
 	<!-- 공통footer -->
