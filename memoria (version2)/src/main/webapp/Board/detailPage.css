@@ -2,288 +2,345 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
 
 html,body{
-   	margin: 0;
-    padding: 0;
-    background-color: #f5ecec;
-}
+    height: 100%;
 
+}
 
 
 main{
-	margin-top:20%;	
+ position: relative;
+ margin:0 auto;
+ width:1200px;
 }
 
-
-
-/* 상품이미지 & 상품구매 */
-#product{
-    width:1300px;
-    height:500px;
-    margin:0 auto;
+div{
+    gap:20px;/*flex 공통 간격*/
 }
 
-.pbox_ul{
-    height:500px;
-    margin-top:50px;
-    /* margin-bottom:30px; */
-}
-
-.pbox_li{
-    float:left;
-}
-
-.p1{
-    display: inline-block;
-    width:900px;
-    height: 500px;
-    background-color: lightcoral;
-}
-
-.p2{
-    display:inline-block;
-    width:300px;
-    height: 500px;
-    margin-left:20px;
-    background-color: lightblue;
-}
-.p2_ul{
-    list-style: none;
-    padding-left:0;
-}
-.p2_ul>li>a{
+a{
     text-decoration: none;
-    font-weight: bold;
-}
-.p2_ul>li:nth-child(4){
-    margin-top:20px;
-}
-
-.buy_btn{
-    margin-top:8%;
-    width:300px;
-    height:80px;
-    color:white;
-    background-color: black;
-    font-size: large;
+    cursor: pointer;
+    font-size:17px;
     font-weight: bold;
 }
 
-
-
-/* 테이스팅 노트 */
-#tasting_note{
-    width:1300px;
-    margin:0 auto;
-    margin-top:-50px;
-   
+a:link{
+    color:black;
 }
-
-.note_ul{
-  display: flex;
-  gap:10%;
-  margin-top:10%;
-  padding:4%;
-  border-top:2px solid lightgray;
-  border-bottom:2px solid lightgray;
-
-}
-
-.common_note{
-    position: relative;
-    display: inline-block;
-    width:400px;
-    height:200px;
-    background-color: lightsalmon;
-}
-
-
-/* 탑,미들,베이스 */
-.note_position{
-   display:block;
-   width:90px;
-   position: relative;
-   top:10%;
-   left:60%;
-   margin:0;
-   font-weight: bold;
-}
-/* 노트내용 */
-.note_content{
-   display:block;
-   position: absolute;
-   width:90px;
-   top:10%;
-   left:60%;
-   margin: 30px 0 0 0;
-   font-size: small;
-   
+a:visited{
+    color:black;
 }
 
 
 
-.note_img{
-    width:150px;
-    margin-top:-30px;
-    margin-left:-20px;
-   
-} 
 
-/* 베스트 상품 */
-#best_list{
-    width:1300px;
-    margin:0 auto;
-    margin-top:-50px;
-    margin-bottom:5%;
-    border-bottom: 2px solid lightgray;
-}
-
-.best_ul{
-  display: flex;
-  gap:8%;
-  margin-top:5%;
-  padding:4%;
-}
-
-
-.common_best{
-    display: inline-block;
-    width:400px;
-    height:450px;
-    background-color: lightpink
-}
-
-.common_best>p{
+/*이미지 & 설멍  */
+.img-info{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content:center;
-    /* gap:0 20px; */
+    justify-content: center;
+    align-items: center;
+    border-bottom:2px solid #565c46;
+    padding-bottom: 30px;
 }
 
-.best_name{
-    margin-top:10%;
-}
-
-
-
-
-.best_img{
-    background-color: lightcyan;
-    width:335px;
-    height:250px;
-}
-
-.b_btn{
+.img-box{
     position: relative;
-    top:3%;
-    margin-left:20%;
-    width:200px;
-    height:60px;
-    padding:0;
-    background-color: black;
-    color:white;
+    width: 900px;
+    height:500px;
+    /*background-color: lightsalmon;*/
 }
 
-
-
-
-
-/* 향수 메뉴얼*/
-#perfuem-manual{
-    width:1300px;
+.img-box img{
+    display: block;
     margin:0 auto;
-    margin-top:-50px;
-    margin-bottom:5%;
-    border-bottom: 2px solid lightgray;
+    width:500px;
+    height: 500px;
 }
 
-.manual_ul{
-  display: flex;
-  gap:8%;
-  margin-top:5%;
-  padding:4%;
+.tip{
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 30px;
 }
 
-
-.common_manual{
-    display: inline-block;
-    width:230px;
-    height:400px;
-    background-color: lightpink
-}
-
-.common_manual>p{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content:center;
-    /* gap:0 20px; */
-}
-
-.best_name{
-    margin-top:10%;
-}
-
-
-
-
-.best_img{
-    background-color: lightcyan;
-    width:335px;
-    height:250px;
-}
-
-.img-manual{
+.p-manual div img{
     width: 100%;
     height: 100%;
 }
 
 
 
-
-
-
-
-/* 리뷰 */
-
-.review_header{
-    padding-top:30px;
-    padding-right: 1%;
-    padding-left: 1%;
-}
-.review_content{
-    padding-right: 1%;
-    padding-left: 1%;
-}
-.review_footer{
-    padding-right: 1%;
-    padding-left: 1%;
-}
-
-.r_title{
-    width:100px;
-    margin:100px auto;
-}
-
-.emotion_area{
-    /* margin-top:30px; */
-    border-bottom:2px solid lightgray;
-    padding-bottom:30px;
-}
-
-
-.emotion_btn{
-    background-color: black;
-    color: white;
-}
-
-.user_log{
+/* 상품정보 & 설명 */
+.info-box{
     position: relative;
-    bottom:70px;
-    left:85%;
+    width: 300px;
+    height:500px;
+    /* background-color: lightskyblue; */
 }
-.user_log>ul>li{
+
+.info-box .detail-info p{
+    margin:0;
+    position: absolute;
+    top:250px;
+}
+
+
+.info-box .review-link a{
+    float: right;
+}
+
+
+.info-box .buy-btn{
+    width:100%;
+    position: absolute;
+    bottom:0;
+}
+.info-box .buy-btn button[type="button"]{
+    width: 100%;
+    height: 70px;
+    background-color: #565c46;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* 노트 설명 */
+.tasting-note{
+    display: flex;
+    padding-top:30px;
+    justify-content: center;
+    border-bottom: 2px solid #565c46;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.tasting-note .note{
+    display: flex;
+    flex-direction: row;
+    width:400px;
+    height: 300px;
+    /* background-color: lightblue; */
+}
+
+.tasting-note .note .note-info{
+    width:100%;
+}
+.tasting-note .note .note-info p{
+    margin:0;
+    margin-top:30px;
+}
+
+.tasting-note .note-img img{
+    width: 130px;
+    height: 180px;
+    
+}
+
+
+
+/* 향수 사용법 설명서 */
+.p-manual{
+    display: flex;
+    justify-content: center;
+    border-bottom:2px solid #565c46;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.p-manual div{
+    width:295px;
+    height: 400px;
+    background-color: lightskyblue;
+}
+
+
+
+
+/* 추천 상품 */
+.recommend-title{
+    padding-top:50px;
+    padding-bottom:50px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.recommend-item{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #565c46;
+    padding-bottom: 30px;
+}
+
+
+.recommend-item div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    /* background-color: lightskyblue; */
+}
+
+.recommend-item img{
+    width:150px;
+    height: 150px;
+}
+
+.recommend-item div h2{
+    margin:0;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size: medium;
+}
+
+.recommend-item div h5{
+    margin:0;
+    margin-top:10px;
+    margin-bottom:10px;
+   
+}
+
+.recommend-item div button[type="button"]{
+    width:200px;
+    height: 50px;
+    background-color: #565c46;
+    color:white;
+    font-weight: bold;
+}
+
+
+
+/* 리뷰 작성하기 */
+.review-write{
+    position: absolute;
+    right: 0;
+    width: 110px;
+    height: 50px;
+    margin-top: 30px;
+
+}
+
+    
+
+
+/* 모달 배경*/
+.modal-bg{
+    background : rgba(0,0,0,0.5);
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    /* visibility: hidden ;
+    opacity: 0; */
+    transition: all 1s;
+    
+}
+.show-modal{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* 댓글 모달창 */
+.review-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width:500px;
+    background-color: white;
+    transform: translate(0%,50%);
+    border:1px solid black;
+    z-index: 1;
+}
+
+.md-ratingbox{
+    font-size: xx-large;
+}
+
+
+
+/* 리뷰 & 등급*/
+
+.ratingbox{
+    width: 500px;
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:50px;
+    font-size:5rem;
+    font-weight:400;
+    margin:0 auto;
+}
+
+
+.review-title{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-top:50px;
+    /* padding-bottom:50px; */
+}
+
+#review-display{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+
+#review-display .pr-review{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    border-bottom:2px solid #565c46;
+}
+
+
+/* 리뷰 헤더 */
+#review-display .pr-review .pr-review-header .pr-rating{
+ font-size:30px;
+}
+
+
+/* 리뷰 푸터 */
+#review-display .pr-review .pr-review-footer{
+    width: 100%;
+    margin-bottom:50px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* 좋아요 & 싫어요 */
+#review-display .pr-review .pr-review-footer .emotion{
+  width:100px;
+  height: 50px;
+}
+
+
+
+/* 작성자 & 작성날짜 */
+#review-display .pr-review  .pr-review-footer .user {
+    width:200px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    /* margin-bottom:10px; */
+}
+#review-display .pr-review .pr-review-footer .user ul{
+    position: absolute;
+    bottom: 0;
+    padding:0;
+    margin:0;
     list-style: none;
+    
+    
 }
+
+
+
+
+

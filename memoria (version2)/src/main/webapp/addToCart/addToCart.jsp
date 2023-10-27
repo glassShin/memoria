@@ -1,3 +1,4 @@
+<%@page import="cart.CartDAO"%>
 <%@page import="utils.JSFunction"%>
 <%@page import="product.ProductDTO"%>
 <%@page import="product.ProductDAO"%>
@@ -14,25 +15,20 @@
 
 	<%
 	String p_id = request.getParameter("productid");
-	System.out.println(p_id);
-	ProductDAO dao = new ProductDAO();
-	ProductDTO dto = dao.getproduct(p_id);
+	CartDAO dao = new CartDAO();
+	boolean check = dao.cartcheck("khang", p_id);
 	
-	System.out.println(dto.getP_stock());
-	if(dto.getP_stock() <= 0) {
-		JSFunction.alertBack("재고가 부족합니다.",out);
+	if(check) {
+		JSFunction.alertBack("이미 장바구니에 존재합니다.", out);
 	}else {
-		@SuppressWarnings("unchecked")
-		ArrayList<ProductDTO> list = (ArrayList<ProductDTO>)session.getAttribute("cart");
-		if(list == null) {
-			list = new ArrayList<ProductDTO>();
+		String msg = dao.cartInsert("khang", p_id);
+		
+		if(msg.equals("stock zero")) {
+			JSFunction.alertBack("재고가 부족합니다.", out);
+		}else if(msg.equals("completion")){
+			JSFunction.alertBack("장바구니에 추가되었습니다.", out);
 		}
-		list.add(dto);
-		session.setAttribute("cart", list);
-		JSFunction.alertBack("장바구니에 추가 되었습니다.",out);
 	}
-	
-	
 	%>
 
 </body>

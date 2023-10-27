@@ -20,127 +20,238 @@ ProductDAO dao = new ProductDAO();
 ProductDTO dto = dao.getproduct("test");
 %>
     
-<main>
-    <section class="section-area">
-        <div class="p-area">
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-               <p class="p-name"><%=dto.getP_kname() %></p>
-                <p class="p-price"><%=dto.getP_price() %></p>
-                <form method="post" action="../addToCart/addToCart.jsp">
-                <input type="hidden" value="<%=dto.getP_id()%>" name="productid">
-                <input type="submit" value="장바구니"/>
-                </form>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L00401_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-            
-              <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-            
-            
-              <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-            
-            
-              <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-            
-            
-              <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-            
-            <div class="buy-product">
-                <a href="">
-                    <img class="p-img" src="https://www.jomalone.co.kr/media/export/cms/products/1000x1000/jo_sku_L3AF01_1000x1000_0.png">
-                </a>
-                <p class="p-name">이름</p>
-                <p class="p-price">가격</p>
-                <a href="">장바구니</a>
-            </div>
-
-
+    <main>
+        <div class="banner-sentence">
+            <h2>베스트셀러</h2>
+            <p>가장 사랑받는 제품들, 완벽한 선물을 위한 영감, 일상의 즐거움과 새로운 루틴으로 향기로움을 채워 보세요</p>    
         </div>
-    </section>
-</main>
+
+        <div class="banner-img">
+            <img src="https://www.jomalone.co.kr/media/export/cms/campaigns/brand_film/MPP/22G09_Evergreen_Brand_Film_MPP_Banner_Desktop.jpg">
+        </div>
+
+      <div class="flex-section"> 
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_L3AF01_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_L3AF01_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_L3AF01_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+
+        <div class=list-item>
+            <div class="item-img">
+                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_L3AF01_670x670_0.png">
+            </div>
+            <div class="item-name">
+                <h2>영어 제목</h2>
+                <h3>한글 제목</h3>
+            </div>
+            <div class="item-price">
+                <h4>가격</h4>    
+            </div>
+            <div class="item-btn">
+                <button type="button">
+                    구매하기
+                </button>
+            </div>
+        </div>
+    </div>    
+    </main>
 
 	
 	<!-- 공통footer -->
