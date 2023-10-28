@@ -58,6 +58,7 @@
 						<li><span class="stock"><%=dto.getCnt()%></span></li>
 						<li><button id = "optionUpdate"class="optionUpdate" onclick="openpopup('<%=dto.getProductid()%>','<%=dto.getCnt()%>','<%=dto.getCartid()%>')">옵션수정</button></li>
 						<li><span class="total"><%=total%></span></li>
+						<div class="close close-x" onclick="location.href='process/CartdeleteProcess.jsp?pid=<%=dto.getCartid()%>'"></div>
 					</ul>
 					<%
 					}

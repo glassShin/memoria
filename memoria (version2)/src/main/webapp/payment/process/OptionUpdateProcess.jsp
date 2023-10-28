@@ -18,7 +18,8 @@ System.out.println(id + " " + cnt);
 CartDAO dao = new CartDAO();
 dao.cartUpdate(id, cnt);
 
-JSFunction.alertLocation("수정이 완료되었습니다.", "../Cart.jsp", out);
+
+JSFunction.alertLocationreload("수정이 완료되었습니다.", "../Cart.jsp","window.parent.location.reload();", out);
 %>
 </body>
 </html>

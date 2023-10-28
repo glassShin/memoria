@@ -121,6 +121,19 @@ main{
    text-decoration: underline;
 }
 
+/*상품 삭제*/
+.close{
+	position: relative;
+	float: right;
+	display: inline-block;
+	bottom: 70px;
+	left: 30px;
+}
+.close-x:after{
+	content: "\00d7";
+	font-size: 20px;
+}
+
 /* 상품이름 */
 .product-KName,
 .product-EName  {

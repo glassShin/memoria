@@ -18,6 +18,19 @@ public class JSFunction {
         }
         catch (Exception e) {}
     }
+    
+    public static void alertLocationreload(String msg, String url,String type, JspWriter out) {
+        try {
+        	String script = ""  // 삽입할 자바스크립트 코드
+                    + "<script>"
+                    + "    alert('" + msg + "');"
+                    + "    location.href='" + url + "';"
+                    + type
+                    + "</script>";
+            out.println(script);
+        }
+        catch (Exception e) {}
+    }
 
     // 메시지 알림창을 띄운 후 이전 페이지로 돌아갑니다.
     public static void alertBack(String msg, JspWriter out) {
