@@ -1,13 +1,23 @@
 @charset "UTF-8";
 
+/* 기본css */
 html,body{
     margin: 0 auto;
     position:relative;
 }
 
+/* 배송지 정보 */
+.delivery-info{
+	position: relative;
+	top: 15em;
+	left: 8em;
+	font-size: 15px;
+	font-weight: bold;
+}
+
 .delivery{
 	position: absolute;
-	top:20em;
+	top: 18em;
 	left: 5em;
 }
 
@@ -20,52 +30,186 @@ ul>li{
 	list-style: none;
 }
 
+.delivery-li{
+	font-size: 13px;
+}
+
 .u_line{
-    width:650px;  
+    width:600px;  
     height:50px;
     border-top:none;
     border-left:none;
     border-right:none;
-    border-bottom:1px solid balck;
+    border-bottom:2px solid #565c46;
 }
 
 .u_code{
-	width:300px;  
-    height:50px;
-    border-top:none;
-    border-left:none;
-    border-right:none;
-    border-bottom:1px solid balck;
+	width: 300px;  
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #565c46;
 }
 
 .code_btn{
 	position: relative;
 	bottom: 50px;
-    left: 20rem;
-    width: 330px;
+    left: 22rem;
+    width: 250px;
     height: 50px;
+    border: none;
     text-align: center;
     font-size: large;
-    font-weight: bold;
     color: white;
 	color: white;
-    background-color: black;  
-}
-.pay_btn{
-	position: relative;
-    top: 100px;
-    right: 15px;
-    width: 630px;
-    height: 70px;
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    color: white;
-    background-color: black; 
+    background-color: #565c46;  
 }
 
 /* footer */
 .footer-all{
 	position:relative;
 	top:220%;	
+}
+
+
+/* ----------------------------------------- */
+/* 장바구니 전체 div */
+.p-box {
+	position: relative;
+	transform: translate(15%, 0%);
+	/* margin: 0 auto; */
+	top: 55em;
+	right: 4em;
+}
+
+/*productList & payGroup공통 속성  */
+.pgroup{ 
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 100px;
+	-webkit-box-pack: justify;
+	height: 100%;
+}
+
+.p__ul{
+  list-style: none;
+}
+
+.basket-header {
+   height : 30px;
+   padding: 15px 0 15px; 
+   margin: 0;  
+   list-style : none;
+   border-bottom: 1px solid lightgray;
+}
+
+.basket-header > li[class^="header"] {
+   float : left;
+   left : 1px;
+   margin: 0 40px 0;
+   font-size : 13px;
+   font-weight: bold;
+}
+
+.basket-header > li.header-price {
+   margin-left : 120px;
+}
+
+/* 게제상품 리스트 */
+.productList {
+	display: inline-block;
+	/* flex:1; */
+	position: relative;
+	width: 600px;
+	/* height:100%; */
+	box-sizing: border-box;
+	border-bottom: 2px solid #565c46;
+}
+
+.basket-product {
+	padding-bottom: 10px; 
+	bottom: 20px;
+	margin: 0;
+	font-size : 15px;
+	font-weight: bold;
+	border-bottom: 2px solid #565c46;
+}
+
+/* 상품리스트 */
+.innerList {
+	width: 680px;
+	height: 100%;
+	padding: 5px;
+}
+
+.paymentList-ul {
+	list-style: none;
+	padding: 0px;
+	display: flex;
+	align-items: center;
+}
+
+.paymentList-ul>li {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product_info {
+   display : inline;
+   margin-right : 35px;
+}
+
+.product_info > span {
+   display : block;
+}
+
+/* 버튼 */
+.qu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.qu:hover {
+	text-decoration: underline;
+}
+
+/* 상품이름 */
+.product-KName,
+.product-EName  {
+	display: block;
+	text-align: center;
+	margin: 0 20px 0;
+	font-size: 13px;
+}
+
+.paymentList-ul > li > span{
+   margin: 0 50px 0 30px;
+   font-size: 13px;
+}
+
+.paymentList-ul > li > button {
+   margin-left : 65px;
+}
+
+.paymentList-ul > li > img {
+   float : left;
+   width: 100px;
+}
+
+.pay_btn{
+	position: relative;
+    top: 10em;
+    left: 21em;
+    width: 300px;
+    height: 60px;
+    border: none;
+    text-align: center;
+    font-size: large;
+    color: white;
+    background-color: #565c46; 
 }

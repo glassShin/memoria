@@ -1,3 +1,5 @@
+<%@page import="product.ProductInfoDTO"%>
+<%@page import="product.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +16,11 @@
 	
    
   <main>
+  <%
+  String pid = request.getParameter("pid");
+  ProductDAO dao = new ProductDAO();
+  ProductInfoDTO dto = dao.getproductInfo(pid);
+  %>
         <!-- <div class="modal-bg">
             <div class="review-modal">
                 <h2>리뷰 작성</h2>
@@ -40,13 +47,13 @@
 
             <div class="info-box">
                 <div class="product-title">
-                    <h1>상품제목</h1>
+                    <h1><%=dto.getKname()%></h1>
                 </div>
                 <div class="product-subtitle">
-                    <h3>부제목</h3>
+                    <h3><%=dto.getEname() %></h3>
                 </div>
                 <div class="product-price">
-                    <h4>가격</h4>
+                    <h4><%=dto.getPrice() %></h4>
                 </div>
                 <div class="review-link">
                     <a href="#review-display">리뷰이동</a>
@@ -54,17 +61,12 @@
 
                 <div class="detail-info">
                     <p>
-                        순수의 향. 블랙베리를 따던 어린 시절의 추억,
-                         블랙베리로 물든 입술과 손. 이제 막 수확한 월계수 잎의
-                         신선함에 톡 쏘는 블랙베리 과즙을 가미하였습니다. 
-                        매력적이고 생기 넘치는 상쾌한 느낌의 향입니다.
+                        <%=dto.getInfo() %>
                     </p>
                 </div>
 
                 <div class="buy-btn">
-                    <button type="button">
-                        구매하기
-                    </button>
+                    <button type="button" onclick="location.href='../addToCart/addToCart.jsp?productid=<%=dto.getPid()%>'">구매하기</button>
                 </div>
 
             </div>
@@ -79,8 +81,8 @@
 
                     <div class="note-info">
                         <p class="top note-position">탑 노트</p>
-                        <p class="top-title note-title">오렌지</p>
-                        <p class="top-detail note-detail">톡하고 과즙을 내뿜는 천연 블랙커런트 꽃봉오리가 과일 향과 새콤한 느낌을 더해주고, 버코 트리 에센스가 블랙베리 잎의 신선함과 풋풋함을 끌어올립니다.</p>
+                        <p class="top-title note-title"><%=dto.getTop() %></p>
+                        <p class="top-detail note-detail"><%=dto.getTopcontent() %></p>
                     </div>
                 </div>
 
@@ -90,8 +92,8 @@
                     </div>
                     <div class="note-info">
                         <p class="middle note-position">미들 노트</p>
-                        <p class="middle-title note-title">월계수</p>
-                        <p class="middle-detail note-detail">갈바넘의 천연향을 바탕으로 한 어코드가 향에 식물의 선명함과 눈부신 녹음의 느낌을 더해줍니다.</p>
+                        <p class="middle-title note-title"><%=dto.getMid() %></p>
+                        <p class="middle-detail note-detail"><%=dto.getMidcontent() %></p>
                     </div>
                 </div>
 
@@ -101,8 +103,8 @@
                     </div>
                     <div class="note-info">
                         <p class="base note-position">베이스 노트</p>
-                        <p class="base-title note-title">시더우드</p>
-                        <p class="base-detail note-detail">우디하고 드라이한 느낌이 하트 노트에 카리스마 있는 강렬함을 채워줍니다</p>
+                        <p class="base-title note-title"><%=dto.getBase() %></p>
+                        <p class="base-detail note-detail"><%=dto.getBasecontent() %></p>
                     </div>
                 </div>
         </div>

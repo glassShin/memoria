@@ -27,13 +27,17 @@
 	<!-- 가운데 콘텐츠 -->
 	<section>
 		<div class="myPage-content">
-			<h1>내 정보 및 주문 관리</h1>
-			<p>*는 필수 입력 정보입니다</p>
-			<p>000님 환영합니다.</p>
+			<h3 class="user-info">회원정보 입력</h3>
+			<p class="">개인정보 관리</p>
+			<p class="">*는 필수 입력 정보입니다</p>
 			<div>
 				<ul class="myPage-ul">
 					<li class="myPage-li">이름</li>
 					<li class="myPage-li"><input type="text" class="u_line" name="name" placeholder="000"></li>
+					<li class="myPage-li">이메일</li>
+					<li class="myPage-li"><input type="text" class="u_line" name="mail" placeholder="나의이메일@naver.com"></li>
+					<li class="myPage-li">비밀번호</li>
+					<li class="myPage-li"><input type="password" class="u_line" name="password" placeholder="******"></li>
 					<li class="myPage-li">전화번호</li>
 					<li class="myPage-li"><input type="tel" class="u_line" name="phonenum"></li>
 					<li class="myPage-li">생년월일</li>
@@ -44,15 +48,11 @@
 				제공이 불가능하게 됩니다. 회원탈퇴를 원하시는 경우에는 <a href="#">여기</a> 를 클릭하세요.</p>
 			<button class="myPage-btn">수정</button>
 		</div>
-<<<<<<< HEAD
-	</section>
-=======
 
 	
 	  <!-- 공통footer -->
    <div class="footer-all">
       <%@include file="../../Footer/Footer.jsp"%>
    </div>
->>>>>>> branch 'memoria_test_branch' of https://github.com/glassShin/memoria.git
 </body>
 </html>

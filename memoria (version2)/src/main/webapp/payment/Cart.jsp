@@ -19,6 +19,7 @@
 	CartDAO dao = new CartDAO();
 	ArrayList<CartListDTO> list = dao.cartSelect();
 	%>
+	
 
 	<div id="positionset">
 		<div id="udpatepopup">
@@ -42,8 +43,9 @@
 
 				<div class="innerList">
 					<%
+					int total = 0;
 					for (CartListDTO dto : list) {
-						int total = dto.getPrice() * dto.getCnt();
+						total += dto.getPrice() * dto.getCnt();
 					%>
 					<ul class="paymentList-ul">
 						<li><img class="product-img1" src="../image2/장미_5x5.jpg"
@@ -68,14 +70,13 @@
 					<p class="order-product">주문 상품</p>
 					<form>
 						<ul class="payGroup-ul p__ul">
-							<li>상품금액<span id="p_price">10000</span></li>
-							<li>할인금액 <span>1,000</span></li>
-							<li>배송비 <span>50,000</span></li>
+							<li>상품금액<span id="p_price"><%=total %></span></li>
+							<li>배송비 <span>3000</span></li>
 						</ul>
 
 						<div class="total-output">
 							<p class="total-pay">
-								총결제금액 <span id="total">1,000,000</span>
+								총결제금액 <span id="total"><%=total + 3000 %></span>
 							</p>
 							<input type="submit" class="total-btn" form="list_info"
 								value="결제">

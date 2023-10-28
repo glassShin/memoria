@@ -4,26 +4,27 @@
 .nav-bar {
 	background-color: white;
 	position: relative;
-	top: 15em; 
+	top: 15em;
 	width: 200px;
 }
 
 /* 마이페이지 + 로그아웃 */
-.nav-myPage{
-	font-size: 15px; 
+.nav-myPage {
+	font-size: 15px;
 	font-weight: bold;
 	position: relative;
 	bottom: 2em;
 	margin: 20px;
 }
-.logout{
-	font-size: 13px; 
+
+.logout {
+	font-size: 13px;
 	position: relative;
 	bottom: 3em;
 	margin: 20px;
 }
 
-/* 목록리스트 */
+/* 네비바 목록리스트 */
 .nav-ul {
 	list-style: none;
 	padding: 0;
@@ -32,15 +33,15 @@
 .nav-li {
 	background-image: url("../Main-image/오른쪽.png");
 	background-repeat: no-repeat;
-    background-position: 95%;
-    background-size: 15px 15px;
-    cursor: pointer;
+	background-position: 95%;
+	background-size: 15px 15px;
+	cursor: pointer;
 	padding: 15px;
 	text-align: left;
 }
 
-.nav-li > a{
-    color: #565c46;
+.nav-li>a {
+	color: #565c46;
 	text-decoration: none;
 }
 
@@ -58,16 +59,30 @@
 	width: 700px;
 }
 
-.myPage-ul{
+/* 회원 정보 */
+.user-info {
+	padding-bottom: 5px;
+	border-bottom: 1px solid #565c46;
+}
+
+.myPage-ul {
 	list-style: none;
 }
 
-.myPage-btn{
+.myPage-li {
+	
+}
+
+.u_line {
+	
+}
+
+.myPage-btn {
 	width: 100px;
-    height: 50px;
-    text-align: center;
-    font-size: 1.2rem;
-    border:none;
-    color: white;
-    background-color: #565c46;
+	height: 50px;
+	text-align: center;
+	font-size: large;
+	border: none;
+	color: white;
+	background-color: #565c46;
 }

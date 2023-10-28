@@ -18,6 +18,7 @@ public class ProductDAO extends JDBCConnect{
 	public ProductDAO() {
 		con = getConnection();
 	}
+	
 	public ProductDTO getproduct(String id) {
 		ProductDTO dto = new ProductDTO();
 		String sql = "select * from product where productid=?";
@@ -41,6 +42,47 @@ public class ProductDAO extends JDBCConnect{
 				dto.setStock75ml(rs.getInt(13));
 				dto.setStock50ml(rs.getInt(14));
 				dto.setStock25ml(rs.getInt(15));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	public ProductInfoDTO getproductInfo(String id) {
+		ProductInfoDTO dto = new ProductInfoDTO();
+		String sql = "SELECT p.productid, p.productkname, p.productEname, p.productprice, p.scentid, p.type, p.img, " +
+	             "s.scentname AS top, s.scentcontent AS topcontent, " +
+	             "m.scentname AS mid, m.scentcontent AS midcontent, " +
+	             "b.scentname AS base, b.scentcontent AS basecontent, p.information, p.stock75ml, p.stock50ml, p.stock25ml " +
+	             "FROM product p " +
+	             "JOIN scent s ON p.top = s.scentid " +
+	             "JOIN scent m ON p.mid = m.scentid " +
+	             "JOIN scent b ON p.base = b.scentid " +
+	             "WHERE p.productid = ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dto.setPid(rs.getString(1));
+				dto.setKname(rs.getString(2));
+				dto.setEname(rs.getString(3));
+				dto.setPrice(rs.getInt(4));
+				dto.setScentid(rs.getString(5));
+				dto.setType(rs.getString(6));
+				dto.setImg(rs.getString(7));
+				dto.setTop(rs.getString(8));
+				dto.setTopcontent(rs.getString(9));
+				dto.setMid(rs.getString(10));
+				dto.setMidcontent(rs.getString(11));
+				dto.setBase(rs.getString(12));
+				dto.setBasecontent(rs.getString(13));
+				dto.setInfo(rs.getString(14));
+				dto.setStock75(rs.getInt(15));
+				dto.setStock50(rs.getInt(16));
+				dto.setStock25(rs.getInt(17));
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

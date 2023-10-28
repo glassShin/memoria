@@ -33,7 +33,7 @@ public class CartDAO extends JDBCConnect {
 	public String cartInsert(String email, String product) {
 		String msg = "";
 		con = getConnection();
-		String sql = "select productstock from product where productid = ?";
+		String sql = "select stock75ml from product where productid = ?";
 		String sql1 = "insert into cart values(?,?,null,default)";
 		try {
 			psmt = con.prepareStatement(sql);
@@ -82,14 +82,15 @@ public class CartDAO extends JDBCConnect {
 		}
 		return list;
 	}
-	public void cartUpdate(String id,String pid,String cnt) {
+	public void cartUpdate(String id,String cnt) {
+		int cntV = Integer.parseInt(cnt);
+		int idV = Integer.parseInt(id);
 		con = getConnection();
-		String sql = "update cart set productid=?,productcnt=? where cartid=?";
+		String sql = "update cart set productcnt=? where cartid=?";
 		try {
 			psmt = con.prepareStatement(sql);
-			psmt.setString(1, pid);
-			psmt.setString(2, cnt);
-			psmt.setString(3, id);
+			psmt.setInt(1, cntV);
+			psmt.setInt(2, idV);
 			psmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

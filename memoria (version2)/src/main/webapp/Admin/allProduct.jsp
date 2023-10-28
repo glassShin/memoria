@@ -105,7 +105,6 @@ dao.close();
 			<td align ="center" id="productEname"><%=dto.getP_kname() %></td>
 			<td align ="center" id="productEname"><%=dto.getP_ename() %></td>
 			<td align ="center" id="price"><%=dto.getP_price() %></td>
-			<td align ="center" id="stock"><%=dto.getP_stock() %></td>
 			<td align ="center" id="brand"><%=dto.getP_brand() %></td>
 			<td align ="center" id="scentid"><%=dto.getScentid() %></td>
 			<td align ="center"> <button onclick = "location.href='updateProduct.jsp?id=<%=dto.getP_id()%>'">변경</button></td>

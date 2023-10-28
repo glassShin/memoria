@@ -1,3 +1,4 @@
+<%@page import="utils.JSFunction"%>
 <%@page import="cart.CartDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,12 +10,15 @@
 </head>
 <body>
 <%
-String id = (String)request.getAttribute("cart");
-String option = (String)request.getAttribute("option");
-String cnt = (String)request.getAttribute("cnt");
+String id = (String)request.getParameter("cartid");
+//String option = (String)request.getAttribute("option");
+String cnt = (String)request.getParameter("cnt");
+System.out.println(id + " " + cnt);
 
 CartDAO dao = new CartDAO();
-dao.cartUpdate(id, option, cnt);
+dao.cartUpdate(id, cnt);
+
+JSFunction.alertLocation("수정이 완료되었습니다.", "../Cart.jsp", out);
 %>
 </body>
 </html>
