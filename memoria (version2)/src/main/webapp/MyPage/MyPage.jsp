@@ -17,8 +17,8 @@
 				<p class="nav-myPage">마이페이지</p>
 				<p class="logout"><a href="#">로그아웃</a></p>
 			<ul class="nav-ul">
-				<li class="nav-li"><a href="#회원정보">회원 정보</a></li>
-				<li class="nav-li"><a href="#배송주소정보">배송 정보</a></li>
+				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
+				<li class="nav-li"><a href="#">배송 정보</a></li>
 				<li class="nav-li"><a href="#주문내역">주문 내역</a></li>
 				<li class="nav-li"><a href="#관심상품">관심 상품</a></li>
 			</ul>
@@ -28,8 +28,8 @@
 	<section>
 		<div class="myPage-content">
 			<h3 class="user-info">회원정보 입력</h3>
-			<p class="">개인정보 관리</p>
-			<p class="">*는 필수 입력 정보입니다</p>
+			<p class="user">개인정보 관리</p>
+			<p class="user">*는 필수 입력 정보입니다</p>
 			<div>
 				<ul class="myPage-ul">
 					<li class="myPage-li">이름</li>
