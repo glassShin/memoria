@@ -31,11 +31,26 @@ a:visited{
     color:black;
 }
 
+button{
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: none;
+}
+
+/* 보류 */
+/* button:hover{
+    
+}
+button:active{
+   
+} */
+
 
 
 
 /*이미지 & 설멍  */
 .img-info{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,9 +100,13 @@ a:visited{
 }
 
 
-.info-box .review-link a{
+.info-box .review-link{
+    width:70px;
+    height: 25px;
     float: right;
+
 }
+
 
 
 .info-box .buy-btn{
@@ -102,6 +121,19 @@ a:visited{
     color: white;
     font-weight: bold;
 }
+
+
+/* 향수 ml 선택 */
+.info-box .mlbox{
+    width: 70px;
+    height: 40px;
+}
+
+.info-box .mlbox .ml{
+    width: 100%;
+    height: 100%;
+}
+
 
 
 /* 노트 설명 */
@@ -155,6 +187,10 @@ a:visited{
 
 
 
+
+
+
+
 /* 추천 상품 */
 .recommend-title{
     padding-top:50px;
@@ -163,100 +199,89 @@ a:visited{
     font-weight: bold;
 }
 
-.recommend-item{
+/* 유사한 상품 아웃라인 박스 */
+.recommend-outline-box{
     display: flex;
     justify-content: center;
-    border-bottom: 2px solid #565c46;
+    position: relative;
+    height:450px;
     padding-bottom: 30px;
+    border-bottom:2px solid #565c46;
+}
+
+/* 화살표 이미지 */
+.recommend-outline-box .arrow{
+    margin-top: 15%;
+    width: 50px;
+    height: 50px;
+}
+.recommend-outline-box .arrow img{
+    width: 100%;
+    height: 100%;
+}
+
+.recommend-outline-box .left{
+    position: absolute;
+    left:0;
+}
+
+.recommend-outline-box .right{
+    position: absolute;
+    right:0;
 }
 
 
-.recommend-item div{
+/* 슬라이드 */
+.recommend-slide{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap:4%;
+    width: 1000px;
+    height: 100%;
+    overflow-x: hidden;
+    
+}
+
+
+.recommend-slide .slide-item{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-shrink: 0;
     align-items: center;
-    width: 500px;
+    flex-wrap: nowrap;
+    width: 300px;
     height: 400px;
-    /* background-color: lightskyblue; */
+    transition: all 1s;
+
 }
 
-.recommend-item img{
-    width:150px;
-    height: 150px;
+.recommend-slide .slide-item img{
+    width:200px;
+    height: 200px;  
 }
 
-.recommend-item div h2{
+.recommend-slide .slide-item h3{
     margin:0;
     margin-top:10px;
     margin-bottom:10px;
     font-size: medium;
 }
 
-.recommend-item div h5{
+.recommend-slide .slide-item h5{
     margin:0;
     margin-top:10px;
     margin-bottom:10px;
    
 }
-
-.recommend-item div button[type="button"]{
-    width:200px;
+.recommend-slide .slide-item button[type="button"]{
+    width:150px;
     height: 50px;
     background-color: #565c46;
     color:white;
     font-weight: bold;
 }
 
-
-
-/* 리뷰 작성하기 */
-.review-write{
-    position: absolute;
-    right: 0;
-    width: 110px;
-    height: 50px;
-    margin-top: 30px;
-
-}
-
-    
-
-
-/* 모달 배경*/
-.modal-bg{
-    background : rgba(0,0,0,0.5);
-    z-index: 5;
-    width: 100%;
-    height: 100%;
-    /* visibility: hidden ;
-    opacity: 0; */
-    transition: all 1s;
-    
-}
-.show-modal{
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/* 댓글 모달창 */
-.review-modal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width:500px;
-    background-color: white;
-    transform: translate(0%,50%);
-    border:1px solid black;
-    z-index: 1;
-}
-
-.md-ratingbox{
-    font-size: xx-large;
-}
 
 
 
@@ -280,6 +305,74 @@ a:visited{
     padding-top:50px;
     /* padding-bottom:50px; */
 }
+
+
+/* 평점 & 댓글입력 구역 */
+.comment-area{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    /* background-color: lightcoral; */
+}
+
+
+/* 사용자 별점 */
+.comment-area .comment-rating{
+    width:80px;
+    height: 40px;
+}
+.comment-area .comment-rating .comment-select{
+    width:109%;
+    height: 100%;
+}
+
+
+/* 댓글입력 */
+.comment-area .comment-textarea{
+    width: 100%;
+    height: 100%;
+    /* background-color: lightsalmon; */
+}
+
+.comment-area .comment-textarea textarea:nth-child(1){
+    width: 30%;
+    height: 20%;
+    resize: none;
+    box-sizing: border-box;
+    border:1px solid black;
+    border-radius: 5px;
+
+}
+.comment-area .comment-textarea textarea:nth-child(2){
+    width: 100%;
+    height: 50%;
+    resize: none;
+    font-size: medium;
+    font-weight:500;
+    box-sizing: border-box;
+    border:1px solid black;
+    border-radius: 5px;
+
+}
+
+
+.comment-area .comment-textarea .comment-btngroup{
+    float:right;
+}
+
+.comment-area .comment-textarea .comment-btngroup button{
+    width: 90px;
+    height: 40px;
+    color:white;
+    font-size: medium;
+    font-weight: 500;
+    border-style: none;
+    background-color: #565c46;
+}
+
+
 
 #review-display{
     position: relative;
@@ -315,10 +408,19 @@ a:visited{
 
 /* 좋아요 & 싫어요 */
 #review-display .pr-review .pr-review-footer .emotion{
-  width:100px;
+  width:200px;
   height: 50px;
 }
-
+#review-display .pr-review .pr-review-footer .emotion span{
+  font-size:medium;
+  font-weight: bold;
+  margin-left:5px;
+  margin-right: 5px;
+  }
+#review-display .pr-review .pr-review-footer .emotion img{
+    width: 25px;
+    height: 25px;
+}
 
 
 /* 작성자 & 작성날짜 */
@@ -339,6 +441,12 @@ a:visited{
     
     
 }
+
+
+
+
+
+
 
 
 
