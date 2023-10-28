@@ -2,13 +2,12 @@
 
 /* 전체 기본 */
 html, body {
-	margin: 0 auto;
-	padding: 0;
-	height: 100%;
+   margin: 0 auto;
+   padding: 0;
+   height: 100%;
 }
-
-body {
-	overflow-x: hidden;
+body{
+   overflow-x: hidden;
 }
 
 /* 네비바 */
@@ -18,7 +17,6 @@ body {
 	top: 15em;
 	width: 200px;
 }
-
 /* 마이페이지 + 로그아웃 */
 .nav-myPage {
 	font-size: 15px;
@@ -38,6 +36,7 @@ body {
 .logout>a {
 	color: black;
 }
+
 
 /* 네비바 목록리스트 */
 .nav-ul {
@@ -64,46 +63,13 @@ body {
 	border-bottom: none;
 }
 
-/* 컨텐츠 */
-.myPage-content {
+
+/* 콘텐츠 */
+.delivery-content{
 	flex-grow: 1;
 	padding: 15px;
 	position: relative;
 	left: 20em;
 	bottom: 7em;
 	width: 700px;
-}
-
-/* 회원 정보 */
-.user-info {
-	padding-bottom: 5px;
-	border-bottom: 1px solid #565c46;
-	margin-bottom: 10px;
-}
-
-.user {
-	font-size: 12px;
-	margin: 3px
-}
-
-.myPage-ul {
-	list-style: none;
-}
-
-.myPage-li {
-	
-}
-
-.u_line {
-	
-}
-
-.myPage-btn {
-	width: 90px;
-	height: 45px;
-	text-align: center;
-	font-size: 15px;
-	border: none;
-	color: white;
-	background-color: #565c46;
 }

@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>delivery Information</title>
+<link href="Delivery.css" rel="stylesheet" type="text/css" />
+<title>Delivery Information</title>
 </head>
 <body>
 	<!-- 공통 상단메뉴-->
@@ -25,9 +26,9 @@
 	</nav>
 	<!-- 가운데 콘텐츠 -->
 	<section>
-		<div class="delivery-info">
-			<div>
-				<h3 class="user-info">주소</h3>
+		<div class="delivery-content">
+			<div class="delivery-info">
+				<h3 class="add-info">주소</h3>
 				<ul>
 					<li><p class="">이름</p></li>
 					<li><p class="">우편번호</p></li>
@@ -36,8 +37,8 @@
 					<li><p class="">전화 번호</p></li>
 				</ul>
 			</div>
-			<div>
-				<h3 class="user-info">다른 주소로 배송</h3>
+			<div class="">
+				<h3 class="add-info">다른 주소로 배송</h3>
 				<ul>
 					<li><p class="">이름</p></li>
 					<li><p class="">우편번호</p></li>
@@ -46,8 +47,6 @@
 					<li><p class="">전화 번호</p></li>
 				</ul>
 			</div>
-			
 		</div>
-			
 </body>
 </html>
