@@ -18,8 +18,8 @@
          <!-- 슬라이드 -->
          <div class="slide slide_wrap">
             <div class="slide_item item1"></div>
-            <div class="slide_item item2">테스트 이미지</div>
-            <div class="slide_item item3">테스트 이미지</div>
+            <div class="slide_item item2"></div>
+            <div class="slide_item item3"></div>
             <div class="slide_prev_button slide_button">
                <img class="Direction-img" src="../Main-image/왼쪽.png">
             </div>

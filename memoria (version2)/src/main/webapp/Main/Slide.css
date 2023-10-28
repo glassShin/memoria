@@ -52,15 +52,16 @@ body{
 
 /* 각 슬라이드 */
 .slide_item.item1 {
-  background: url("../Main-image/향수메인.jpg");
+  background: url("../Main-image/향수슬라이드1.jpg");
   background-size: 100% 100%;
 }
 .slide_item.item2 {
-  background: url("../Main-image/숲1.jpg");
+  background: url("../Main-image/향수슬라이드2.jpg");
   background-size: 100% 100%;
 }
 .slide_item.item3 {
-  background-color: blueviolet;
+  background: url("../Main-image/향수슬라이드3.jpg");
+  background-size: 100% 100%;
 }
 
 /* 페이지네이션 스타일 */
