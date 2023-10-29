@@ -21,7 +21,6 @@ public class JDBCConnect {
 			String pwd = "1234";
 
 			con = DriverManager.getConnection(url, id, pwd);
-			System.out.println("연결성공");
 		} catch (SQLException e) {
 			System.out.println("연결실패");
 			// TODO Auto-generated catch block

@@ -18,6 +18,35 @@ public class MemberDAO extends JDBCConnect{
 	public MemberDAO() {
 		con = getConnection();
 	}
+	
+	public MemberDTO getmember(String email) {
+		MemberDTO dto = new MemberDTO();
+		String sql = "select * from member where memberemail=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, email);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setMail(rs.getString(1));
+				dto.setPassward(rs.getString(2));
+				dto.setName(rs.getString(3));
+				dto.setAddr(rs.getString(4));
+				dto.setPhoneNum(rs.getString(5));
+				dto.setBirth(rs.getString(6));
+				dto.setSex(rs.getString(7));
+				dto.setRegidate(rs.getDate(8));
+				dto.setCategory(rs.getString(9));
+				dto.setRole(rs.getString(10));
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return dto;
+		
+	}
 	public boolean insertmember(String mail, String passward, String name, String phoneNum ,String birth, String sex) {
 		boolean result = true;
 		String sql = "insert into member(memberemail,memberpassward,membername,memberaddress,memberphonenumber,memberbirth,membersex,regidate) values (?,?,?,NULL,?,?,?,sysdate())";
@@ -87,22 +116,37 @@ public class MemberDAO extends JDBCConnect{
 		return dto;
 	}
 	
-	public MemberDTO deleteMember(String mail, String pass) {
-
-		MemberDTO dto = new MemberDTO();
-		String sql = "delete from member where memberemail = ? and memberpassward = ?";
+	public boolean memberUpdate(String name,String mail,String pass,String phone,String birth,String id) {
+		boolean result = true;
+		String sql = "update member set membername=?,memberemail=?,memberpassward=?,memberphonenumber=?,memberbirth=? where memberemail=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, name);
+			psmt.setString(2, mail);
+			psmt.setString(3, pass);
+			psmt.setString(4, phone);
+			psmt.setString(5, birth);
+			psmt.setString(6, id);
+			psmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = false;
+		}
+		return result;
+	}
+	
+	public void deleteMember(String mail) {
+		String sql = "delete from member where memberemail = ?";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, mail);
-			psmt.setString(2, pass);
 			psmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return dto;
 	}
 	
 	public boolean resetPassword ( String mail, String pass) {

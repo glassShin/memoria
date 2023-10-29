@@ -4,7 +4,6 @@
 <%
 String role = (String)session.getAttribute("role");
 String user = (String)session.getAttribute("user");
-System.out.println(role);
 %>
 
 <html>
@@ -205,7 +204,6 @@ margin-top : 100px;
 var logobar = document.getElementById('logobar');
 var navbar = document.getElementById('navbar');
 window.addEventListener("scroll",function(){
-   console.log(window.scrollY)
    if (window.scrollY >= 200) {
       logobar.style.animation = "logosilde 0.5s ease-out forwards";
       navbar.style.animation = "navsilde 0.5s ease-out forwards";
