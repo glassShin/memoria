@@ -21,7 +21,7 @@ dto = new MemberDAO().getmember(email);
 	<nav>
 		<div class="nav-bar">
 				<p class="nav-myPage">마이페이지</p>
-				<p class="logout"><a href="#">로그아웃</a></p>
+				<p class="logout"><a href="process/Logout.jsp">로그아웃</a></p>
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
 				<li class="nav-li"><a href="Delivery.jsp">배송 정보</a></li>

@@ -67,7 +67,7 @@ public class CartDAO extends JDBCConnect {
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, email);
-			rs = psmt.executeQuery(sql);
+			rs = psmt.executeQuery();
 			if(rs.next()) {
 				CartListDTO dto = new CartListDTO();
 				dto.setName(rs.getString(1));

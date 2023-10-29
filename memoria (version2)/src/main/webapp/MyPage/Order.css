@@ -100,7 +100,7 @@ p {
    position: relative;
    transform: translate(15%, 0%);
    /* margin: 0 auto; */
-   top: 15em;
+   top: 1em;
    right: 6em;
 }
 
