@@ -13,13 +13,16 @@ public class CartDAO extends JDBCConnect {
 	Statement stmt = null;
 	ResultSet rs = null;
 	
+	
 	public boolean cartcheck(String email,String product) {
 		boolean result = false;
 		con = getConnection();
-		String sql = "select * from cart";
+		String sql = "select * from cart where email=? and productid=?";
 		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, email);
+			psmt.setString(2, product);
+			rs = psmt.executeQuery(sql);
 			
 			if(rs.next()) {
 				result = true;
@@ -57,13 +60,14 @@ public class CartDAO extends JDBCConnect {
 		}
 		return msg;
 	}
-	public ArrayList<CartListDTO> cartSelect() {
+	public ArrayList<CartListDTO> cartSelect(String email) {
 		ArrayList<CartListDTO> list = new ArrayList<CartListDTO>();
 		con = getConnection();
-		String sql = "select productkname,productename,productprice,productcnt,product.productid,cartid from cart join product on cart.productid = product.productid";
+		String sql = "select productkname,productename,productprice,productcnt,product.productid,cartid from cart join product on cart.productid = product.productid where memberemail=?";
 		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, email);
+			rs = psmt.executeQuery(sql);
 			if(rs.next()) {
 				CartListDTO dto = new CartListDTO();
 				dto.setName(rs.getString(1));

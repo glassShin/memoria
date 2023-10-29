@@ -16,8 +16,9 @@
 		<%@include file="../../header/Header.jsp"%>
 	</header>
 	<%
+	String email = (String)session.getAttribute("user");
 	CartDAO dao = new CartDAO();
-	ArrayList<CartListDTO> list = dao.cartSelect();
+	ArrayList<CartListDTO> list = dao.cartSelect(email);
 	%>
 	
 
