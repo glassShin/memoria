@@ -31,7 +31,10 @@ list = dao.getProductList();
         </div>
 
       <div class="flex-section"> 
-      <%for(ProductDTO dto : list) { %>
+      <%
+      for(ProductDTO dto : list) {
+    	  System.out.println(dto.getP_id());%>
+      
         <div class=list-item>
             <div class="item-img">
                 <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">

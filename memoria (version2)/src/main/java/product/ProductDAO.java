@@ -98,7 +98,7 @@ public class ProductDAO extends JDBCConnect{
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
 				dto.setP_id(rs.getString(1));
 				dto.setP_kname(rs.getString(2));

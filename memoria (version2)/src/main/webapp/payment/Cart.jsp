@@ -58,7 +58,7 @@
 						<li><span class="price"><%=dto.getPrice()%></span></li>
 						<li><span class="stock"><%=dto.getCnt()%></span></li>
 						<li><button id = "optionUpdate"class="optionUpdate" onclick="openpopup('<%=dto.getProductid()%>','<%=dto.getCnt()%>','<%=dto.getCartid()%>')">옵션수정</button></li>
-						<li><span class="total"><%=total%></span></li>
+						<li><span class="total"><%=dto.getPrice() * dto.getCnt()%></span></li>
 						<div class="close close-x" onclick="location.href='process/CartdeleteProcess.jsp?pid=<%=dto.getCartid()%>'"></div>
 					</ul>
 					<%
@@ -70,7 +70,6 @@
 			<aside class="payGroup pgroup">
 				<div class="sticky-block">
 					<p class="order-product">주문 상품</p>
-					<form>
 						<ul class="payGroup-ul p__ul">
 							<li>상품금액<span id="p_price"><%=total %></span></li>
 							<li>배송비 <span>3000</span></li>
@@ -80,8 +79,7 @@
 							<p class="total-pay">
 								총결제금액 <span id="total"><%=total + 3000 %></span>
 							</p>
-							<input type="submit" class="total-btn" form="list_info"
-								value="결제">
+							<input type="button" class="total-btn" value="결제" onclick="location.href='Payment.jsp'">
 						</div>
 					</form>
 

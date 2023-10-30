@@ -36,6 +36,14 @@ html,body{
    left: 2.5em;
    padding-bottom: 15px;
 }
+#errmsg {
+	 position: relative;
+   left: 2.5em;
+   padding-bottom: 15px;
+	font-weight: bold;
+	color : red;
+	margin-top : -15px;
+}
 
 ul>li {
    padding-top: 3px;
@@ -66,19 +74,29 @@ ul>li {
     border-left: none;
     border-right: none;
     border-bottom: 1px solid #565c46;
+    margin-top : 15px;
+    
+}
+
+.u_detailaddr {
+	width: 285px;  
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #565c46;
 }
 
 .code_btn{
    position: relative;
-   bottom: 50px;
-    left: 24rem;
+   top : 2px;
+   left : 45px;
     width: 200px;
     height: 50px;
     border: none;
     text-align: center;
     font-size: 15px;
     color: white;
-   color: white;
     background-color: #565c46;  
 }
 

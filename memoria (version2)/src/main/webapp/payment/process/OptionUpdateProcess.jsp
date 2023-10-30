@@ -13,7 +13,6 @@
 String id = (String)request.getParameter("cartid");
 //String option = (String)request.getAttribute("option");
 String cnt = (String)request.getParameter("cnt");
-System.out.println(id + " " + cnt);
 
 CartDAO dao = new CartDAO();
 dao.cartUpdate(id, cnt);

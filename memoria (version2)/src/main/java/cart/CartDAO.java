@@ -17,12 +17,12 @@ public class CartDAO extends JDBCConnect {
 	public boolean cartcheck(String email,String product) {
 		boolean result = false;
 		con = getConnection();
-		String sql = "select * from cart where email=? and productid=?";
+		String sql = "select * from cart where memberemail=? and productid=?";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, email);
 			psmt.setString(2, product);
-			rs = psmt.executeQuery(sql);
+			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
 				result = true;
@@ -36,7 +36,7 @@ public class CartDAO extends JDBCConnect {
 	public String cartInsert(String email, String product) {
 		String msg = "";
 		con = getConnection();
-		String sql = "select stock75ml from product where productid = ?";
+		String sql = "select stock75ml from product where productid=?";
 		String sql1 = "insert into cart values(?,?,null,default)";
 		try {
 			psmt = con.prepareStatement(sql);
@@ -68,7 +68,7 @@ public class CartDAO extends JDBCConnect {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, email);
 			rs = psmt.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
 				CartListDTO dto = new CartListDTO();
 				dto.setName(rs.getString(1));
 				dto.setEname(rs.getString(2));
@@ -115,6 +115,6 @@ public class CartDAO extends JDBCConnect {
 			e.printStackTrace();
 		}
 	}
-	
+
 
 }
