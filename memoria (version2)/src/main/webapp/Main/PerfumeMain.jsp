@@ -5,16 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>PerfumeMain</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link href="PerfumeMain.css" rel="stylesheet" type="text/css" />
 <link href="Slide.css" rel="stylesheet" type="text/css" />
+<title>메모리아</title>
 </head>
 <body>
-   <!-- 공통 상단메뉴-->
+       <!-- 공통 상단메뉴-->
    <jsp:include page="../header/Header.jsp" />
 
-   <!-- section -->
+ 
    <main>
-      <section>
+
          <!-- 슬라이드 -->
          <div class="slide slide_wrap">
             <div class="slide_item item1"></div>
@@ -29,23 +33,7 @@
             <ul class="slide_pagination"></ul>
          </div>
 
-         <!-- 상품슬라이드 -->
-         <div class="product-slide">
-            <h1 class="product-slide-h1">추천향수</h1>
-            <div class="product">
-               <div class="card-img">
-                  <img alt="perfume" src="../Main-image/향수1.png" class="product-img"
-                     height="250">
-               </div>
-               <div class="card-head">
-                  <h3 class="E-name">English name</h3>
-                  <h3 class="K-name">향수이름</h3>
-               </div>
-               <div class="card-main">
-                  <p class="price">₩200,000 100ml</p>
-               </div>
-               <button type="button" class="card-btn">상품보기</button>
-            </div>
+       
             <!-- 중간 문구 -->
             <div class="image-moonjang">
                <p class="moonjang">
@@ -53,6 +41,71 @@
                   intense memories
                </p>
             </div>
+            
+        
+               <!-- <h1 class="multiple-items-h1">추천향수</h1> -->
+            <div class="recommend-area"> 
+                <div class="multiple-items">
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                    <div class="slide-item">
+                        <img src=""  alt="테스트">
+                        <h3 class="E-name">English name</h3>
+                        <h4 class="K-name">향수이름</h4>
+                        <span class="price">₩200,000</span>
+                        <span class="ml">100ml</span>
+                        <button type="button" class="card-btn">상품보기</button>
+                    </div>
+                </div> 
+            </div>
+          
+
 
             <!-- 상품이동 페이지 -->
             <div class="product-page">
@@ -73,7 +126,6 @@
                   <a href="../Board/PerfumeBoard.jsp" class="product-btn-l">보러가기</a>
                </div>
             </div>
-      </section>
    </main>
    
    <!-- 슬라이드js -->
@@ -82,6 +134,26 @@
    <!-- 공통footer -->
    <div class="footer-all">
          <%@include file="../../Footer/Footer.jsp"%>
-   </div> 
+   </div>  
+   
+   <script>
+// slick.js
+    $('.multiple-items').slick({
+        slide: '.slide-item',
+        infinite: false,
+        arrows : true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        speed : 1000,
+    });
+
+        var prevButton = document.querySelector('.slick-prev');
+        var nextButton = document.querySelector('.slick-next');
+
+        // 버튼 텍스트를 원하는 값으로 설정
+        prevButton.textContent = '';
+        nextButton.textContent = '';
+   </script>
+
 </body>
 </html>

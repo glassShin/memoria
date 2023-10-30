@@ -7,22 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="detailPage.css">
 <title>제품상세 페이지</title>
 </head>
 <body>
-    <!-- 공통 상단메뉴-->
-	<jsp:include page="../header/Header.jsp"/>
+
+	<jsp:include page="../header/Header.jsp" />
 	
-   
     <main>
-    
-    	<%
-  			String pid = request.getParameter("pid");
-  			ProductDAO dao = new ProductDAO();
-  			ProductInfoDTO dto = dao.getproductInfo(pid);
-  		%>
+  
         <div class="img-info">
          
             <div class="img-box">
@@ -125,42 +121,54 @@
         <div class=" recommend-title">보고있는 상품과 유사한 상품</div>
 
 
-
         <div class="recommend-outline-box">
-            <div class="left arrow">
-                <img src="/detail_modify/arrow/left-arrow.png">
-            </div> 
-            
-            <div class="recommend-slide">
+           
+            <div class="multiple-items" style="transition: all 3s;"><!--*multiple-items*-->
                
                 <div class="slide-item">
                     <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
+                    <h3>제품영어1</h3>
+                    <h5>제품한글1</h5>
                     <button type="button">보러가기</button>
                 </div>
 
                
                 <div class="slide-item">
                     <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
+                    <h3>제품영어2</h3>
+                    <h5>제품한글2</h5>
                     <button type="button">보러가기</button>
                 </div>
 
                 <div class="slide-item">
                     <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
+                    <h3>제품영어3</h3>
+                    <h5>제품한글3</h5>
                     <button type="button">보러가기</button>
                 </div>
 
-            </div>
+                <div class="slide-item">
+                    <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
+                    <h3>제품영어4</h3>
+                    <h5>제품한글4</h5>
+                    <button type="button">보러가기</button>
+                </div>
 
-            <div class="right arrow">
-                <img src="/detail_modify/arrow/right-arrow.png">
+                <div class="slide-item">
+                    <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
+                    <h3>제품영어5</h3>
+                    <h5>제품한글5</h5>
+                    <button type="button">보러가기</button>
+                </div>
+                <div class="slide-item">
+                    <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
+                    <h3>제품영어6</h3>
+                    <h5>제품한글6</h5>
+                    <button type="button">보러가기</button>
+                </div>
             </div>
         </div>
+        
 
 
         
@@ -168,7 +176,7 @@
             리뷰
         </div>
 
-
+        
 
             <div class="ratingbox">
                 <span class="p-rating">5</span>/5
@@ -208,6 +216,8 @@
                     <h2 class="pr-review-title">남성도 어울릴만한 향수</h2>
                 </div>
                
+
+                <!-- 290자 제한 걸어두기 -->
                 <p class="pr-review-main">향수선물하고싶어서 이곳 저곳 향 맡아보는데 남여 구분없이 어울릴만한 향을 조말론에서 만들어서 반했습니다 너무 만족 샘플까지 꼼꼼하게 보내주셨어요 다음엔 쇼핑백까지 살려고요</p>
                 <footer class="pr-review-footer">
                    <div class="emotion">
@@ -247,14 +257,14 @@
             </div>
         </div> 
     </main>
-       
-     	<!-- 공통footer -->
+
 	<%-- <div class="footer-all">
-		<%@include file="../../Footer/Footer.jsp"%>
-	</div> --%>	
-	
-	
-	<script>
+         <%@include file="../../Footer/Footer.jsp"%>
+   </div>  
+    --%>
+
+
+<script>
 
 
     // 좋아요 & 싫어요
@@ -299,7 +309,25 @@
 
 // 캐러셀(슬라이드)
 
+// slick.js
+    $('.multiple-items').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    speed : 1000,
+    dots: false
+    //   prevArrow : "<button type='button' class='slick-prev'>Previous</button> ",
+    //   nextArrow : "<button type='button' class='slick-next'>Next</button>",
+    });
+
+    var prevButton = document.querySelector('.slick-prev');
+    var nextButton = document.querySelector('.slick-next');
+
+    // 버튼 텍스트를 원하는 값으로 설정
+    prevButton.textContent = '';
+    nextButton.textContent = '';
 </script>
-	
+
+
 </body>
 </html>
