@@ -23,7 +23,7 @@ body{
    position: relative;
    height:400px;
    padding:20px;
-   margin-top:420px;
+   margin-top: 96px;
    margin-bottom:100px;
    background-color: rgba(86, 92, 70, 0.2);
 }
@@ -79,17 +79,21 @@ body{
    border:none;
    cursor: pointer;
    /* background-color: rgba(86, 92, 70, 0); */
-   background-color: white;
+   background-color: rgba(86, 92, 70, 0);
 }
 
-.slick-next::before {
+.slick-next {
    background-image: url('../Main-image/오른쪽.png');
    background-size: 100% 100%;
+   width:20px;
+   height: 20px;
    content:"";
 }
-.slick-prev::before {
+.slick-prev {
    background-image:url('../Main-image/왼쪽.png');
    background-size: 100% 100%;
+   width:20px;
+   height: 20px;
    content:"";
 }
 
@@ -101,7 +105,7 @@ body{
 .image-moonjang{
      background-size: 100% 100%;
    position: absolute;
-   top: 37.5em;
+   top: 63em;
    width: 100%;
    height: 300px;
    z-index: 1;
@@ -129,12 +133,12 @@ body{
 }
  
 
-/* product page
+
 .product-page{
-   position: relative;
-   top: 57em;
+  /*  position: relative; */
+  	margin-top: 500px;
 }
-*/
+
 
 /* 오른쪽 */
 /* 이미지 */
@@ -235,5 +239,5 @@ body{
 /* footer */
 .footer-all{
    position: relative;
-   margin-top: 30%
+   margin-top: -20%
 }

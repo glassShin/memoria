@@ -74,7 +74,7 @@
                 <div class="note">
 
                     <div class="note-img">
-                        <img src="https://www.jomalone.co.kr/media/export/cms/spp/tasing_notes/desktop/Mandarin_Desktop.png">
+                        <img src="../image2/코튼.png">
                     </div>
 
                     <div class="note-info">
@@ -320,12 +320,12 @@
     //   nextArrow : "<button type='button' class='slick-next'>Next</button>",
     });
 
+     // 버튼 텍스트를 원하는 값으로 설정
     var prevButton = document.querySelector('.slick-prev');
     var nextButton = document.querySelector('.slick-next');
 
-    // 버튼 텍스트를 원하는 값으로 설정
-    prevButton.textContent = '';
-    nextButton.textContent = '';
+    prevButton.textContent ='';
+    nextButton.textContent = ''; 
 </script>
 
 
