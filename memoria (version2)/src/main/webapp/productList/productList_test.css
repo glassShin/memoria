@@ -56,3 +56,10 @@ font-size: large;
     background-color: #565c46;
     color:white;
 }
+
+.footer-all{
+	position:relative;
+	bottom:35%;
+	width:100%;
+}
+
