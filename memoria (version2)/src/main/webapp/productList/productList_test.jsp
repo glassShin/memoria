@@ -33,7 +33,7 @@ list = dao.getProductList();
       <div class="flex-section"> 
       <%
       for(ProductDTO dto : list) {
-    	  System.out.println(dto.getP_id());%>
+   		%>
       
         <div class=list-item>
             <div class="item-img">
@@ -47,7 +47,7 @@ list = dao.getProductList();
                 <h4><%=dto.getP_price() %></h4>    
             </div>
             <div class="item-btn">
-                <button type="button" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">구매하기</button>
+                <button type="button" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">보러가기</button>
             </div>
         </div>
         <%} %>

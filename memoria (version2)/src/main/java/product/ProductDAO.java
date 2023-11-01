@@ -31,17 +31,16 @@ public class ProductDAO extends JDBCConnect{
 				dto.setP_kname(rs.getString(2));
 				dto.setP_ename(rs.getString(3));
 				dto.setP_price(rs.getInt(4));
-				dto.setP_brand(rs.getString(5));
-				dto.setScentid(rs.getString(6));
-				dto.setType(rs.getString(7));
-				dto.setImage(rs.getString(8));
-				dto.setTop(rs.getString(9));
-				dto.setMid(rs.getString(10));
-				dto.setBase(rs.getString(11));
-				dto.setInfomation(rs.getString(12));
-				dto.setStock75ml(rs.getInt(13));
-				dto.setStock50ml(rs.getInt(14));
-				dto.setStock25ml(rs.getInt(15));
+				dto.setP_stock(rs.getInt(5));
+				dto.setP_brand(rs.getString(6));
+				dto.setScentid(rs.getString(7));
+				dto.setType(rs.getString(8));
+				dto.setImage(rs.getString(9));
+				dto.setTop(rs.getString(10));
+				dto.setMid(rs.getString(11));
+				dto.setBase(rs.getString(12));
+				dto.setInfomation(rs.getString(13));
+				dto.setP_ml(rs.getString(14));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -54,7 +53,7 @@ public class ProductDAO extends JDBCConnect{
 		String sql = "SELECT p.productid, p.productkname, p.productEname, p.productprice, p.scentid, p.type, p.img, " +
 	             "s.scentname AS top, s.scentcontent AS topcontent, " +
 	             "m.scentname AS mid, m.scentcontent AS midcontent, " +
-	             "b.scentname AS base, b.scentcontent AS basecontent, p.information, p.stock75ml, p.stock50ml, p.stock25ml " +
+	             "b.scentname AS base, b.scentcontent AS basecontent, p.information, p.productml " +
 	             "FROM product p " +
 	             "JOIN scent s ON p.top = s.scentid " +
 	             "JOIN scent m ON p.mid = m.scentid " +
@@ -79,9 +78,7 @@ public class ProductDAO extends JDBCConnect{
 				dto.setBase(rs.getString(12));
 				dto.setBasecontent(rs.getString(13));
 				dto.setInfo(rs.getString(14));
-				dto.setStock75(rs.getInt(15));
-				dto.setStock50(rs.getInt(16));
-				dto.setStock25(rs.getInt(17));
+				dto.setPml(rs.getString(15));
 				
 			}
 		} catch (SQLException e) {
@@ -93,7 +90,7 @@ public class ProductDAO extends JDBCConnect{
 	
 	public ArrayList<ProductDTO> getProductList() {
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
-		String sql = "select * from product";
+		String sql = "select * from product where productml='50ml'";
 		try {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -104,18 +101,52 @@ public class ProductDAO extends JDBCConnect{
 				dto.setP_kname(rs.getString(2));
 				dto.setP_ename(rs.getString(3));
 				dto.setP_price(rs.getInt(4));
-				dto.setP_brand(rs.getString(5));
-				dto.setScentid(rs.getString(6));
-				dto.setType(rs.getString(7));
-				dto.setImage(rs.getString(8));
-				dto.setTop(rs.getString(9));
-				dto.setMid(rs.getString(10));
-				dto.setBase(rs.getString(11));
-				dto.setInfomation(rs.getString(12));
-				dto.setStock75ml(rs.getInt(13));
-				dto.setStock50ml(rs.getInt(14));
-				dto.setStock25ml(rs.getInt(15));
+				dto.setP_stock(rs.getInt(5));
+				dto.setP_brand(rs.getString(6));
+				dto.setScentid(rs.getString(7));
+				dto.setType(rs.getString(8));
+				dto.setImage(rs.getString(9));
+				dto.setTop(rs.getString(10));
+				dto.setMid(rs.getString(11));
+				dto.setBase(rs.getString(12));
+				dto.setInfomation(rs.getString(13));
+				dto.setP_ml(rs.getString(14));
 				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public ArrayList<ProductDTO> recommendlist(String type) {
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+		String sql = "select * from product where productml='50ml' and type=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, type);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				dto.setP_id(rs.getString(1));
+				dto.setP_kname(rs.getString(2));
+				dto.setP_ename(rs.getString(3));
+				dto.setP_price(rs.getInt(4));
+				dto.setP_stock(rs.getInt(5));
+				dto.setP_brand(rs.getString(6));
+				dto.setScentid(rs.getString(7));
+				dto.setType(rs.getString(8));
+				dto.setImage(rs.getString(9));
+				dto.setTop(rs.getString(10));
+				dto.setMid(rs.getString(11));
+				dto.setBase(rs.getString(12));
+				dto.setInfomation(rs.getString(13));
+				dto.setP_ml(rs.getString(14));
+				list.add(dto);
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -143,6 +174,7 @@ public class ProductDAO extends JDBCConnect{
     	return totalcount;
     	
     }
+	
     
     
     
@@ -166,17 +198,16 @@ public class ProductDAO extends JDBCConnect{
     					dto.setP_kname(rs.getString(2));
     					dto.setP_ename(rs.getString(3));
     					dto.setP_price(rs.getInt(4));
-    					dto.setP_brand(rs.getString(5));
-    					dto.setScentid(rs.getString(6));
-    					dto.setType(rs.getString(7));
-    					dto.setImage(rs.getString(8));
-    					dto.setTop(rs.getString(9));
-    					dto.setMid(rs.getString(10));
-    					dto.setBase(rs.getString(11));
-    					dto.setInfomation(rs.getString(12));
-    					dto.setStock75ml(rs.getInt(13));
-    					dto.setStock50ml(rs.getInt(14));
-    					dto.setStock25ml(rs.getInt(15));
+    					dto.setP_stock(rs.getInt(5));
+    					dto.setP_brand(rs.getString(6));
+    					dto.setScentid(rs.getString(7));
+    					dto.setType(rs.getString(8));
+    					dto.setImage(rs.getString(9));
+    					dto.setTop(rs.getString(10));
+    					dto.setMid(rs.getString(11));
+    					dto.setBase(rs.getString(12));
+    					dto.setInfomation(rs.getString(13));
+    					dto.setP_ml(rs.getString(14));
     				  
     				 bbs.add(dto);
     			  }

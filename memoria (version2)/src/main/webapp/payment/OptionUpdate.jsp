@@ -30,7 +30,7 @@
 		<div class="imglocation">
 		<img alt="image" src="../Main-image/향수1.png">
 		</div>
-		<form action="process/OptionUpdateProcess.jsp" method="post" id="update" onsubmit="parent.popupclose();">
+		<form action="process/OptionUpdateProcess.jsp?pid=<%=id %>" method="post" id="update" onsubmit="parent.popupclose();">
 		<div class="contentlocation">
 		<input type="hidden" name="cartid" value="<%=cid%>">
 			<p><%=dto.getP_kname() %></p>
@@ -39,9 +39,9 @@
 				<select id = "optionbar" name="option" class="form-select form-select-sm"
 					aria-label="Default select example">
 					<option selected>옵션 선택</option>
+					<option value="100ml">100ml</option>
 					<option value="75ml">75ml</option>
 					<option value="50ml">50ml</option>
-					<option value="25ml">25ml</option>
 				</select>
 			</div>
 

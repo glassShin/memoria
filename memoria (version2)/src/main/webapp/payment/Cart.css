@@ -115,6 +115,7 @@ main{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-left : -10px;
   }
 
 .optionUpdate:hover {
@@ -127,7 +128,7 @@ main{
 	float: right;
 	display: inline-block;
 	bottom: 70px;
-	left: 30px;
+	left: 10px;
 }
 .close-x:after{
 	content: "\00d7";

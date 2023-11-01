@@ -13,6 +13,7 @@
 <title>Payment</title>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 </head>
 <body>
 <%
@@ -36,14 +37,14 @@ String title = list.size() > 1 ? title = list.get(0).getName() + " 외 " + (list
             <p class="delivery-info">배송지 정보</p>
             <p class="delivery-p">배송지를 입력해 주세요.</p>
             <p id="errmsg"></p>
-      <!-- <form method="post" action="" id="deliveryInfo" onsubmit="return validateForm();"> -->
+       <form method="post" action="process/PaymentProcess.jsp" id="deliveryInfo" onsubmit="return validateForm();">
             <ul class="delivery-ul">
                <li><input type="text" class="u_line" name="name" value="<%=mdto.getName() %>"></li>
                <li><input type="text" class="u_code" id="postcode" name="postal_code" onclick="findaddr();" placeholder="우편번호" readonly>
                <input type="button" value="우편주소"  class="code_btn" onclick="findaddr();"></li>
-               <li><input type="text" class="u_line" id="address" name="add" placeholder="주소"></li>
-               <li><input type="text" class="u_detailaddr" id="detail" name="postal_code" placeholder="상세주소">
-               <input type="text" class="u_detailaddr" id="extra" name="postal_code" placeholder="참고항목">
+               <li><input type="text" class="u_line" id="address" name="addr" placeholder="주소"></li>
+               <li><input type="text" class="u_detailaddr" id="detail" name="detail" placeholder="상세주소">
+               <input type="text" class="u_detailaddr" id="extra" name="detail" placeholder="참고항목">
                </li>
                <li><input type="tel" class="u_line" name="phonenum" value="<%=mdto.getPhoneNum()%>"></li>
             </ul>
@@ -70,8 +71,8 @@ String title = list.size() > 1 ? title = list.get(0).getName() + " 외 " + (list
             <ul class="paymentList-ul">
                <li><img class="product-img1" src="../image2/장미_5x5.jpg" alt="상품이미지"></li>
             <div class="name">
-               <li><span class="product-KName"><%=dto.getName() %></span></li>
-               <li><span class="product-EName"><%=dto.getEname() %></span></li>
+               <li><span class="product-KName"><%=dto.getName() %> <%=dto.getProductml() %></span></li>
+               <li><span class="product-EName"><%=dto.getEname() %> <%=dto.getProductml() %></span></li>
             </div>
                <li><span class="price"><%=dto.getPrice() %></span></li>
                <li><span class="stock"><%=dto.getCnt() %></span></li>
@@ -81,9 +82,7 @@ String title = list.size() > 1 ? title = list.get(0).getName() + " 외 " + (list
             <%} %>
             </div>      
          </div>
-         <input type="button" value="결제하기" class="pay_btn" onclick="requestPay('<%=total%>','<%=title%>');">
-             <!--   <input type="submit" value="결제하기" class="pay_btn" form="deliveryInfo" onclick="handlePayment(event);">
-      </form> -->
+             <input type=button value="결제하기" form="deliveryInfo" class="pay_btn" onclick="requestPay('<%=total%>','<%=title%>','<%=user%>')">
       </div>
    </section>
 

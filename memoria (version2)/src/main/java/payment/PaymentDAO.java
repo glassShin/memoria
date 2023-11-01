@@ -1,4 +1,4 @@
-package order;
+package payment;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,26 +7,23 @@ import java.sql.Statement;
 
 import common.JDBCConnect;
 
-public class OrderDAO extends JDBCConnect{
+public class PaymentDAO extends JDBCConnect{
 	PreparedStatement psmt = null;
 	Statement stmt = null;
 	ResultSet rs = null;
 	
-	public OrderDAO() {
+	public PaymentDAO() {
 		con = getConnection();
 	}
 	
-	public void orderInsert(String id,String payid, String pid,int cnt,String name,String addr,String phone) {
-		String sql = "insert into order1 values(?,?,?,?,default,?,?,?)";
+	public void insertpayment(String id,String email,String title,String price) {
+		String sql = "insert into payment values(?,?,?,?,default,default)";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, id);
-			psmt.setString(2, payid);
-			psmt.setString(3, pid);
-			psmt.setInt(4,cnt);
-			psmt.setString(5, name);
-			psmt.setString(6, addr);
-			psmt.setString(7, phone);
+			psmt.setString(2, email);
+			psmt.setString(3, title);
+			psmt.setInt(4, Integer.parseInt(price));
 			psmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -1,4 +1,10 @@
+<%@page import="heart.HeartDAO"%>
+<%@page import="review.ReviewDAO"%>
+<%@page import="log.LogDAO"%>
+<%@page import="review.ReviewDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="product.ProductInfoDTO"%>
+<%@page import="product.ProductDTO"%>
 <%@page import="product.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -18,9 +24,20 @@
     <main>
     
     	<%
+    		String user = (String)session.getAttribute("user");
   			String pid = request.getParameter("pid");
   			ProductDAO dao = new ProductDAO();
   			ProductInfoDTO dto = dao.getproductInfo(pid);
+  			ArrayList<ProductDTO> recommlist = dao.recommendlist(dto.getType());
+  			ReviewDAO reviewdao = new ReviewDAO();
+  			ArrayList<ReviewDTO> reviewlist = reviewdao.selectReview(pid);
+  			int total = 0;
+  			for(ReviewDTO gradetotal : reviewlist) {
+  				total += gradetotal.getR_grade();
+  			}
+  			if(user!=null) {
+  			new LogDAO().insertLog(user, pid);
+  			}
   		%>
         <div class="img-info">
          
@@ -61,7 +78,7 @@
                 </div>
 
                 <div class="buy-btn">
-                    <button type="button" onclick="location.href='../addToCart/addToCart.jsp?productid=<%=dto.getPid()%>'">구매하기</button>
+                    <button type="button" id="moveCartbtn" onclick="location.href='../addToCart/addToCart.jsp?productid=<%=dto.getPid()%>'">구매하기</button>
                 </div>
 
             </div>
@@ -118,6 +135,16 @@
         	productPrice.innerText = oriprice * 1.5;
         }
     }
+    
+    document.getElementById('mlSelect').addEventListener('change', function() {
+    var selectedOption = this.value;
+    var button = document.getElementById('moveCartbtn');
+    var productId = '<%=dto.getPid()%>' + selectedOption;
+    button.onclick = function() {
+        location.href = '../addToCart/addToCart.jsp?productid=' + productId;
+    };
+});
+    
 </script>
 
         <!-- 단순 이미지 구역(수정 후에 이미지 삽입 예정, 데이터 사용 필요 x)-->
@@ -140,29 +167,14 @@
             </div> 
             
             <div class="recommend-slide">
-               
+               <%for(ProductDTO redto : recommlist) { %>
                 <div class="slide-item">
                     <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
-                    <button type="button">보러가기</button>
+                    <h3><%=redto.getP_kname() %></h3>
+                    <h5><%=redto.getP_ename() %></h5>
+                    <button type="button" onclick="location.href='../Board/detailPage.jsp?pid=<%=redto.getP_id()%>'">보러가기</button>
                 </div>
-
-               
-                <div class="slide-item">
-                    <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
-                    <button type="button">보러가기</button>
-                </div>
-
-                <div class="slide-item">
-                    <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png" alt="사진없음">
-                    <h3>제품영어</h3>
-                    <h5>제품한글</h5>
-                    <button type="button">보러가기</button>
-                </div>
-
+				<%} %>
             </div>
 
             <div class="right arrow">
@@ -179,80 +191,69 @@
 
 
             <div class="ratingbox">
-                <span class="p-rating">5</span>/5
+                <%if(total == 0) { %>
+                <span class="p-rating">
+                <%=total%></span>/5
+                <%}else { %>
+                <span class="p-rating">
+                <%=total/recommlist.size()%></span>/5
+                <%} %>
             </div>
 
 
-
+		<form method="post" action="process/ReviewInsertProcess.jsp?pid=<%=pid%>">
             <div class="comment-area">
                 <div class="comment-rating">
-                    <select class="comment-select">
-                        <option vlaue="">-평점-</option>
-                        <option vlaue="one">1</option>
-                        <option vlaue="two">2</option>
-                        <option vlaue="three">3</option>
-                        <option vlaue="four">4</option>
-                        <option vlaue="five">5</option>
+                    <select class="comment-select" name="regrade">
+                        <option value="">-평점-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
                 <div class="comment-textarea">
-                    <textarea placeholder="제목"></textarea>
-                    <textarea placeholder="후기를 작성해주세요"></textarea>
+                    <textarea name="retitle" placeholder="제목"></textarea>
+                    <textarea name="recontent" placeholder="후기를 작성해주세요"></textarea>
 
                     <div class="comment-btngroup">
-                        <button>확인</button>
+                        <button type="submit">확인</button>
                     </div>
                 </div>
-
             </div>
-         
+         </form>
 
         <div id="review-display">
+        <%boolean reviewcheck = true;
+        for(ReviewDTO redto : reviewlist) { 
+        	reviewcheck = new HeartDAO().checkHeart(user, redto.getR_id());
+        	String imgsrc = reviewcheck ? "../image2/thumbUp_off.png" : "../image2/thumbUp_on.png";
+        %>
+        	
             <div class="pr-review">
                 <div class="pr-review-header">
                     <div class="pr-rating">
-                        5/5
+                        <%=redto.getR_grade() %>/5
                     </div>    
-                    <h2 class="pr-review-title">남성도 어울릴만한 향수</h2>
+                    <h2 class="pr-review-title"><%=redto.getR_title() %></h2>
                 </div>
                
-                <p class="pr-review-main">향수선물하고싶어서 이곳 저곳 향 맡아보는데 남여 구분없이 어울릴만한 향을 조말론에서 만들어서 반했습니다 너무 만족 샘플까지 꼼꼼하게 보내주셨어요 다음엔 쇼핑백까지 살려고요</p>
+                <p class="pr-review-main"><%=redto.getR_content() %></p>
                 <footer class="pr-review-footer">
                    <div class="emotion">
-                            <img src="../image2/thumbUp.png" class="good-img"> <span class="good">0</span>
-                            <img src="../image2/thumbDown.png" class="bad-img"><span class="bad">0</span>
+                            <img src=<%=imgsrc %> class="good-img"> <span class="good"><%=redto.getR_like() %></span>
                     </div> 
                     <div class="user">
                         <ul>
-                            <li>작성자: <span class="writer">ㅁㄴㅇㄹ</span> </li>
-                            <li>작성날짜: <span class="write-date">23/23/23</span></li>
+                            <li>작성자: <span class="writer"><%=redto.getEmail() %></span> </li>
+                            <li>작성날짜: <span class="write-date"><%=redto.getDate() %></span></li>
                         </ul>
                     </div>
                 </footer>
             </div>
+            <%} %>
            
-            <div class="pr-review">
-                <div class="pr-review-header">
-                    <div class="pr-rating">
-                        <span class="pr-inner-rating">5</span>/5
-                    </div>    
-                    <h2 class="pr-review-title">남성도 어울릴만한 향수</h2>
-                </div>
-               
-                <p class="pr-review-main">향수선물하고싶어서 이곳 저곳 향 맡아보는데 남여 구분없이 어울릴만한 향을 조말론에서 만들어서 반했습니다 너무 만족 샘플까지 꼼꼼하게 보내주셨어요 다음엔 쇼핑백까지 살려고요</p>
-                <footer class="pr-review-footer">
-                   <div class="emotion"> 
-                    <img src="../image2/thumbUp.png" class="good-img"> <span class="good">0</span>
-                    <img src="../image2/thumbDown.png" class="bad-img"><span class="bad">0</span>
-                    </div> 
-                    <div class="user">
-                        <ul>
-                            <li>작성자: <span>ㅁㄴㅇㄹ</span> </li>
-                            <li>작성날짜: <span>23/23/23</span></li>
-                        </ul>
-                    </div>
-                </footer>
-            </div>
         </div> 
     </main>
        
@@ -287,22 +288,6 @@
                     good.innerHTML = goodImgClick;
                 }
             });
-
-
-            // 싫어요(필요애 따라 기능 삭제 요망)
-            badImg.addEventListener('click', function() {
-                if (badImgClick === 0) {
-                    badImgClick = 1;
-                    goodImgClick = 0;
-                    bad.innerHTML = badImgClick;
-                    good.innerHTML = goodImgClick;
-                } else {
-                    badImgClick = 0;
-                    bad.innerHTML = badImgClick;
-                }
-            });
-        });
-
  
 
 // 캐러셀(슬라이드)

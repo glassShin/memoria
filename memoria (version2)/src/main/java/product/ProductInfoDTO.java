@@ -15,17 +15,14 @@ public class ProductInfoDTO {
 	private String base;
 	private String basecontent;
 	private String info;
-	private int stock75;
-	private int stock50;
-	private int stock25;
-
-	public ProductInfoDTO() {
-		// TODO Auto-generated constructor stub
-	}
+	private String pml;
 	
+	
+	
+
 	public ProductInfoDTO(String pid, String kname, String ename, int price, String scentid, String type, String img,
 			String top, String topcontent, String mid, String midcontent, String base, String basecontent, String info,
-			int stock75, int stock50, int stock25) {
+			String pml) {
 		super();
 		this.pid = pid;
 		this.kname = kname;
@@ -41,9 +38,11 @@ public class ProductInfoDTO {
 		this.base = base;
 		this.basecontent = basecontent;
 		this.info = info;
-		this.stock75 = stock75;
-		this.stock50 = stock50;
-		this.stock25 = stock25;
+		this.pml = pml;
+	}
+
+	public ProductInfoDTO() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getType() {
@@ -158,28 +157,12 @@ public class ProductInfoDTO {
 		this.info = info;
 	}
 
-	public int getStock75() {
-		return stock75;
+	public String getPml() {
+		return pml;
 	}
 
-	public void setStock75(int stock75) {
-		this.stock75 = stock75;
-	}
-
-	public int getStock50() {
-		return stock50;
-	}
-
-	public void setStock50(int stock50) {
-		this.stock50 = stock50;
-	}
-
-	public int getStock25() {
-		return stock25;
-	}
-
-	public void setStock25(int stock25) {
-		this.stock25 = stock25;
+	public void setPml(String pml) {
+		this.pml = pml;
 	}
 
 }
