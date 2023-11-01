@@ -173,15 +173,17 @@ button:active{
 .p-manual{
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom:2px solid #565c46;
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
 .p-manual div{
-    width:295px;
-    height: 400px;
-    background-color: lightskyblue;
+    width:230px;
+    height: 350px;
+    margin:0 auto;
+    /* background-color: lightskyblue; */
 }
 
 
@@ -204,6 +206,7 @@ button:active{
     display: flex;
     justify-content: center;
     position: relative;
+    /* width: 100%; */
     height:450px;
     padding-bottom: 30px;
     border-bottom:2px solid #565c46;
@@ -232,19 +235,20 @@ button:active{
 
 
 /* 슬라이드 */
-.recommend-slide{
+.multiple-items{
     display: flex;
     align-items: center;
     justify-content:flex-start;
-    gap:4%;
-    width: 1000px;
+    /* gap:4%; */
+    width: 100%;
     height: 100%;
+    /* transition: all 3s; */
     overflow-x: hidden;
     
 }
 
 
-.recommend-slide .slide-item{
+.multiple-items .slide-item{
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -252,34 +256,60 @@ button:active{
     flex-wrap: nowrap;
     width: 300px;
     height: 400px;
-    transition: all 1s;
 
 }
 
-.recommend-slide .slide-item img{
+.multiple-items .slide-item img{
     width:200px;
     height: 200px;  
 }
 
-.recommend-slide .slide-item h3{
+.multiple-items .slide-item h3{
     margin:0;
     margin-top:10px;
     margin-bottom:10px;
     font-size: medium;
 }
 
-.recommend-slide .slide-item h5{
+.multiple-items .slide-item h5{
     margin:0;
     margin-top:10px;
     margin-bottom:10px;
    
 }
-.recommend-slide .slide-item button[type="button"]{
-    width:150px;
+
+.multiple-items .slide-item button[type="button"] {
+    width: 200px;
     height: 50px;
     background-color: #565c46;
-    color:white;
+    color: white;
     font-weight: bold;
+}
+
+
+.slick-arrow{
+	width:50px;
+	height:50px;
+	background-color:white;
+}
+
+
+
+.slick-next {
+    background-image: url('../Main-image/오른쪽.png');
+    background-size: 100% 100%;
+   	width: 20px; 
+    height: 20px;
+    content:"";
+
+}
+
+.slick-prev {
+    background-image:url('../Main-image/왼쪽.png');
+    background-size: 100% 100%;
+   	width: 20px; 
+    height: 20px;
+    content:"";
 }
 
 
@@ -314,6 +344,7 @@ button:active{
     flex-direction: row;
     width: 100%;
     height: 200px;
+    margin-top: 70px;
     /* background-color: lightcoral; */
 }
 
@@ -336,8 +367,15 @@ button:active{
     /* background-color: lightsalmon; */
 }
 
+
+
+.comment-area .comment-textarea textarea::placeholder{
+    font-size: large;
+    font-weight:600;
+
+}
 .comment-area .comment-textarea textarea:nth-child(1){
-    width: 30%;
+    width: 100%;
     height: 20%;
     resize: none;
     box-sizing: border-box;
@@ -441,14 +479,3 @@ button:active{
     
     
 }
-
-
-
-
-
-
-
-
-
-
-

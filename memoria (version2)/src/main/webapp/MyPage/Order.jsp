@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="cart.CartListDTO"%>
+<%@page import="cart.CartDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +11,12 @@
 <title>Order Details</title>
 </head>
 <body>
+	<%
+	String email = (String) session.getAttribute("user");
+	ArrayList<CartListDTO> list = new ArrayList<CartListDTO>();
+	CartDAO dao = new CartDAO();
+	list = dao.cartSelect(email);
+	%>
 	<!-- 공통 상단메뉴-->
 	<jsp:include page="../header/Header.jsp" />
 
@@ -16,12 +25,12 @@
 		<div class="nav-bar">
 			<p class="nav-myPage">마이페이지</p>
 			<p class="logout">
-				<a href="#">로그아웃</a>
+				<p class="logout"><a href="process/Logout.jsp">로그아웃</a></p>
 			</p>
 			<ul class="nav-ul">
-				<li class="nav-li"><a href="#회원정보">회원 정보</a></li>
-				<li class="nav-li"><a href="#배송주소정보">배송 정보</a></li>
-				<li class="nav-li"><a href="#주문내역">주문 내역</a></li>
+				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
+				<li class="nav-li"><a href="Delivery.jsp">배송 정보</a></li>
+				<li class="nav-li"><a href="Order.jsp">주문 내역</a></li>
 				<li class="nav-li"><a href="#관심상품">관심 상품</a></li>
 			</ul>
 		</div>
@@ -32,8 +41,10 @@
 		<div class="order-content">
 			<h3 class="order-total">주문전체보기</h3>
 			<!-- 여기만 바꾸시오. -->
+			<%if(list == null) { %>
 			<p>고객님의 주문내역이 없습니다.</p>
 			<button class="order-btn">쇼핑계속하기</button>
+			<%}else { %>
 
 			<!-- 주문내역 있을 때 -->
 			<div class="p-box">
@@ -51,7 +62,8 @@
 								<li><span class="date">2023.10.19</span></li>
 								<li><span class="orderNumber">2202110543</span></li>
 							</div>
-							<li><img class="product-img1" src="../image2/장미_5x5.jpg" alt="상품이미지"></li>
+							<li><img class="product-img1" src="../image2/장미_5x5.jpg"
+								alt="상품이미지"></li>
 							<div class="name">
 								<li><span class="product-KName">한국이름</span></li>
 								<li><span class="product-EName">영어이름</span></li>
@@ -66,6 +78,7 @@
 					</div>
 				</div>
 			</div>
+			<%}; %>
 		</div>
 	</section>
 </body>
