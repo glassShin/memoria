@@ -67,14 +67,17 @@
                     </tr>
                     <tr>
                         <th>재고</th>
-                            <td>
-                                <ul>
-                                    <li><input type="text" class="md-stock"  placeholder="ml입력" disabled></li>
-         
-                                </ul>
-                            </td>   
-                        <td><button type="button"  class="stock-reset">수정하기</button></td>
+                            <td><input type="text" class="md-stock" disabled></td>   
+                        	<td><button type="button"  class="stock-reset">수정하기</button></td>
                     </tr>
+                    
+                    
+                    <tr>
+                        <th>ML</th>
+                        <td><input type="text" class="md-ml"  placeholder="ml입력" disabled></td>
+                        <td><button type="button"  class="ml-reset">수정하기</button></td>
+                    </tr>
+                
                     <tr>
                         <th>브랜드</th>
                         <td><input type="text" class="md-brand" disabled></td>
@@ -100,12 +103,6 @@
                         <td><input type="text" class="md-base" disabled></td>
                         <td><button type="button"  class="base-reset">수정하기</button></td>
                     </tr>
-
-                    <tr>
-                        <th>이미지</th>
-                        <td><input type="file" class="md-file"></td>
-                    </tr>
-                
                 </table>
 
                 <div class="btn-group">
@@ -272,6 +269,22 @@
             }
             else if(stkCount%2==1){
                 stkInput.disabled = true;
+            }
+        })
+        
+        
+         //재고
+        let mlCount=1;
+        let mlInput = document.querySelector('.md-ml');
+        let mlReset = document.querySelector('.ml-reset');
+
+        mlReset.addEventListener('click',function(){
+            mlCount++;
+            if(mlCount%2==0){
+                mlInput.disabled = false;
+            }
+            else if(mlCount%2==1){
+                mlInput.disabled = true;
             }
         })
 
