@@ -11,16 +11,16 @@
 <title>Cart</title>
 </head>
 <body>
-			<script src="Cart.js"></script>
+	<script src="Cart.js"></script>
 	<header>
 		<%@include file="../../header/Header.jsp"%>
 	</header>
 	<%
-	String email = (String)session.getAttribute("user");
+	String email = (String) session.getAttribute("user");
 	CartDAO dao = new CartDAO();
 	ArrayList<CartListDTO> list = dao.cartSelect(email);
 	%>
-	
+
 
 	<div id="positionset">
 		<div id="udpatepopup">
@@ -28,7 +28,6 @@
 				height="330px"></iframe>
 		</div>
 	</div>
-
 
 	<main>
 		<div class="p-box">
@@ -57,9 +56,11 @@
 						</div>
 						<li><span class="price"><%=dto.getPrice()%></span></li>
 						<li><span class="stock"><%=dto.getCnt()%></span></li>
-						<li><button id = "optionUpdate"class="optionUpdate" onclick="openpopup('<%=dto.getProductid()%>','<%=dto.getCnt()%>','<%=dto.getCartid()%>')">옵션수정</button></li>
+						<li><button id="optionUpdate" class="optionUpdate"
+								onclick="openpopup('<%=dto.getProductid()%>','<%=dto.getCnt()%>','<%=dto.getCartid()%>')">옵션수정</button></li>
 						<li><span class="total"><%=dto.getPrice() * dto.getCnt()%></span></li>
-						<div class="close close-x" onclick="location.href='process/CartdeleteProcess.jsp?pid=<%=dto.getCartid()%>'"></div>
+						<div class="close close-x"
+							onclick="location.href='process/CartdeleteProcess.jsp?pid=<%=dto.getCartid()%>'"></div>
 					</ul>
 					<%
 					}
@@ -70,25 +71,23 @@
 			<aside class="payGroup pgroup">
 				<div class="sticky-block">
 					<p class="order-product">주문 상품</p>
-						<ul class="payGroup-ul p__ul">
-							<li>상품금액<span id="p_price"><%=total %></span></li>
-							<li>배송비 <span>3000</span></li>
-						</ul>
+					<ul class="payGroup-ul p__ul">
+						<li>상품금액<span id="p_price"><%=total%></span></li>
+						<li>배송비 <span>3000</span></li>
+					</ul>
 
-						<div class="total-output">
-							<p class="total-pay">
-								총결제금액 <span id="total"><%=total + 3000 %></span>
-							</p>
-							<input type="button" class="total-btn" value="결제" onclick="location.href='Payment.jsp'">
-						</div>
+					<div class="total-output">
+						<p class="total-pay">
+							총결제금액 <span id="total"><%=total + 3000%></span>
+						</p>
+						<input type="button" class="total-btn" value="결제"
+							onclick="location.href='Payment.jsp'">
+					</div>
 					</form>
-
 				</div>
 			</aside>
-
 		</div>
 	</main>
-
 	<div class="footer-all">
 		<%@include file="../../Footer/Footer.jsp"%>
 	</div>

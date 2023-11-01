@@ -65,8 +65,8 @@ String title = list.size() > 1 ? title = list.get(0).getName() + " 외 " + (list
             int total = 0;
             
             for(CartListDTO dto : list) {
-               total += dto.getPrice() * dto.getCnt();
-               %>
+            	total += dto.getPrice() * dto.getCnt();
+            	%>
             <div class="innerList">
             <ul class="paymentList-ul">
                <li><img class="product-img1" src="../image2/장미_5x5.jpg" alt="상품이미지"></li>

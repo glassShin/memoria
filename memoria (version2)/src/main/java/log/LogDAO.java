@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import common.JDBCConnect;
+import member.MemberDAO;
+import member.MemberDTO;
 
 public class LogDAO  extends JDBCConnect{
 	PreparedStatement psmt = null;
@@ -27,6 +29,25 @@ public class LogDAO  extends JDBCConnect{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	
+	public String recommendcate(String email) {
+		String result = null;
+		String sql = "select scentid,count(*)as '조회수' from product join log on product.productid = log.productid where memberemail=?"
+				+ " group by scentid ORDER BY COUNT(*) DESC";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, email);
+			psmt.executeQuery();
+			if(rs.next()) {
+				result = rs.getString(1);
+			}else {
+				result = new MemberDAO().checkcate(email);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

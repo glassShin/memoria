@@ -248,6 +248,25 @@ public class MemberDAO extends JDBCConnect{
     	
     }
     
+    public String checkcate(String email) {
+    	String type = null;
+    	String sql = "select category from member where memberemail="+email;
+    	try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				type = rs.getString(1);
+			}else {
+				type="고급스러운";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return type;
+    }
+    
     
     
 public List<MemberDTO> selectUserinfo(Map<String, Object> map) {

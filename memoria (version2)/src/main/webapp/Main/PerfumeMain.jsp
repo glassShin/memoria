@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="product.ProductDAO"%>
+<%@page import="product.ProductDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +18,17 @@
 <body>
        <!-- 공통 상단메뉴-->
    <jsp:include page="../header/Header.jsp" />
+<%
+ProductDAO dao = new ProductDAO();
+ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
+String user = (String)session.getAttribute("user");
+if(user == null) {
+	list = dao.recommendlist("고급스러운");
+}else {
+	list = dao.recommendlist(user);
+}
 
+%>
  
    <main>
 
@@ -46,62 +59,15 @@
                <!-- <h1 class="multiple-items-h1">추천향수</h1> -->
             <div class="recommend-area"> 
                 <div class="multiple-items">
+                <%for(ProductDTO dto : list) {%>
                     <div class="slide-item">
                         <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
+                        <h3 class="E-name"><%=dto.getP_ename() %></h3>
+                        <h4 class="K-name"><%=dto.getP_kname() %></h4>
+                        <span class="price"><%=dto.getP_price() %></span>
+                        <button type="button" class="card-btn" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">상품보기</button>
                     </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
-                    <div class="slide-item">
-                        <img src=""  alt="테스트">
-                        <h3 class="E-name">English name</h3>
-                        <h4 class="K-name">향수이름</h4>
-                        <span class="price">₩200,000</span>
-                        <span class="ml">100ml</span>
-                        <button type="button" class="card-btn">상품보기</button>
-                    </div>
+                    <%} %>
                 </div> 
             </div>
           

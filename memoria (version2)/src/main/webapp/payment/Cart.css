@@ -23,10 +23,6 @@ main{
 
 /*productList & payGroup공통 속성  */
 .pgroup{
-   /* float:left; */
-   /* margin:0 auto; */
-   /* position: relative; */
-   /* transform: translate(30%,0%); */
    display: flex;
    justify-content: space-between;
    flex-direction: row;
@@ -43,6 +39,8 @@ main{
    height : 30px;
    padding: 10px;   
    list-style : none;
+   display: flex; /* 요소들을 가로로 나란히 배치 */
+   justify-content: space-between; 
    border-bottom: 1px solid lightgray;
 }
 
@@ -55,7 +53,7 @@ main{
 }
 
 .basket-header > li.header-price {
-   margin-left : 120px;
+   margin-left : 160px;
 }
 
 /* 게제상품 리스트 */
@@ -63,7 +61,7 @@ main{
   display:inline-block;
   /* flex:1; */
   position: relative;
-  width: 700px;
+  width: 750px;
   /* height:100%; */
   box-sizing: border-box;
   border-bottom:2px solid #565c46;
@@ -81,7 +79,6 @@ main{
 .innerList {
    width: 700px;
    height: 100%;
-/*    transform: translate(2%, 0%); */   
    padding: 10px;
    margin-bottom: 2%;
 }
@@ -122,12 +119,16 @@ main{
    text-decoration: underline;
 }
 
+.paymentList-ul > li >.optionUpdate {
+	margin-right: 50px;
+}
+
 /*상품 삭제*/
 .close{
 	position: relative;
 	float: right;
 	display: inline-block;
-	bottom: 70px;
+	bottom: 60px;
 	left: 10px;
 }
 .close-x:after{
@@ -141,14 +142,16 @@ main{
    display: block;
    text-align: center;
    margin: 0 20px 0;
+   width: 120px;
 }
 
 .paymentList-ul > li > span{
-   margin: 0 50px 0 30px;
+   margin: 0 45px 0 30px;
 }
 
 .paymentList-ul > li > button {
-   margin-left : 65px;
+   margin-left : 50px;
+   width: 70px;
 }
 
 .paymentList-ul > li > img {
@@ -166,7 +169,6 @@ main{
    box-sizing: border-box;
    margin-left: 2%;
    height: 100%;
-   box-sizing: border-box;
 }
 
 /* 결제금액  div */

@@ -1,404 +1,390 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@page import="product.ProductDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="product.ProductDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="newProduct.css">
-<title>»óÇ°°ü¸®</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="newProduct.css"/>
+<script src="newProduct.js"></script>
+<title>ìƒí’ˆê´€ë¦¬</title>
 </head>
 <body>
-		    <main>
-        <nav class="sidebar">
-            <ul>
-                <li><a href="/management_modify/customerFolder/customer-manage.html">°í°´ °ü¸®</a></li>
-                <li><a href="/management_modify/productFolder/product-manage.html">»óÇ° °ü¸®</a></li>
-                <li><a href="">»çÀÌÆ® °ü¸®</a></li>
-            </ul>
-        </nav>
+	<% ProductDAO dao = new ProductDAO();
 
-        <div class="manager-section">
-            <p>»óÇ° °ü¸®</p>
-            <div class="customer-search">
-                <select name="customer-select">
-                    <option value="none">¼±ÅÃ</option>
-                    <option value="none">¼±ÅÃ</option>
-                    <option value="none">¼±ÅÃ</option>
-                    <option value="none">¼±ÅÃ</option>
-                    <option value="none">¼±ÅÃ</option>
-                </select>
-                <input type="text" placeholder="°Ë»ö">
-                <button type="button">Á¶È¸ÇÏ±â</button>   
-            </div>
+Map<String,Object> param = new HashMap<String,Object>();
 
-        <div class="modal-bg">
-            <div class="modal">
-                <h3>»óÇ° Á¤º¸ ¼öÁ¤</h3>
-                <div class="exitBtn">
-                    <img src="../image2/exitBtn.png">
-                </div>
-            
-                <!-- <div class="customer-img">
+String searchField = request.getParameter("searchField");
+String searchWord = request.getParameter("searchWord");
+if (searchWord != null) {
+	 param.put("searchField",searchField);
+	 param.put("searchWord", searchWord);
+}
+
+int totalCount = dao.productCount(param);
+List<ProductDTO> productList = dao.selectProductInfo(param);
+dao.close();
+%>
+	<main>
+		<nav class="sidebar">
+			<ul>
+				<li><a
+					href="newCustomer.jsp">ê³ ê°
+						ê´€ë¦¬</a></li>
+				<li><a
+					href="newProduct.jsp">ìƒí’ˆ
+						ê´€ë¦¬</a></li>
+			</ul>
+		</nav>
+
+		<div class="manager-section">
+			<p>ìƒí’ˆ ê´€ë¦¬</p>
+			<div class="customer-search">
+				<select name="customer-select">
+					<option value="none">ì„ íƒ</option>
+					<option value="none">ì„ íƒ</option>
+					<option value="none">ì„ íƒ</option>
+					<option value="none">ì„ íƒ</option>
+					<option value="none">ì„ íƒ</option>
+				</select> <input type="text" placeholder="ê²€ìƒ‰">
+				<button type="button">ì¡°íšŒí•˜ê¸°</button>
+			</div>
+
+			<div class="modal-bg">
+				<div class="modal">
+					<h3>ìƒí’ˆ ì •ë³´ ìˆ˜ì •</h3>
+					<div class="exitBtn">
+						<img src="../image2/exitBtn.png">
+					</div>
+
+					<!-- <div class="customer-img">
                     <img src="/management_modify/imgFolder/customer.png">
                 </div>
                  -->
-                <table>
-                    <tr>
-                        <th>Á¦Ç°ÀÌ¸§</th>
-                        <td><input type="text" class="md-product" disabled></td>
-                        <td><button type="button"  class="product-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>¿µ¹®ÀÌ¸§</th>
-                        <td><input type="text" class="md-eng" disabled></td>
-                        <td><button type="button"  class="eng-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>ÇÑ±ÛÀÌ¸§</th>
-                        <td><input type="text" class="md-kr" disabled></td>
-                        <td><button type="button"  class="kr-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>°¡°İ</th>
-                        <td><input type="text" class="md-price" disabled></td>
-                        <td><button type="button"  class="price-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>Àç°í</th>
-                            <td><input type="text" class="md-stock" disabled></td>   
-                        	<td><button type="button"  class="stock-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    
-                    
-                    <tr>
-                        <th>ML</th>
-                        <td><input type="text" class="md-ml"  placeholder="mlÀÔ·Â" disabled></td>
-                        <td><button type="button"  class="ml-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                
-                    <tr>
-                        <th>ºê·£µå</th>
-                        <td><input type="text" class="md-brand" disabled></td>
-                        <td><button type="button"  class="brand-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>Çâ</th>
-                        <td><input type="text" class="md-scent" disabled></td>
-                        <td><button type="button"  class="scent-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>Å¾</th>
-                        <td><input type="text" class="md-top" disabled></td>
-                        <td><button type="button"  class="top-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>¹Ìµé</th>
-                        <td><input type="text" class="md-middle" disabled></td>
-                        <td><button type="button"  class="middle-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                    <tr>
-                        <th>º£ÀÌ½º</th>
-                        <td><input type="text" class="md-base" disabled></td>
-                        <td><button type="button"  class="base-reset">¼öÁ¤ÇÏ±â</button></td>
-                    </tr>
-                </table>
-
-                <div class="btn-group">
-                    <button type="button" class="cancle-btn">Ãë¼Ò</button>
-                    <button type="button" class="confirm-btn">È®ÀÎ</button>
-                </div>
-            </div>
-        </div>    
-
-            <div class="customer-tb">
-                <table>
-                    <thead>
-                        <tr>
-                            <th><button type="button" class="customer-delete">»èÁ¦</button></th>
-                            <th>Á¦Ç°ÀÌ¸§</th>
-                            <th>¿µ¹®ÀÌ¸§</th>
-                            <th>ÇÑ±ÛÀÌ¸§</th>
-                            <th>°¡°İ</th>
-                            <th>Àç°í</th>
-                            <th>ºê·£µå</th>
-                            <th>Çâ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox" name="customer-chk"></td>
-                            <td class="product-name">flower-ode</td>
-                            <td class="eng-name">roes</td>
-                            <td class="kr-name">Àå¹Ì</td>
-                            <td class="pd-price">10,000</td>
-                            <td class="pd-brand">Á¶¸»¶û</td>
-                            <td class="pd-scent">Àå¹ÌÇâ</td>
-                            <td><button type=button class="info-rewrite">Á¤º¸¼öÁ¤</button></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="customer-chk"></td>
-                            <td class="product-name">Å×½ºÆ®1</td>
-                            <td class="eng-name">Å×½ºÆ®2</td>
-                            <td class="kr-name">Å×½ºÆ®3</td>
-                            <td class="pd-price">Å×½ºÆ®4</td>
-                            <td class="pd-brand">Å×½ºÆ®5</td>
-                            <td class="pd-scent">Å×½ºÆ®5</td>
-                            <td><button type=button class="info-rewrite">Á¤º¸¼öÁ¤</button></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="customer-chk"></td>
-                            <td class="product-name">Å×½ºÆ®1</td>
-                            <td class="eng-name">Å×½ºÆ®2</td>
-                            <td class="kr-name">Å×½ºÆ®3</td>
-                            <td class="pd-price">Å×½ºÆ®4</td>
-                            <td class="pd-brand">Å×½ºÆ®5</td>
-                            <td class="pd-scent">Å×½ºÆ®5</td>
-                            <td><button type=button class="info-rewrite">Á¤º¸¼öÁ¤</button></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="customer-chk"></td>
-                            <td class="product-name">Å×½ºÆ®1</td>
-                            <td class="eng-name">Å×½ºÆ®2</td>
-                            <td class="kr-name">Å×½ºÆ®3</td>
-                            <td class="pd-price">Å×½ºÆ®4</td>
-                            <td class="pd-brand">Å×½ºÆ®5</td>
-                            <td class="pd-scent">Å×½ºÆ®5</td>
-                            <td><button type=button class="info-rewrite">Á¤º¸¼öÁ¤</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </main> 
+					<table>
+						<tr>
+							<th>ì œí’ˆì´ë¦„</th>
+							<td><input type="text" class="md-product" disabled></td>
+							<td><button type="button" class="product-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>ì˜ë¬¸ì´ë¦„</th>
+							<td><input type="text" class="md-eng" disabled></td>
+							<td><button type="button" class="eng-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>í•œê¸€ì´ë¦„</th>
+							<td><input type="text" class="md-kr" disabled></td>
+							<td><button type="button" class="kr-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>ê°€ê²©</th>
+							<td><input type="text" class="md-price" disabled></td>
+							<td><button type="button" class="price-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>ì¬ê³ </th>
+							<td><input type="text" class="md-stock" disabled></td>
+							<td><button type="button" class="stock-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
 
 
+						<tr>
+							<th>ML</th>
+							<td><input type="text" class="md-ml" placeholder="mlì…ë ¥"
+								disabled></td>
+							<td><button type="button" class="ml-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
 
-    
-    <script>
+						<tr>
+							<th>ë¸Œëœë“œ</th>
+							<td><input type="text" class="md-brand" disabled></td>
+							<td><button type="button" class="brand-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>í–¥</th>
+							<td><input type="text" class="md-scent" disabled></td>
+							<td><button type="button" class="scent-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>íƒ‘</th>
+							<td><input type="text" class="md-top" disabled></td>
+							<td><button type="button" class="top-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>ë¯¸ë“¤</th>
+							<td><input type="text" class="md-middle" disabled></td>
+							<td><button type="button" class="middle-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+						<tr>
+							<th>ë² ì´ìŠ¤</th>
+							<td><input type="text" class="md-base" disabled></td>
+							<td><button type="button" class="base-reset">ìˆ˜ì •í•˜ê¸°</button></td>
+						</tr>
+					</table>
 
-        //¸ğ´ŞÃ¢ ¿­±â
-        let infoRewrite = $('.info-rewrite');
-        let modalBg = $('.modal-bg');
-        
-            for(let i=0; i < infoRewrite.length; i++){
-                infoRewrite.eq(i).on('click',function(){
-                    modalBg.addClass('show-modal');
-                })
-            }
+					<div class="btn-group">
+						<button type="button" class="cancle-btn">ì·¨ì†Œ</button>
+						<button type="button" class="confirm-btn">í™•ì¸</button>
+					</div>
+				</div>
+			</div>
 
-        //¸ğ´ŞÃ¢ ´İ±â
-        document.querySelector('.exitBtn').addEventListener('click',function(){
-            document.querySelector('.modal-bg').classList.remove('show-modal');
-        })
-        
-        // Á¦Ç°ÀÌ¸§ ¼öÁ¤
-        let prdCount=1;
-        let prdInput = document.querySelector('.md-product');
-        let prdReset = document.querySelector('.product-reset');
+			<div class="customer-tb">
+				<table>
+					<thead>
+						<tr>
+							<th><button type="button" class="customer-delete">ì‚­ì œ</button></th>
+							<th>ì œí’ˆì´ë¦„</th>
+							<th>ì˜ë¬¸ì´ë¦„</th>
+							<th>í•œê¸€ì´ë¦„</th>
+							<th>ê°€ê²©</th>
+							<th>ë¸Œëœë“œ</th>
+							<th>í–¥</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%if (productList.isEmpty()) {%>
+						<h2>ë“±ë¡ëœ ìƒí’ˆì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.</h2>
+						<%} else {
+							int virtualNum = 1;
+							
+							for(ProductDTO dto : productList) {
+						%>
+						<tr>
+							<td><input type="checkbox" name="customer-chk"></td>
+							<td class="product-name"><%=dto.getP_id() %></td>
+							<td class="eng-name"><%=dto.getP_ename() %></td>
+							<td class="kr-name"><%=dto.getP_kname() %></td>
+							<td class="pd-price"><%=dto.getP_price() %></td>
+							<td class="pd-brand"><%=dto.getP_brand() %></td>
+							<td class="pd-scent"><%=dto.getScentid() %></td>
+							<td><button type=button class="info-rewrite">ì •ë³´ìˆ˜ì •</button></td>
+						</tr>
+						<%}} %>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
 
-        prdReset.addEventListener('click',function(){
-            prdCount++;
-            if(prdCount%2==0){
-                prdInput.disabled = false;
-            }
-            else if(prdCount%2==1){
-                prdInput.disabled = true;
-            }
-        })
-
-
-
-        //¿µ¹®ÀÌ¸§
-        let engCount=1;
-        let engInput = document.querySelector('.md-eng');
-        let engReset = document.querySelector('.eng-reset');
-
-        engReset.addEventListener('click',function(){
-            engCount++;
-            if(engCount%2==0){
-                engInput.disabled = false;
-            }
-            else if(engCount%2==1){
-                engInput.disabled = true;
-            }
-        })
-
-        
-        //ÇÑ±ÛÀÌ¸§
-        let krCount=1;
-        let krInput = document.querySelector('.md-kr');
-        let krReset = document.querySelector('.kr-reset');
-
-        krReset.addEventListener('click',function(){
-            krCount++;
-            if(krCount%2==0){
-                krInput.disabled = false;
-            }
-            else if(krCount%2==1){
-                krInput.disabled = true;
-            }
-        })
-
-         //°¡°İ
-        let prCount=1;
-        let prInput = document.querySelector('.md-price');
-        let prReset = document.querySelector('.price-reset');
-
-        prReset.addEventListener('click',function(){
-            prCount++;
-            if(prCount%2==0){
-                prInput.disabled = false;
-            }
-            else if(prCount%2==1){
-                prInput.disabled = true;
-            }
-        })
-
-        //Àç°í
-        let stkCount=1;
-        let stkInput = document.querySelector('.md-stock');
-        let stkReset = document.querySelector('.stock-reset');
-
-        stkReset.addEventListener('click',function(){
-            stkCount++;
-            if(stkCount%2==0){
-                stkInput.disabled = false;
-            }
-            else if(stkCount%2==1){
-                stkInput.disabled = true;
-            }
-        })
-        
-        
-         //Àç°í
-        let mlCount=1;
-        let mlInput = document.querySelector('.md-ml');
-        let mlReset = document.querySelector('.ml-reset');
-
-        mlReset.addEventListener('click',function(){
-            mlCount++;
-            if(mlCount%2==0){
-                mlInput.disabled = false;
-            }
-            else if(mlCount%2==1){
-                mlInput.disabled = true;
-            }
-        })
-
-         //ºê·£µå
-        let brdCount=1;
-        let brdInput = document.querySelector('.md-brand');
-        let brdReset = document.querySelector('.brand-reset');
-
-        brdReset.addEventListener('click',function(){
-            brdCount++;
-            if(brdCount%2==0){
-                brdInput.disabled = false;
-            }
-            else if(brdCount%2==1){
-                brdInput.disabled = true;
-            }
-        })
-
-        //Çâ
-        let scCount=1;
-        let scInput = document.querySelector('.md-scent');
-        let scReset = document.querySelector('.scent-reset');
-
-        scReset.addEventListener('click',function(){
-            scCount++;
-            if(scCount%2==0){
-                scInput.disabled = false;
-            }
-            else if(scCount%2==1){
-                scInput.disabled = true;
-            }
-        })
-
-        //Å¾
-        let topCount=1;
-        let topInput = document.querySelector('.md-top');
-        let topReset = document.querySelector('.top-reset');
-
-        topReset.addEventListener('click',function(){
-            topCount++;
-            if(topCount%2==0){
-                topInput.disabled = false;
-            }
-            else if(topCount%2==1){
-                topInput.disabled = true;
-            }
-        })
-
-        //¹Ìµé
-        let midCount=1;
-        let midInput = document.querySelector('.md-middle');
-        let midReset = document.querySelector('.middle-reset');
-
-        midReset.addEventListener('click',function(){
-            midCount++;
-            if(midCount%2==0){
-                midInput.disabled = false;
-            }
-            else if(midCount%2==1){
-                midInput.disabled = true;
-            }
-        })
-
-        //º£ÀÌ½º
-        let bsCount=1;
-        let bsInput = document.querySelector('.md-base');
-        let bsReset = document.querySelector('.base-reset');
-
-        bsReset.addEventListener('click',function(){
-            bsCount++;
-            if(bsCount%2==0){
-                bsInput.disabled = false;
-            }
-            else if(bsCount%2==1){
-                bsInput.disabled = true;
-            }
-        })
+	</main>
 
 
 
 
-        // input ¸®¼Â
-        let cancle = document.querySelector('.cancle-btn');
-        let pdNull = document.querySelector('.md-product');
-        let engNull = document.querySelector('.md-eng');
-        let krNull = document.querySelector('.md-kr');
-        let prNull = document.querySelector('.md-price');
-        let stkNull = document.querySelector('.md-stock');
-        let brdNull = document.querySelector('.md-brand');
-        let scNull = document.querySelector('.md-scent');
-        let topNull = document.querySelector('.md-top');
-        let midNull = document.querySelector('.md-middle');
-        let bsNull = document.querySelector('.md-base');
+	<script>
+		//ëª¨ë‹¬ì°½ ì—´ê¸°
+		let infoRewrite = $('.info-rewrite');
+		let modalBg = $('.modal-bg');
 
-        cancle.addEventListener('click',function(){
-         pdNull.value = null;
-         engNull.value = null;
-         krNull.value = null;
-         prNull.value = null;
-         stkNull.value = null;
-         brdNull.value = null;
-         scNull.value = null;
-         topNull.value = null;
-         midNull.value = null;    
-         bsNull.value = null;
-        })
-        
-        let conFirm = document.querySelector('.confirm-btn');
+		for (let i = 0; i < infoRewrite.length; i++) {
+			infoRewrite.eq(i).on('click', function() {
+				modalBg.addClass('show-modal');
+			})
+		}
 
-            conFirm.addEventListener('click',function(){
-                alert('¼öÁ¤µÇ¾ú½À´Ï´Ù.');
-        })
-        
-    </script>
-		
+		//ëª¨ë‹¬ì°½ ë‹«ê¸°
+		document.querySelector('.exitBtn').addEventListener(
+				'click',
+				function() {
+					document.querySelector('.modal-bg').classList
+							.remove('show-modal');
+				})
+
+		// ì œí’ˆì´ë¦„ ìˆ˜ì •
+		let prdCount = 1;
+		let prdInput = document.querySelector('.md-product');
+		let prdReset = document.querySelector('.product-reset');
+
+		prdReset.addEventListener('click', function() {
+			prdCount++;
+			if (prdCount % 2 == 0) {
+				prdInput.disabled = false;
+			} else if (prdCount % 2 == 1) {
+				prdInput.disabled = true;
+			}
+		})
+
+		//ì˜ë¬¸ì´ë¦„
+		let engCount = 1;
+		let engInput = document.querySelector('.md-eng');
+		let engReset = document.querySelector('.eng-reset');
+
+		engReset.addEventListener('click', function() {
+			engCount++;
+			if (engCount % 2 == 0) {
+				engInput.disabled = false;
+			} else if (engCount % 2 == 1) {
+				engInput.disabled = true;
+			}
+		})
+
+		//í•œê¸€ì´ë¦„
+		let krCount = 1;
+		let krInput = document.querySelector('.md-kr');
+		let krReset = document.querySelector('.kr-reset');
+
+		krReset.addEventListener('click', function() {
+			krCount++;
+			if (krCount % 2 == 0) {
+				krInput.disabled = false;
+			} else if (krCount % 2 == 1) {
+				krInput.disabled = true;
+			}
+		})
+
+		//ê°€ê²©
+		let prCount = 1;
+		let prInput = document.querySelector('.md-price');
+		let prReset = document.querySelector('.price-reset');
+
+		prReset.addEventListener('click', function() {
+			prCount++;
+			if (prCount % 2 == 0) {
+				prInput.disabled = false;
+			} else if (prCount % 2 == 1) {
+				prInput.disabled = true;
+			}
+		})
+
+		//ì¬ê³ 
+		let stkCount = 1;
+		let stkInput = document.querySelector('.md-stock');
+		let stkReset = document.querySelector('.stock-reset');
+
+		stkReset.addEventListener('click', function() {
+			stkCount++;
+			if (stkCount % 2 == 0) {
+				stkInput.disabled = false;
+			} else if (stkCount % 2 == 1) {
+				stkInput.disabled = true;
+			}
+		})
+
+		//ì¬ê³ 
+		let mlCount = 1;
+		let mlInput = document.querySelector('.md-ml');
+		let mlReset = document.querySelector('.ml-reset');
+
+		mlReset.addEventListener('click', function() {
+			mlCount++;
+			if (mlCount % 2 == 0) {
+				mlInput.disabled = false;
+			} else if (mlCount % 2 == 1) {
+				mlInput.disabled = true;
+			}
+		})
+
+		//ë¸Œëœë“œ
+		let brdCount = 1;
+		let brdInput = document.querySelector('.md-brand');
+		let brdReset = document.querySelector('.brand-reset');
+
+		brdReset.addEventListener('click', function() {
+			brdCount++;
+			if (brdCount % 2 == 0) {
+				brdInput.disabled = false;
+			} else if (brdCount % 2 == 1) {
+				brdInput.disabled = true;
+			}
+		})
+
+		//í–¥
+		let scCount = 1;
+		let scInput = document.querySelector('.md-scent');
+		let scReset = document.querySelector('.scent-reset');
+
+		scReset.addEventListener('click', function() {
+			scCount++;
+			if (scCount % 2 == 0) {
+				scInput.disabled = false;
+			} else if (scCount % 2 == 1) {
+				scInput.disabled = true;
+			}
+		})
+
+		//íƒ‘
+		let topCount = 1;
+		let topInput = document.querySelector('.md-top');
+		let topReset = document.querySelector('.top-reset');
+
+		topReset.addEventListener('click', function() {
+			topCount++;
+			if (topCount % 2 == 0) {
+				topInput.disabled = false;
+			} else if (topCount % 2 == 1) {
+				topInput.disabled = true;
+			}
+		})
+
+		//ë¯¸ë“¤
+		let midCount = 1;
+		let midInput = document.querySelector('.md-middle');
+		let midReset = document.querySelector('.middle-reset');
+
+		midReset.addEventListener('click', function() {
+			midCount++;
+			if (midCount % 2 == 0) {
+				midInput.disabled = false;
+			} else if (midCount % 2 == 1) {
+				midInput.disabled = true;
+			}
+		})
+
+		//ë² ì´ìŠ¤
+		let bsCount = 1;
+		let bsInput = document.querySelector('.md-base');
+		let bsReset = document.querySelector('.base-reset');
+
+		bsReset.addEventListener('click', function() {
+			bsCount++;
+			if (bsCount % 2 == 0) {
+				bsInput.disabled = false;
+			} else if (bsCount % 2 == 1) {
+				bsInput.disabled = true;
+			}
+		})
+
+		// input ë¦¬ì…‹
+		let cancle = document.querySelector('.cancle-btn');
+		let pdNull = document.querySelector('.md-product');
+		let engNull = document.querySelector('.md-eng');
+		let krNull = document.querySelector('.md-kr');
+		let prNull = document.querySelector('.md-price');
+		let stkNull = document.querySelector('.md-stock');
+		let brdNull = document.querySelector('.md-brand');
+		let scNull = document.querySelector('.md-scent');
+		let topNull = document.querySelector('.md-top');
+		let midNull = document.querySelector('.md-middle');
+		let bsNull = document.querySelector('.md-base');
+
+		cancle.addEventListener('click', function() {
+			pdNull.value = null;
+			engNull.value = null;
+			krNull.value = null;
+			prNull.value = null;
+			stkNull.value = null;
+			brdNull.value = null;
+			scNull.value = null;
+			topNull.value = null;
+			midNull.value = null;
+			bsNull.value = null;
+		})
+
+		let conFirm = document.querySelector('.confirm-btn');
+
+		conFirm.addEventListener('click', function() {
+			alert('ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.');
+		})
+	</script>
+
 </body>
 </html>

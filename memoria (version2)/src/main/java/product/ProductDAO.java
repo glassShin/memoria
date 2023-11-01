@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 import common.JDBCConnect;
+import log.LogDAO;
 
 public class ProductDAO extends JDBCConnect{
 	PreparedStatement psmt = null;
@@ -160,7 +161,7 @@ public class ProductDAO extends JDBCConnect{
 
     	int totalcount = 0;
     	
-    	String query = "select count(*) from member";
+    	String query = "select count(*) from product";
     	
     	try {
     		stmt = con.createStatement();
@@ -175,14 +176,95 @@ public class ProductDAO extends JDBCConnect{
     	
     }
 	
-    
-    
-    
+	public List<ProductDTO> recommendmainList(String email) {
+		List<ProductDTO> list = new ArrayList<ProductDTO>();
+		String type = new LogDAO().recommendcate(email);
+		String sql = "select * from product where productml='50ml' and type="+type;
+		try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				ProductDTO dto = new ProductDTO();
+				dto.setP_id(rs.getString(1));
+				dto.setP_kname(rs.getString(2));
+				dto.setP_ename(rs.getString(3));
+				dto.setP_price(rs.getInt(4));
+				dto.setP_stock(rs.getInt(5));
+				dto.setP_brand(rs.getString(6));
+				dto.setScentid(rs.getString(7));
+				dto.setType(rs.getString(8));
+				dto.setImage(rs.getString(9));
+				dto.setTop(rs.getString(10));
+				dto.setMid(rs.getString(11));
+				dto.setBase(rs.getString(12));
+				dto.setInfomation(rs.getString(13));
+				dto.setP_ml(rs.getString(14));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public boolean addDIYProduct(ProductDTO dto) {
+	      String sql = "insert into product values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	      
+	      try {
+	         psmt = con.prepareStatement(sql);
+	         psmt.setString(1, dto.getP_id());
+	         psmt.setString(2, dto.getP_kname());
+	         psmt.setString(3, dto.getP_ename());
+	         psmt.setInt(4, dto.getP_price());
+	         psmt.setInt(5, dto.getP_stock());
+	         psmt.setString(6, dto.getP_brand());
+	         psmt.setString(7, dto.getScentid());
+	         psmt.setString(8, dto.getP_ml());
+	         psmt.setString(9, dto.getType());
+	         psmt.setString(10, dto.getImage());
+	         psmt.setString(11, dto.getTop());
+	         psmt.setString(12, dto.getMid());
+	         psmt.setString(13, dto.getBase());
+	         psmt.setString(14, dto.getInfomation());
+	         int rowsAffected = psmt.executeUpdate();
+	         return rowsAffected > 0;
+	         
+	         
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }
+	      return false;
+	   }
+	
+	public String findType(String scent) {
+	      String type="";
+	      String sql = "select category from scent where scentid = ?" ;
+	      
+	      try {
+	         psmt = con.prepareStatement(sql);
+	         psmt.setString(1, scent);
+	         rs=psmt.executeQuery();
+	         while(rs.next()) {
+	            type = rs.getString(1);
+	         }
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      }
+	      
+	      
+	      return type;
+	   }
+
+	
 	public List<ProductDTO> selectProductInfo(Map<String, Object> map) {
     	
     	List<ProductDTO> bbs = new Vector<ProductDTO>();
     	
-    	String query = "SELECT * FROM product";
+    	String query = "SELECT * FROM product where productml='50ml'";
     	if (map.get("searchWord") != null) {
     	    query += " WHERE " + map.get("searchField") + " LIKE '%" + map.get("searchWord") + "%'";
     	}

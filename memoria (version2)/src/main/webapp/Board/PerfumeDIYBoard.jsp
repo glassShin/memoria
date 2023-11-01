@@ -175,6 +175,17 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 	<section class="cont_perfume">
 		<div class="inner">
 			<div class="perfume_box">
+				<form action = "DIYprocess.jsp" method = "post" id ="perfumeForm">
+			   	<select name="ml_selectBox" id = "ml">
+               		<option value="50ml">50ml</option>
+               		<option value="75ml">75ml</option>
+               		<option value="100ml">100ml</option>
+            	</select>
+            	<input type = "hidden" id = "top"  name="top">
+            	<input type = "hidden" id = "mid"  name="mid">
+            	<input type = "hidden" id = "base" name="base">
+            	<button type = "submit"> 완료하기 </button>
+          		</form>
 				<div class="purfume_choice">
 					<div class="choice_item">
 						<span>향수1</span>
@@ -249,21 +260,53 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 	<div class="footer-all">
 		<%@include file="../../Footer/Footer.jsp"%>
 	</div>	
-	
-	
-	
-	
-	
+
 	<script>
-        const lists = document.querySelectorAll('.menu > ul > li');
-        for(list of lists){
-            var randomColor = Math.floor(Math.random()*16777215).toString(16);
-            list.children[0].dataset.color = randomColor
-            list.children[0].addEventListener('click', function(index, obj){
-                let color = this.dataset.color;
-                this.parentNode.parentNode.parentNode.parentNode.style.backgroundColor = '#'+color;
-            })
-        }
+	const lists = document.querySelectorAll('.menu > ul > li');
+	const form = document.querySelector('#perfumeForm');
+	const predefinedColors = {
+	  'Whitemusk': '#e3eaf2',
+	  'Rose': '#a12222',
+	  'Grapefruit': '#ff5546',
+	  'Lemon': '#ffd734',
+	  'Woody': '#8d5549',
+	  'Aqua': '#6eb2ff',
+	  'Peach': '#ff937b',
+	  'Fig': '#9c6688',
+	  'Lime': '#dddb74',
+	  'Lilac': '#d2a8ff',
+	  'Lavender': '#8d579f',
+	  'Ivory': '#fffbe8',
+	  'Babypowder': '#ffffff'
+	};
+
+	for (list of lists) {
+	  list.children[0].addEventListener('click', function () {
+	    const randomScentName = getRandomScentName(predefinedColors);
+	    const color = predefinedColors[randomScentName];
+	    console.log('Selected Scent: ' + randomScentName);
+	    console.log(color);
+	    
+	    const menuClass = this.parentNode.parentNode.parentNode.className; // Get the menu class
+	    console.log('menuClass:', menuClass);
+	    if (menuClass.includes('menu1')) {
+	      form.querySelector('#top').value = randomScentName;
+	    } else if (menuClass.includes('menu2')) {
+	      form.querySelector('#mid').value = randomScentName;
+	    } else if (menuClass.includes('menu3')) {
+	      form.querySelector('#base').value = randomScentName;
+	    }
+	    
+	    this.parentNode.parentNode.parentNode.parentNode.style.backgroundColor = color;
+	  });
+	}
+
+	function getRandomScentName(colors) {
+	  const scentNames = Object.keys(colors);
+	  const randomIndex = Math.floor(Math.random() * scentNames.length);
+	  return scentNames[randomIndex];
+	}
+        
     </script>
 	
 
