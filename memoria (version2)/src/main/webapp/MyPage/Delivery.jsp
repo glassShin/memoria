@@ -27,19 +27,19 @@
 	<!-- 가운데 콘텐츠 -->
 	<section>
 		<div class="delivery-content">
-			<div class="delivery-info">
-				<h3 class="add-info">주소</h3>
-				<ul>
-					<li><p class="">이름</p></li>
-					<li><p class="">우편번호</p></li>
-					<li><p class="">주소</p></li>
-					<li><p class="">상세주소</p></li>
-					<li><p class="">전화 번호</p></li>
+			<div class="delivery-info1">
+				<h3 class="add">주소</h3>
+				<ul class="add-ul">
+					<li class="add-li"><p class="">이름</p></li>
+					<li class="add-li"><p class="">우편번호</p></li>
+					<li class="add-li"><p class="">주소</p></li>
+					<li class="add-li"><p class="">상세주소</p></li>
+					<li class="add-li"><p class="">전화 번호</p></li>
 				</ul>
 			</div>
-			<div class="">
-				<h3 class="add-info">다른 주소로 배송</h3>
-				<ul>
+			<div class="delivery-info2">
+				<h3 class="different-add">다른 주소로 배송</h3>
+				<ul class="add-ul">
 					<li><p class="">이름</p></li>
 					<li><p class="">우편번호</p></li>
 					<li><p class="">주소</p></li>
@@ -48,5 +48,6 @@
 				</ul>
 			</div>
 		</div>
+	</section>
 </body>
 </html>

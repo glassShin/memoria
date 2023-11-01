@@ -1,25 +1,27 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&family=Playfair+Display&display=swap');
 
 /* 기본css */
 html, body {
-   height: 100%;
+	height: 100%;
 }
-body{
-   overflow-x: hidden;
-   margin: 0 auto;
-   padding: 0;
+
+body {
+	overflow-x: hidden;
+	margin: 0 auto;
+	padding: 0;
+	font-family: 'Nanum Gothic';
+	font-size: 13px;
 }
 
 /*신규회원, 기존회원  */
-
 /* 로그인 회원가입 전체구역 */
-#login_join{
-	display:flex;
-   /* position: absolute; */
-   top: 15em;
-   width: 100%;
-   margin-top:300px;
-   margin-left:150px;
+#login_join {
+	display: flex;
+	/* position: absolute; */
+	top: 15em;
+	width: 100%;
+	margin-top: 300px;
 }
 
 /* 로그인 구역 */
@@ -35,17 +37,18 @@ body{
     list-style: none;
 }
 
-.user{
-   position: relative;   
-   left: 34px;
-   bottom: 2em;
+.user {
+	position: relative;
+	left: 34px;
+	bottom: 2em;
+	font-size: 15px;
 }
 
 /* 비밀번호 찾기  */
-.u_login>ul>li:nth-child(5){
-    margin-top: 50px;
-    margin-left: 270px;
-    font-weight: bold;
+.u_login>ul>li:nth-child(5) {
+	margin-top: 50px;
+	margin-left: 270px;
+	font-weight: bold;
 }
 
 /* 에러메세지 */
@@ -59,6 +62,7 @@ body{
 .u_line{
     width:500px;  
     height:50px;
+    margin-bottom: 10px;
     border:none;
     border-bottom:1px solid #565c46;
 }
@@ -70,31 +74,29 @@ body{
     right: 15px;
     width: 550px;
     height:70px;
-    font-size: 1.2rem;
+    font-size: 15px;
     border:none;
     color: white;
     background-color: #565c46;  
 }
 
-
 /* 회원가입 구역 */
-.u_join{
-	position:relative;
-   box-sizing: border-box;
-   position: relative;
-   width: 100%;
-   /* float: right; */
+.u_join {
+	position: relative;
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
 }
 
-.u_join>ul{
-    list-style: none;
+.u_join>ul {
+	list-style: none;
 }
 
-.newuser{
-   position: relative;
-   left: 35px;
-   bottom: 3em;
-
+.newuser {
+	position: relative;
+	left: 35px;
+	bottom: 3em;
+	font-size: 15px;
 }
 
 /* 회원가입 버튼 */
@@ -103,7 +105,8 @@ body{
     width: 550px;
     height: 70px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 15px;
+    margin-top: 20px;
     border:none;
     color: white;
     background-color: #565c46;    

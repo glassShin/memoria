@@ -65,7 +65,7 @@ body{
 
 
 /* 콘텐츠 */
-.delivery-content{
+.delivery-content {
 	flex-grow: 1;
 	padding: 15px;
 	position: relative;
@@ -73,3 +73,9 @@ body{
 	bottom: 7em;
 	width: 700px;
 }
+
+.add-ul {
+	list-style: none;
+	font-size: 13px;
+}
+

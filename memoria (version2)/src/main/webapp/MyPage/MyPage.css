@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&family=Playfair+Display&display=swap');
 
 /* 전체 기본 */
 html, body {
@@ -9,6 +10,8 @@ html, body {
 
 body {
 	overflow-x: hidden;
+	font-family: 'Nanum Gothic';
+	font-size: 13px;
 }
 
 /* 네비바 */
@@ -72,6 +75,7 @@ body {
 	left: 20em;
 	bottom: 7em;
 	width: 700px;
+	font-size: 13px;
 }
 
 /* 회원 정보 */
@@ -83,11 +87,12 @@ body {
 
 .user {
 	font-size: 12px;
-	margin: 3px
+	margin: 3px;
 }
 
 .myPage-ul {
 	list-style: none;
+	margin: 50px 0 50px;
 }
 
 .myPage-li {
@@ -95,12 +100,16 @@ body {
 }
 
 .u_line {
-	
+	width: 580px;
+	height: 45px;
+	border: none;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #565c46;
 }
 
 .myPage-btn {
 	width: 90px;
-	height: 45px;
+	height: 40px;
 	text-align: center;
 	font-size: 15px;
 	border: none;

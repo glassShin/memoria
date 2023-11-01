@@ -16,11 +16,11 @@
 <div class = "option">
 	<ul>
 		
-		<li onclick="location.href='allUserList.jsp'">
+		<li onclick="location.href='newCustomer.jsp'">
 			<a>전체회원조회</a>
 		</li>
 		
-		<li onclick="location.href='allProduct.jsp'">
+		<li onclick="location.href='newProduct.jsp'">
 			<a>상품관리</a>
 		</li>
 

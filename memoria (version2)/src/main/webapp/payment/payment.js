@@ -70,7 +70,7 @@ function validateForm() {
             isValid = false;
         }
     }
-	if (!isValid) {
+   if (!isValid) {
         errmsg.innerText = "아래 항목을 모두 입력해주세요."; // errmsg p태그에 메시지 추가
     } else {
         errmsg.innerText = ""; // 유효성이 통과되면 errmsg 내용 비우기
@@ -89,15 +89,15 @@ function validateForm() {
       
        var currentDate = new Date();
 
-		var year = currentDate.getFullYear();
-		var month = currentDate.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
-		var day = currentDate.getDate();
-		var hours = currentDate.getHours();
-		var minutes = currentDate.getMinutes();
-		var seconds = currentDate.getSeconds();
+      var year = currentDate.getFullYear();
+      var month = currentDate.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
+      var day = currentDate.getDate();
+      var hours = currentDate.getHours();
+      var minutes = currentDate.getMinutes();
+      var seconds = currentDate.getSeconds();
 
-		var paynumber = mail+'_'+year + month+ day+ hours+ minutes + seconds;
-      	console.log(paynumber);
+      var paynumber = mail+'_'+year + month+ day+ hours+ minutes + seconds;
+         console.log(paynumber);
       var form = document.getElementById('deliveryInfo');
       
       var name = form.querySelector('input[name="name"]').value;
@@ -111,7 +111,7 @@ function validateForm() {
           {
             pg: "kcp.store-42477920-14c4-4f3f-a393-c20d45cd96f1",
             pay_method: "card",
-            merchant_uid: paynumber,		//주문번호
+            merchant_uid: paynumber,      //주문번호
             name: title,
             amount: total,
             buyer_email: mail,
