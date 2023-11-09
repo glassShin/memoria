@@ -31,7 +31,6 @@ if(user == null) {
 %>
  
    <main>
-
          <!-- 슬라이드 -->
          <div class="slide slide_wrap">
             <div class="slide_item item1"></div>
@@ -59,12 +58,14 @@ if(user == null) {
                <!-- <h1 class="multiple-items-h1">추천향수</h1> -->
             <div class="recommend-area"> 
                 <div class="multiple-items">
-                <%for(ProductDTO dto : list) {%>
+                <%for(ProductDTO dto : list) {
+                	
+                %>
                     <div class="slide-item">
-                        <img src=""  alt="테스트">
+                        <img src="../productimg/<%=dto.getP_id()+".png"%>"  alt="테스트">
                         <h3 class="E-name"><%=dto.getP_ename() %></h3>
                         <h4 class="K-name"><%=dto.getP_kname() %></h4>
-                        <span class="price"><%=dto.getP_price() %></span>
+                        <span class="price">₩<%=dto.getP_price() %></span>
                         <button type="button" class="card-btn" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">상품보기</button>
                     </div>
                     <%} %>

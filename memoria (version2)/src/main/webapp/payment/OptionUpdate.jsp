@@ -28,7 +28,7 @@
 	<h5 class="info">변경할 옵션을 선택해주세요.</h5>
 	<div class="container">
 		<div class="imglocation">
-		<img alt="image" src="../Main-image/향수1.png">
+		<img alt="image" src="../productimg/<%=dto.getImage()+".png"%>">
 		</div>
 		<form action="process/OptionUpdateProcess.jsp?pid=<%=id %>" method="post" id="update" onsubmit="parent.popupclose();">
 		<div class="contentlocation">

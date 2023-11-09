@@ -69,7 +69,7 @@ String title = list.size() > 1 ? title = list.get(0).getName() + " 외 " + (list
             	%>
             <div class="innerList">
             <ul class="paymentList-ul">
-               <li><img class="product-img1" src="../image2/장미_5x5.jpg" alt="상품이미지"></li>
+               <li><img class="product-img1" src="../productimg/<%=dto.getEname()+".png" %>" alt="상품이미지"></li>
             <div class="name">
                <li><span class="product-KName"><%=dto.getName() %> <%=dto.getProductml() %></span></li>
                <li><span class="product-EName"><%=dto.getEname() %> <%=dto.getProductml() %></span></li>

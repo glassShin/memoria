@@ -188,8 +188,7 @@ margin-top : 100px;
 <div id="navbar">
 <ul>
 <li onclick="location.href='../productList/productList_test.jsp'">향수</li>
-<li>디퓨저</li>
-<li>나만의 커스텀</li>
+<li onclick="location.href='../Board/PerfumeDIYBoard.jsp'">나만의 커스텀</li>
 </ul>
    <div id="mypage">
    <h2>마이페이지</h2>
@@ -197,9 +196,7 @@ margin-top : 100px;
 </div>
 
 <!--메뉴바 생성 -->
-
 </header>
-
 <script>
 var logobar = document.getElementById('logobar');
 var navbar = document.getElementById('navbar');

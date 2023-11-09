@@ -80,7 +80,6 @@ main{
    width: 700px;
    height: 100%;
    padding: 10px;
-   margin-bottom: 2%;
 }
 
 .paymentList-ul {
@@ -156,7 +155,8 @@ main{
 
 .paymentList-ul > li > img {
    float : left;
-   width: 100px;
+   width: 80px;
+   height: 180px;
 }
 
 

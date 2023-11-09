@@ -48,7 +48,7 @@
 						total += dto.getPrice() * dto.getCnt();
 					%>
 					<ul class="paymentList-ul">
-						<li><img class="product-img1" src="../image2/장미_5x5.jpg"
+						<li><img class="product-img1" src="../productimg/<%=dto.getEname()+".png" %>"
 							alt="상품이미지"></li>
 						<div class="name">
 							<li><span class="product-KName"><%=dto.getName()%><%=dto.getProductml()%></span></li>

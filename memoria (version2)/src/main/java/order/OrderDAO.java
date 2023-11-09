@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import common.JDBCConnect;
 
@@ -33,5 +34,32 @@ public class OrderDAO extends JDBCConnect{
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public ArrayList<OrderDTO> orderSelect(String payid) {
+		ArrayList<OrderDTO> list = new ArrayList<OrderDTO>();
+		String sql = "select orderid,paymentid,order1.productid,product.productprice,ordercnt,orderdate,orderuser,orderaddress,orderphonenumber from order1 join product on order1.productid = product.productid where paymentid=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, payid);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				OrderDTO dto = new OrderDTO();
+				dto.setO_id(rs.getString(1));
+				dto.setPaymentid(rs.getString(2));
+				dto.setProductid(rs.getString(3));
+				dto.setProductprice(rs.getInt(4));
+				dto.setO_cnt(rs.getInt(5));
+				dto.setO_date(rs.getDate(6));
+				dto.setO_user(rs.getString(7));
+				dto.setAddr(rs.getString(8));
+				dto.setO_phone(rs.getString(9));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

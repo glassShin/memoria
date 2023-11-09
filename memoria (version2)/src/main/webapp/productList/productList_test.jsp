@@ -20,10 +20,11 @@ ProductDAO dao = new ProductDAO();
 list = dao.getProductList();
 %>
     
-    <main>
+    <section class="stn">
+    <div class="content">
         <div class="banner-sentence">
-            <h2>베스트셀러</h2>
-            <p>가장 사랑받는 제품들, 완벽한 선물을 위한 영감, 일상의 즐거움과 새로운 루틴으로 향기로움을 채워 보세요</p>    
+            <h2 class="best">베스트셀러</h2>
+            <p class="best">가장 사랑받는 제품들, 완벽한 선물을 위한 영감, 일상의 즐거움과 새로운 루틴으로 향기로움을 채워 보세요</p>    
         </div>
 
         <div class="banner-img">
@@ -37,22 +38,23 @@ list = dao.getProductList();
       
         <div class=list-item>
             <div class="item-img">
-                <img src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_JMKR15_670x670_0.png">
+                 <img src="../productimg/<%=dto.getP_id()+".png"%>">
             </div>
             <div class="item-name">
                 <h2><%=dto.getP_ename() %></h2>
                 <h3><%=dto.getP_kname() %></h3>
             </div>
             <div class="item-price">
-                <h4><%=dto.getP_price() %></h4>    
+                <h4>₩<%=dto.getP_price() %></h4>    
             </div>
             <div class="item-btn">
                 <button type="button" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">보러가기</button>
             </div>
         </div>
         <%} %>
+    </div>
     </div>    
-    </main>
+    </section>
 
 	
 	<!-- 공통footer -->

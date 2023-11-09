@@ -11,10 +11,11 @@ html, body {
 	height: 100%;
 }
 
-body{
+body {
 	overflow-x: hidden;
 	margin: 0 auto;
 	padding: 0;
+	
 }
 
 /* 로고 및 sns */
@@ -35,12 +36,8 @@ footer {
 	height: 200px;
 	position: absolute;
 	bottom: 0;
-<<<<<<< HEAD
-	margin-top: 50%;
 	z-index: -1;
-=======
-	top: 100%;
->>>>>>> branch 'memoria_test_branch' of https://github.com/glassShin/memoria.git
+	top: 80%;
 }
 
 /* Footer메뉴 */
@@ -73,7 +70,7 @@ footer {
 	min-height: 100%;
 	font-size: 13px;
 	color: black;
-	margin-top: 60%;
+	margin-top: 40%;
 }
 
 /* 기업정보 */
@@ -91,6 +88,7 @@ footer {
 </style>
 </head>
 <body>
+	<section class="stn"></section>
 	<footer>
 		<div class="company">
 
