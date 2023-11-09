@@ -181,11 +181,8 @@
 
 
 		<div class="recommend-outline-box">
-			<div class="left arrow">
-				<img src="/detail_modify/arrow/left-arrow.png">
-			</div>
 
-			<div class="recommend-slide">
+			<!-- <div class="recommend-slide"> -->
 				<%for(ProductDTO redto : recommlist) { %>
 
 				<div class="multiple-items" style="transition: all 3s;">
@@ -202,7 +199,7 @@
 					</div>
 				</div>
 				<%} %>
-			</div>
+			<!-- </div> -->
 		</div>
 
 		<div class="review-title">리뷰</div>

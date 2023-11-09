@@ -113,12 +113,12 @@ if(user == null) {
         speed : 1000,
     });
 
-        var prevButton = document.querySelector('.slick-prev');
+  /*       var prevButton = document.querySelector('.slick-prev');
         var nextButton = document.querySelector('.slick-next');
 
         // 버튼 텍스트를 원하는 값으로 설정
         prevButton.textContent = '';
-        nextButton.textContent = '';
+        nextButton.textContent = ''; */
    </script>
 
 </body>
