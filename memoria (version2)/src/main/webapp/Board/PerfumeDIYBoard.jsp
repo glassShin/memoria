@@ -35,6 +35,8 @@
 	.perfume_box .purfume_choice:hover .choice_item{opacity: .3;}
 	.perfume_box .purfume_choice .choice_item{display: flex; flex: 1; justify-content: center; align-items: center;}
 	.perfume_box .purfume_choice .choice_item + .choice_item{border-top: 1px solid #ddd;}
+	+
+	
 	.perfume_box .purfume_choice .choice_item ul{display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #ddd; width: 100%; height: 600px; box-shadow: 0 0 5px #ddd; box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 7%);}
 	.perfume_box .purfume_choice .choice_item ul > li{width: 25%; display: flex; justify-content: center; align-items: center;}
 	.perfume_box .purfume_choice .choice_item ul > li > a{width: 90px; height: 90px; border-radius: 50px; border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; text-align: center;}
