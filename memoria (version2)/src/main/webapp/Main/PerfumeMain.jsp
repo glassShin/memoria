@@ -90,7 +90,7 @@ if(user == null) {
                <div class="product-moonjang-l">
                   <p class="l-Title">향수 사러가기</p>
                   <p class="l-moonjang">테스트용 문장입니다.</p>
-                  <a href="../Board/PerfumeBoard.jsp" class="product-btn-l">보러가기</a>
+                  <button  onclick="location.href='../productList/productList_test.jsp'" class="product-btn-l">보러가기</button>
                </div>
             </div>
    </main>
@@ -114,12 +114,12 @@ if(user == null) {
         speed : 1000,
     });
 
-        var prevButton = document.querySelector('.slick-prev');
+  /*       var prevButton = document.querySelector('.slick-prev');
         var nextButton = document.querySelector('.slick-next');
 
         // 버튼 텍스트를 원하는 값으로 설정
         prevButton.textContent = '';
-        nextButton.textContent = '';
+        nextButton.textContent = ''; */
    </script>
 
 </body>

@@ -54,7 +54,9 @@ body {
 /* 에러메세지 */
 #err {
    color : red;
-   margin-top : 1px;
+   margin:0;
+   margin-top : 5px;
+   margin-bottom:10px;
 }
 
 

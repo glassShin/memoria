@@ -240,7 +240,7 @@ button:active{
     align-items: center;
     justify-content:flex-start;
     /* gap:4%; */
-    width: 100%;
+    width: 1000px;
     height: 100%;
     /* transition: all 3s; */
     overflow-x: hidden;

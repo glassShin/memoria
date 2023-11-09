@@ -31,7 +31,7 @@
 	.product_wrap .product_cart ul > li + li{border-top: 1px solid #ddd;}
 
 	/* 향수 */
-	.cont_perfume{display: flex; align-items: center; }
+	.cont_perfume{display: flex; align-items: center; position:relative;}
 	.cont_perfume .inner{height: 100%;}
 	.perfume_box{display: flex; justify-content: space-between; align-items: center;}
 	.perfume_box .purfume_choice{display: flex; flex-direction: column; background: #fff; width: 300px; height: 600px; border: 1px solid #ddd; position: relative;}
@@ -83,9 +83,11 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 			
 		</ul>
 	</div>
-				<div class="perfume_info">
-					<img src="../image2/향수노트.jpg" alt="향수 노트" class="info-img">
+
+			<div class="perfume_info">
+					<img src="../image2/향수노트.jpg" alt="비어있음">
 				</div>
+
 
 	<section class="cont_perfume">
 		<div class="inner">
@@ -106,7 +108,7 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 						<span>향수1</span>
 						<div class="menu menu1">
 							<ul>
-								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:void('Rose');"><span>메뉴1</span></a></li>
 								<li><a href="javascript:;"><span>메뉴2</span></a></li>
 								<li><a href="javascript:;"><span>메뉴3</span></a></li>
 								<li><a href="javascript:;"><span>메뉴4</span></a></li>
@@ -125,7 +127,7 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 						<span>향수2</span>
 						<div class="menu menu2">
 							<ul>
-								<li><a href="javascript:;"><span>메뉴1</span></a></li>
+								<li><a href="javascript:;" onclick="test('Rose')"><span>메뉴1</span></a></li>
 								<li><a href="javascript:;"><span>메뉴2</span></a></li>
 								<li><a href="javascript:;"><span>메뉴3</span></a></li>
 								<li><a href="javascript:;"><span>메뉴4</span></a></li>
@@ -173,6 +175,7 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 	</div>	
 
 	<script>
+	
 	const lists = document.querySelectorAll('.menu > ul > li');
 	const form = document.querySelector('#perfumeForm');
 	const predefinedColors = {
@@ -193,6 +196,7 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 
 	for (list of lists) {
 	  list.children[0].addEventListener('click', function () {
+		  console.log(scent);
 	    const randomScentName = getRandomScentName(predefinedColors);
 	    const color = predefinedColors[randomScentName];
 	    console.log('Selected Scent: ' + randomScentName);
