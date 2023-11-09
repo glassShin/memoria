@@ -1,3 +1,5 @@
+<%@page import="payment.PaymentDAO"%>
+<%@page import="payment.PaymentDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="cart.CartListDTO"%>
 <%@page import="cart.CartDAO"%>
@@ -13,9 +15,9 @@
 <body>
 	<%
 	String email = (String) session.getAttribute("user");
-	ArrayList<CartListDTO> list = new ArrayList<CartListDTO>();
-	CartDAO dao = new CartDAO();
-	list = dao.cartSelect(email);
+	ArrayList<PaymentDTO> list = new ArrayList<PaymentDTO>();
+	PaymentDAO dao = new PaymentDAO();
+	list = dao.selectpayment(email);
 	%>
 	<!-- 공통 상단메뉴-->
 	<jsp:include page="../header/Header.jsp" />
@@ -29,9 +31,7 @@
 			</p>
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
-				<li class="nav-li"><a href="Delivery.jsp">배송 정보</a></li>
 				<li class="nav-li"><a href="Order.jsp">주문 내역</a></li>
-				<li class="nav-li"><a href="#관심상품">관심 상품</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -50,31 +50,28 @@
 			<div class="p-box">
 				<div class="productList pgroup">
 					<ul class="basket-header">
-						<li class="header-allprice">주문번호</li>
+						<li class="header-allprice">결제번호</li>
 						<li class="header-product">제품</li>
 						<li class="header-price">가격</li>
-						<li class="header-cnt">수량</li>
 						<li class="header-order">주문상태</li>
 					</ul>
 					<div class="innerList">
+					<%for(PaymentDTO dto : list) { %>
 						<ul class="paymentList-ul">
 							<div class="order-date">
-								<li><span class="date">2023.10.19</span></li>
-								<li><span class="orderNumber">2202110543</span></li>
+								<li><span class="orderNumber"><%=dto.getPaymentid() %></span></li>
 							</div>
-							<li><img class="product-img1" src="../image2/장미_5x5.jpg"
+							<li><img class="product-img1" src="../productimg/April.png"
 								alt="상품이미지"></li>
 							<div class="name">
-								<li><span class="product-KName">한국이름</span></li>
-								<li><span class="product-EName">영어이름</span></li>
+								<li><span class="product-Info"><a href="DetailOrder.jsp?payid=<%=dto.getPaymentid()%>"><%=dto.getInfo() %></a></span></li>
 							</div>
-							<li><span class="price">20000</span></li>
-							<li><span class="stock">1</span></li>
+							<li><span class="price"><%=dto.getPrice() %></span></li>
 							<div class="order-state">
-								<li><span class="stock">입금완료</span></li>
-								<li><button id="Cancel" class="Cancel">취소신청</button></li>
+								<li><span class="stock"><%=dto.getCondi() %></span></li>
 							</div>
 						</ul>
+						<%}; %>
 					</div>
 				</div>
 			</div>

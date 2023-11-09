@@ -6,18 +6,24 @@ public class OrderDTO {
 	private String o_id;
 	private String paymentid;
 	private String productid;
+	private int productprice;
 	private int o_cnt;
 	private Date o_date;
 	private String o_user;
 	private String addr;
 	private String o_phone;
+
+	public OrderDTO() {
+		// TODO Auto-generated constructor stub
+	}
 	
-	public OrderDTO(String o_id, String paymentid, String productid, int o_cnt, Date o_date, String o_user, String addr,
-			String o_phone) {
+	public OrderDTO(String o_id, String paymentid, String productid, int productprice, int o_cnt, Date o_date,
+			String o_user, String addr, String o_phone) {
 		super();
 		this.o_id = o_id;
 		this.paymentid = paymentid;
 		this.productid = productid;
+		this.productprice = productprice;
 		this.o_cnt = o_cnt;
 		this.o_date = o_date;
 		this.o_user = o_user;
@@ -47,6 +53,14 @@ public class OrderDTO {
 
 	public void setProductid(String productid) {
 		this.productid = productid;
+	}
+
+	public int getProductprice() {
+		return productprice;
+	}
+
+	public void setProductprice(int productprice) {
+		this.productprice = productprice;
 	}
 
 	public int getO_cnt() {
@@ -88,7 +102,5 @@ public class OrderDTO {
 	public void setO_phone(String o_phone) {
 		this.o_phone = o_phone;
 	}
-	
-	
 
 }

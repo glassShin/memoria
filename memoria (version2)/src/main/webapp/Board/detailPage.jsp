@@ -193,7 +193,7 @@
 
 					<div class="slide-item">
 						<img
-							src="https://www.jomalone.co.kr/media/export/cms/products/670x670/jo_sku_LHWK01_670x670_0.png"
+							src="../productimg/<%=redto.getImage()+".png" %>"
 							alt="사진없음">
 						<h3><%=redto.getP_kname() %></h3>
 						<h5><%=redto.getP_ename() %></h5>

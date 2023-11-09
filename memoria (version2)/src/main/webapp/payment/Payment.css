@@ -249,13 +249,14 @@ ul>li {
 
 .paymentList-ul > li > img {
    float : left;
-   width: 100px;
+   width: 70px;
+   height: 150px;
 }
 
 .pay_btn{
    position: relative;
-    top: 3em;
-    left: 35em;
+    top: 10em;
+    left: 50px;
     width: 200px;
     height: 50px;
     border: none;

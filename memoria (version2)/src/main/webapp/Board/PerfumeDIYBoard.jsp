@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="scent.ScentDAO"%>
+<%@page import="scent.ScentDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,6 +54,12 @@
 </head>
 <body>
 <!-- 공통 상단메뉴-->
+<%
+ScentDAO dao = new ScentDAO();
+ArrayList<ScentDTO> list = new ArrayList<ScentDTO>();
+list = dao.selectScent();
+
+%>
 
 	<%@include file = "../../header/Header.jsp" %>	
    
@@ -60,117 +69,23 @@
 section은 ul, ul은 li로 바꾸고 묶어주기  -->
 	<div class="DIYcard-area">
 		<ul class="DIYcard">
+		<%
+		for(ScentDTO dto : list) {
+		%>
 			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
+				<img src="../image2/<%=dto.getS_name()+".jpg" %>" class="perfuem-img">
+				<h1><%=dto.getS_id() %></h1>
+				<h3><%=dto.getS_name() %></h3>
+				<p><%=dto.getS_content() %></p>
 			</li>
+			<%} %>
 
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
-
-			<li>
-				<img src="" class="perfuem-img">
-				<h1>Lavender</h1>
-				<h3>라벤더</h3>
-				<p>숙면효과로
-					널리알려진 라벤더, 꿈의 정원에
-					초대된듯한 은은한 꽃</p>
-			</li>
+			
 		</ul>
 	</div>
-
-
+				<div class="perfume_info">
+					<img src="../image2/향수노트.jpg" alt="향수 노트" class="info-img">
+				</div>
 
 	<section class="cont_perfume">
 		<div class="inner">
@@ -184,7 +99,7 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
             	<input type = "hidden" id = "top"  name="top">
             	<input type = "hidden" id = "mid"  name="mid">
             	<input type = "hidden" id = "base" name="base">
-            	<button type = "submit"> 완료하기 </button>
+            	<button type = "submit" class="ok"> 완료하기 </button>
           		</form>
 				<div class="purfume_choice">
 					<div class="choice_item">
@@ -244,10 +159,6 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 							</ul>
 						</div>
 				</div>
-				</div>
-				<div class="perfume_info">
-					<!-- <h2>← 마우스를 올려 향수를 정해보세요.</h2> -->
-					<img src="../image2/향수노트.jpg" alt="비어있음">
 				</div>
 			</div>
 		</div>

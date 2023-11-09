@@ -138,7 +138,7 @@ function validateForm() {
         }
       }).done(function (data) {
         alert("결제에 성공했습니다.");
-        location.href='../Main/PerfumeMain.jsp';
+        location.href='PaymentCompleted.jsp';
       })
     } else {
       alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);

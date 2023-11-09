@@ -18,9 +18,7 @@
 			<p class="logout"><a href="process/Logout.jsp">로그아웃</a></p>
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
-				<li class="nav-li"><a href="Delivery.jsp">배송 정보</a></li>
 				<li class="nav-li"><a href="Order.jsp">주문 내역</a></li>
-				<li class="nav-li"><a href="#관심상품">관심 상품</a></li>
 			</ul>
 		</div>
 	</nav>
