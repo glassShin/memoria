@@ -1,128 +1,132 @@
-<%@ page language="java" 
-    pageEncoding="UTF-8"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Footer</title>
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&display=swap');
 
 html, body {
-    height: 100%;
-    background-color: #f5ecec;  
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	margin: 0 auto;
+	padding: 0;
+	
 }
 
 /* 로고 및 sns */
-#logo{
-    position: absolute;
-    top: 3em;
-    left: 75px;
-}
-#logo>img{
-    width: 160px;
-    height: 40px;
-}
-#sns{
-    position: absolute;
-    top: 8em;
-    left: 130px;
+#logo {
+	position: relative;
+	top: 4em;
+	left: 75px;
 }
 
-/* 메뉴 */
-#menu1{
-   position: relative;
-   display: inline-block;
-   width: 600px;
-   text-align: center;   
-   left: 300px;
-   margin-top : 50px;
-   margin-bottom : 70px;
+#logo>img {
+	width: 130px;
+	height: 35px;
 }
 
-#menu2{
-   position: relative;
-   display: inline-block;
-   width: 600px;
-   text-align: center;   
-   margin-top : 50px;
-   margin-bottom : 70px;
-}
-ul {
-    list-style:none;
-}
-b{
-	margin-left : 43px;
+/* Footer 하단고정*/
+footer {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+	top: 80%;
 }
 
-
- 
-/* 기업정보 하단고정*/
-footer{
-    width: 100%;
-    height: 40px; 
-    position: absolute;  
-    bottom: 0;
-    left: 0;
-    margin-top:50%;
+/* Footer메뉴 */
+.menu-ul {
+	list-style: none;
+	position: relative;
+	left: 20rem;
+	float: left;
+	margin: 20px 0 40px;
 }
-.company{
-   	background-color: white;
-    padding: 20px 0px 10px;
-    position: relative;
-   	min-height: 100%;
-   	font-size: 1.2rem;
-   	color: black;
 
-
+.menu-li {
+	padding: 0 40px 0;
+	line-height: 25px;
 }
-.company-info{
-   margin-left: 10px; 
-   color: rgba(0, 0, 0, 0.5);
+
+.menu-h2{
+	margin: 0 40px 20px;
+	float: left;
+}
+
+/* sns */
+.footer-sns{
+	float: left;
+	margin: 0 17px 0;
+}
+
+.company {
+	background-color: rgba(86, 92, 70, 0.2);
+	min-height: 100%;
+	font-size: 13px;
+	color: black;
+	margin-top: 40%;
+}
+
+/* 기업정보 */
+.company-info {
+	border-top: 1.5px solid #565c46;
+	color: rgba(0, 0, 0, 0.5);
+	clear: both;
+}
+
+.company-ul{
+	margin: 10px 2px 10px;
+	list-style: none;
 }
 
 </style>
 </head>
 <body>
-<footer>
-   <div class="company">
+	<section class="stn"></section>
+	<footer>
+		<div class="company">
 
-      <!-- 로고 -->
-      <div id="logo">
-         <img alt="로고" src="../Main-image/로고.png">
-      </div>
-      
-      <!-- sns -->
-      <div id="sns">
-         <a><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-           <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-         </svg></a>
-      </div>
-      
-      <!-- Footer Menu  -->
-      <div id="menu1">
-            <b>고객서비스</b>
-            <ul>
-            <li>고객센터</li>
-            <li>배송 및 반품</li>
-            </ul>
-            </div>
-            <div id="menu2">
-            <b>메모리아 하우스</b>
-            <ul>
-            <li>법적고지</li>
-            <li>개인정보처리방침</li>
-            </ul>
-      </div>
-      <!-- 회사 정보 -->
-      <hr size = "2" color = "#b27979">
-      <div class="company-info">
-         <p> 상호: Memoria<br>
-            대표자: 메모리아 <br>
-            연락처: 010-0000-0000 | 사업자등록번호: 010-1111-0000<br>
-            이메일: Memoria@naver.com | 주소: 서울특별시 부평구 무네미로 478<br>
-            ⓒ2023MEMORIACOMPANY</p>
-      </div>
-   </div>
-</footer>
+			<!-- 로고 -->
+			<div id="logo">
+				<img alt="로고" src="../Main-image/로고1.png">
+			</div>
+
+			<!-- Footer Menu  -->
+			<div id="menu-all">
+				<ul class="menu-ul">
+					<h2 class="menu-h2">고객서비스</h2>
+					<li class="menu-li">고객센터</li>
+					<li class="menu-li">배송 및 반품</li>
+				</ul>
+				<ul class="menu-ul">
+					<h2 class="menu-h2">메모리아 하우스</h2>
+					<li class="menu-li">법적고지</li>
+					<li class="menu-li">개인정보처리방침</li>
+				</ul>
+				<ul class="menu-ul">
+					<h2 class="menu-h2">SNS</h2><br>
+					<li class="footer-sns"><a href="#"><img src="../image2/카카오.png" alt="kakao" clsas="sns" width="30" height="30"></a></li>
+					<li class="footer-sns"><a href="#"><img src="../image2/인스타.png" alt="insta" clsas="sns" width="30" height="30"></a></li>
+				</ul>
+			</div>
+			<!-- 회사 정보 -->
+			<div class="company-info">
+				<ul class="company-ul">
+				<li class="company-li">상호: Memoria</li>
+				<li class="company-li">대표자: 메모리아</li>
+				<li class="company-li">연락처: 010-0000-0000 | 사업자등록번호: 010-1111-0000</li>
+				<li class="company-li">이메일: Memoria@naver.com | 주소: 서울특별시 강서구 무네미로 478</li>
+				<li class="company-li">ⓒ2023MEMORIACOMPANY</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
 </body>
 </html>

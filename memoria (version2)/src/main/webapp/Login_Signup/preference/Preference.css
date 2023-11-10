@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* 기본css */
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* 테이블 */
+.Preference-table {
+	height: 200px;
+	width: 50%;
+}
+
+.Preference-td {
+	text-align: center;
+	vertical-align: bottom; /* 이미지 아래에 위치하도록 설정 */
+
+}
+
+/* 이미지 */
+.category-img{
+	border-radius: 7px;
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+
+/* 라벤더 이미지에 대한 스타일 */
+.category-img.img1:hover {
+    background-color: purple; /* 배경색을 보라색으로 변경 */
+    color: white; /* 글자 색을 흰색으로 변경 */
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    
+}
+
+/* 장미 이미지에 대한 스타일 */
+.category-img-2:hover {
+    background-color: red; /* 배경색을 빨간색으로 변경 */
+    color: white; /* 글자 색을 흰색으로 변경 */
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+}
+
+/* 자몽 이미지에 대한 스타일 */
+.category-img-3:hover {
+    background-color: orange; /* 배경색을 주황색으로 변경 */
+    color: white; /* 글자 색을 흰색으로 변경 */
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+}
+
+/* 복숭아 이미지에 대한 스타일 */
+.category-img-4:hover {
+    background-color: #FF7DB4; /* 배경색을 핑크색으로 변경 */
+    color: white; 
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+}
+
+/* 솜 이미지에 대한 스타일 */
+.category-img-5:hover {
+    background-color: ivory; /* 배경색을 아이보리로 변경 */
+    color: brown; 
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+}
+
+/* 물 이미지에 대한 스타일 */
+.category-img-5:hover {
+    background-color: #0AC9FF; /* 배경색을 아이보리로 변경 */
+    color: white; 
+    padding: 10px; /* 텍스트 주위에 여백을 추가하여 텍스트가 가운데에 오도록 함 */
+    font-weight: bold; /* 텍스트를 굵게 표시 */
+}
+
+/* 체크박스 */
+.category-checkbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

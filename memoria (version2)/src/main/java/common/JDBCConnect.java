@@ -1,51 +1,40 @@
 package common;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletContext;
 
 public class JDBCConnect {
-    public Connection con;
-    public Statement stmt;  
-    public PreparedStatement psmt;  
-    public ResultSet rs;
+	public Connection con = null;
+	public Connection getConnection() {
 
-    public JDBCConnect(ServletContext application) {
-    	try {
-    		// JDBC 드라이버 로드
-    		String driver = application.getInitParameter("OracleDriver"); 
-    		Class.forName(driver); 
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 
-    		// DB에 연결
-    		String url = application.getInitParameter("OracleURL"); 
-    		String id = application.getInitParameter("OracleId");
-    		String pwd = application.getInitParameter("OraclePwd");
-    		con = DriverManager.getConnection(url, id, pwd);
+			String url = "jdbc:mysql://localhost:3306/memoriadb";
+			String id = "root";
+			String pwd = "1234";
 
-    		System.out.println("DB 연결 성공(인수 생성자 2)"); 
-    	}
-    	catch (Exception e) {
-    		e.printStackTrace();
-    	}
-    }
+			con = DriverManager.getConnection(url, id, pwd);
+		} catch (SQLException e) {
+			System.out.println("연결실패");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return con;
 
-    // 연결 해제(자원 반납)
-    public void close() { 
-        try {            
-            if (rs != null) rs.close(); 
-            if (stmt != null) stmt.close();
-            if (psmt != null) psmt.close();
-            if (con != null) con.close(); 
-
-            System.out.println("JDBC 자원 해제");
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	}
+	public static void main(String[] args) {
+		new JDBCConnect().getConnection();
+	}
 
 }

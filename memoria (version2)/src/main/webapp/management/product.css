@@ -1,0 +1,369 @@
+@charset "EUC-KR";
+
+html,body{
+    height: 100%;
+    margin:0;
+    padding:0;
+ }
+ 
+ 
+ 
+ 
+ main{
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     height: 100%;
+ }
+ 
+ a{
+     text-decoration: none;
+     font-weight: 500;
+ }
+ 
+ a:link{
+     color:white;
+ }
+ 
+ a:visited{
+     color: white;
+ }
+ button{
+     cursor: pointer;
+ }
+ 
+ 
+ 
+ /* 관리자 입력 & 확인 */
+ .manager-section{
+     position: relative;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap:200px;
+ }
+ 
+ 
+ /* 닫기 버튼 */
+ .manager-section .exitBtn{
+ position: absolute;
+ top:0;
+ right: 0;
+ margin-top:10px;
+ margin-right:10px;
+ cursor: pointer;
+ }
+ .manager-section .exitBtn img{
+     width: 20px;
+     height: 20px;
+ }
+ 
+ 
+ 
+ 
+ /* 네비게이션 */
+ .sidebar{
+     width:300px;
+     background-color: #929c79;
+ }
+ .sidebar ul{
+     display: flex;
+     flex-direction: column;
+     gap:50px;
+     padding:30px;
+     list-style: none;
+     color: white;
+ }
+ 
+ .sidebar ul li{
+     padding-bottom: 10px;
+     border-bottom:1px solid white;
+ }
+ 
+ 
+ 
+ 
+ /* 고객조회 문구 */
+ .manager-section p{
+    position: absolute;
+    left: 0;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* 모달 배경*/
+ .modal-bg{
+     background : rgba(0,0,0,0.5);
+     z-index: 5;
+     width: 100%;
+     height: 100%;
+     visibility: hidden ;
+     opacity: 0;
+     transition: all 1s;
+     
+ }
+ .show-modal{
+     visibility: visible;
+     opacity: 1;
+ }
+ 
+ 
+ /* 모달창 */
+ .manager-section .modal{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     position: relative;
+     width: 1200px;
+     height: 800px;
+     background-color: white;
+     transform: translate(-7%,9%);
+     border-radius: 10px;
+     margin: 0 auto;
+ }
+ 
+ 
+ .manager-section .modal h3{
+     position: absolute;
+     top:0;
+     left:550px;
+     
+    
+ }
+ 
+ 
+ /* 모달 이미지 */
+ .manager-section .modal .customer-img{
+     position: absolute;
+     top:200px;
+     left:150px;
+    
+ }
+ .manager-section .modal .customer-img img{
+     width:300px;
+     height: 300px;
+     border-radius: 100%;   
+     background-color: #e6e6e6;
+ }
+ .manager-section .modal .customer-name{
+    position: absolute;
+    top:0;
+     margin: 0;
+ }
+ 
+ 
+ 
+ 
+ /* 모달 하단 버튼그룹 */
+ .manager-section .modal .btn-group {
+     position: absolute;
+     bottom:0;
+     margin-bottom:50px;
+ }
+ .manager-section .modal .btn-group button[type="button"]{
+     width:130px;
+     height: 50px;
+     border-radius:5px;
+     border-style:none ;
+     font-size: medium;
+     font-weight: bold;
+ }
+ .manager-section .modal .btn-group button[type="button"]:first-child{
+     margin-right: 10px;  
+     color: black;
+     background-color: #e6e6e6;
+ }
+ .manager-section .modal .btn-group button[type="button"]:first-child:hover{
+     background-color: #cfcfcf;
+ }
+ .manager-section .modal .btn-group button[type="button"]:first-child:active{
+ 
+     background-color: #bdbbbb;
+ }
+ 
+ .manager-section .modal .btn-group button[type="button"]:last-child{
+     margin-left: 10px;
+     color: white;
+     background-color: #929c79;
+  }
+  .manager-section .modal .btn-group button[type="button"]:last-child:hover{
+     background-color:  #838c6d;
+  }
+  .manager-section .modal .btn-group button[type="button"]:last-child:active{
+     background-color:  #757d61;
+  }
+ 
+ 
+ 
+ 
+ 
+ /* 모달 테이블 */
+ .manager-section .modal table{
+     position: absolute;
+     right: 0;
+     bottom: 130px;
+     width:500px;
+     margin-right: 100px;
+     border-collapse: collapse;
+ }
+
+ .manager-section .modal table tr ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin:0;
+    padding:0;
+ }
+
+ .manager-section .modal table tr ul li{
+    height: 50px;
+    width: 100px;
+ }
+ 
+ 
+ 
+ /* 모달 테이블 정보수정 인풋 & 버튼 */
+ .manager-section .modal table tr td input[type="text"]{
+   width:95%;
+   height: 50px;
+   border-style: none;
+   font-size:small;
+   background-color: white;
+ }
+ .manager-section .modal table tr td button[type="button"]{
+     width:70px;
+     height: 40px;
+     float:right;
+     border-radius: 5px;
+     color:#929c79;
+     border-color:#929c79;
+     background-color:white;
+ }
+ 
+ 
+ 
+ 
+ /* 테이블 테두리 */
+ .manager-section .modal table tr{
+     border-bottom:2px solid #e6e6e6;
+     height: 50px;
+ }
+ .manager-section .modal table tr:first-child{
+     border-top:1px solid black;
+ }
+ .manager-section .modal table tr:last-child{
+     border-bottom:1px solid black;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* 고객 정보 조회 */
+ .customer-search{
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+ }
+ 
+ .customer-search input[type="text"]{
+     height: 30px;
+     margin-top: 80px;
+     border-radius: 5px;
+     outline: #d9d9d9;
+ }
+ 
+ .customer-search button[type="button"]{
+     height: 35px;
+     background-color:#929c79 ;
+     border-style: none;
+     border-radius: 5px;
+     font-weight: bold;
+     color: white;
+     box-sizing: content-box;
+ }
+ .manager-section .customer-search select{
+    border-radius: 5px;
+    height: 36px;
+  }
+ 
+ 
+ 
+ /* 고객 테이블 */
+ .customer-tb{
+     position: absolute;
+     width: 100%;
+     height: 80%;
+     bottom:0;
+     overflow-y:scroll ;
+ }
+ .customer-tb::-webkit-scrollbar{
+    display: none;
+ }
+ 
+ .customer-tb table{
+     width:100%;
+     border:2px solid #d9d9d9;
+     border-collapse: collapse;
+     text-align: center;
+ }
+ 
+ .customer-tb table tr{
+     border:2px solid #d9d9d9;
+     height: 50px;
+ }
+ .customer-tb table tr:nth-child(even){
+    background-color:#f0f0f0 ;
+}
+ 
+ 
+ /* 정보수정 */
+ .customer-tb tr td .info-rewrite{
+     width: 80px;
+     height: 40px;
+     border-radius: 5px;
+     border-style: none;
+     color:white;
+     background-color:#929c79;
+ }
+
+ .customer-tb tr td .info-rewrite:hover{
+     background-color:  #838c6d;
+  }
+  .customer-tb tr td .info-rewrite:active{
+     background-color:  #757d61;
+  }
+ 
+
+  /* 삭제버튼 */
+  .customer-tb tr th .customer-delete{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;;
+    border-style:none;
+    color:white;
+    background-color: #f54242;
+  }
+  .customer-tb tr th .customer-delete:hover{
+    background-color: #d93b3b;
+  }
+  .customer-tb tr th .customer-delete:active{
+    background-color: #c23434;
+  }
+
+ 
+ 

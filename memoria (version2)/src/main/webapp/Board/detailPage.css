@@ -2,225 +2,480 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
 
 html,body{
-   	margin: 0;
-    padding: 0;
-    background-color: #f5ecec;
-}
+    height: 100%;
 
+}
 
 
 main{
-	margin-top:20%;	
+ position: relative;
+ margin:0 auto;
+ width:1200px;
 }
 
-
-
-/* 상품이미지 & 상품구매 */
-#product{
-    width:1300px;
-    height:500px;
-    margin:0 auto;
+div{
+    gap:20px;/*flex 공통 간격*/
 }
 
-.pbox_ul{
-    height:500px;
-    margin-top:50px;
-    /* margin-bottom:30px; */
-}
-
-.pbox_li{
-    float:left;
-}
-
-.p1{
-    display: inline-block;
-    width:900px;
-    height: 500px;
-    background-color: lightcoral;
-}
-
-.p2{
-    display:inline-block;
-    width:300px;
-    height: 500px;
-    margin-left:20px;
-    background-color: lightblue;
-}
-.p2_ul{
-    list-style: none;
-    padding-left:0;
-}
-.p2_ul>li>a{
+a{
     text-decoration: none;
-    font-weight: bold;
-}
-.p2_ul>li:nth-child(4){
-    margin-top:20px;
-}
-
-.buy_btn{
-    margin-top:24px;
-    width:300px;
-    height:80px;
-    color:white;
-    background-color: black;
-    font-size: large;
+    cursor: pointer;
+    font-size:17px;
     font-weight: bold;
 }
 
+a:link{
+    color:black;
+}
+a:visited{
+    color:black;
+}
 
+button{
+    cursor: pointer;
+    border-radius: 5px;
+    border-style: none;
+}
 
-/* 테이스팅 노트 */
-#tasting_note{
-    width:1300px;
-    margin:0 auto;
-    margin-top:-50px;
+/* 보류 */
+/* button:hover{
+    
+}
+button:active{
    
-}
+} */
 
-.note_ul{
-  display: flex;
-  gap:10%;
-  /* float:left; */
-  margin-top:10%;
-  /* margin-left:25px; */
-  padding:4%;
-  border-top:2px solid lightgray;
-  border-bottom:2px solid lightgray;
 
-}
 
-.common_note{
+
+/*이미지 & 설멍  */
+.img-info{
     position: relative;
-    display: inline-block;
-    width:400px;
-    height:200px;
-    background-color: lightsalmon;
-}
-
-
-/* 탑,미들,베이스 */
-.note_position{
-   display:block;
-   width:90px;
-   position: relative;
-   top:10%;
-   left:60%;
-   margin:0;
-   font-weight: bold;
-}
-/* 노트내용 */
-.note_content{
-   display:block;
-   position: absolute;
-   width:90px;
-   top:10%;
-   left:60%;
-   margin: 30px 0 0 0;
-   font-size: small;
-   
-}
-
-
-
-.note_img{
-    width:150px;
-    margin-top:-30px;
-    margin-left:-20px;
-   
-} 
-
-/* 베스트 상품 */
-#best_list{
-    width:1300px;
-    margin:0 auto;
-    margin-top:-50px;
-    margin-bottom:5%;
-}
-
-.best_ul{
-  display: flex;
-  gap:8%;
-  margin-top:5%;
-  padding:4%;
-}
-
-
-.common_best{
-    display: inline-block;
-    width:400px;
-    height:450px;
-    background-color: lightpink
-}
-
-.common_best>p{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content:center;
-    /* gap:0 20px; */
+    justify-content: center;
+    align-items: center;
+    border-bottom:2px solid #565c46;
+    padding-bottom: 30px;
 }
 
-.best_name{
-    margin-top:10%;
-}
-
-
-
-
-.best_img{
-    background-color: lightcyan;
-    width:335px;
-    height:250px;
-}
-
-.b_btn{
+.img-box{
     position: relative;
-    top:3%;
-    margin-left:20%;
-    width:200px;
-    height:60px;
-    padding:0;
-    background-color: black;
-    color:white;
+    width: 900px;
+    height:500px;
+    /*background-color: lightsalmon;*/
+}
+
+.img-box img{
+    display: block;
+    margin:0 auto;
+    width:500px;
+    height: 500px;
+}
+
+.tip{
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.p-manual div img{
+    width: 100%;
+    height: 100%;
 }
 
 
 
-
-/* 리뷰 */
-
-.review_box{
-	position:relative;
+/* 상품정보 & 설명 */
+.info-box{
+    position: relative;
+    width: 300px;
+    height:500px;
+    /* background-color: lightskyblue; */
 }
 
-.review_header{
-padding-top:30px;
-}
-
-.r_title{
-   width:100px;
-   margin:100px auto;
-}
-
-.emotion_area{
-    /* margin-top:30px; */
-    border-bottom:2px solid lightgray;
-    padding-bottom:30px;
+.info-box .detail-info p{
+    margin:0;
+    position: absolute;
+    top:250px;
 }
 
 
-.emotion_btn{
-    background-color: black;
+.info-box .review-link{
+    width:70px;
+    height: 25px;
+    float: right;
+
+}
+
+
+
+.info-box .buy-btn{
+    width:100%;
+    position: absolute;
+    bottom:0;
+}
+.info-box .buy-btn button[type="button"]{
+    width: 100%;
+    height: 70px;
+    background-color: #565c46;
     color: white;
+    font-weight: bold;
 }
 
-.user_log{
-    position: relative;
-    bottom:70px;
-    left:85%;
+
+/* 향수 ml 선택 */
+.info-box .mlbox{
+    width: 70px;
+    height: 40px;
 }
-.user_log>ul>li{
+
+.info-box .mlbox .ml{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 노트 설명 */
+.tasting-note{
+    display: flex;
+    padding-top:30px;
+    justify-content: center;
+    border-bottom: 2px solid #565c46;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.tasting-note .note{
+    display: flex;
+    flex-direction: row;
+    width:400px;
+    height: 300px;
+    /* background-color: lightblue; */
+}
+
+.tasting-note .note .note-info{
+    width:100%;
+}
+.tasting-note .note .note-info p{
+    margin:0;
+    margin-top:30px;
+}
+
+.tasting-note .note-img img{
+    width: 130px;
+    height: 180px;
+    
+}
+
+
+
+/* 향수 사용법 설명서 */
+.p-manual{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom:2px solid #565c46;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.p-manual div{
+    width:230px;
+    height: 350px;
+    margin:0 auto;
+    /* background-color: lightskyblue; */
+}
+
+
+
+
+
+
+
+
+/* 추천 상품 */
+.recommend-title{
+    padding-top:50px;
+    padding-bottom:50px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/* 유사한 상품 아웃라인 박스 */
+.recommend-outline-box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* width: 100%; */
+    height:450px;
+    padding-bottom: 30px;
+    border-bottom:2px solid #565c46;
+}
+
+/* 화살표 이미지 */
+.recommend-outline-box .arrow{
+    margin-top: 15%;
+    width: 50px;
+    height: 50px;
+}
+.recommend-outline-box .arrow img{
+    width: 100%;
+    height: 100%;
+}
+
+.recommend-outline-box .left{
+    position: absolute;
+    left:0;
+}
+
+.recommend-outline-box .right{
+    position: absolute;
+    right:0;
+}
+
+
+/* 슬라이드 */
+.multiple-items{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    /* gap:4%; */
+    width: 1000px;
+    height: 100%;
+    /* transition: all 3s; */
+    overflow-x: hidden;
+    
+}
+
+
+.multiple-items .slide-item{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 300px;
+    height: 400px;
+
+}
+
+.multiple-items .slide-item img{
+    width:200px;
+    height: 200px;  
+}
+
+.multiple-items .slide-item h3{
+    margin:0;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size: medium;
+}
+
+.multiple-items .slide-item h5{
+    margin:0;
+    margin-top:10px;
+    margin-bottom:10px;
+   
+}
+
+.multiple-items .slide-item button[type="button"] {
+    width: 200px;
+    height: 50px;
+    background-color: #565c46;
+    color: white;
+    font-weight: bold;
+}
+
+
+.slick-arrow{
+	width:50px;
+	height:50px;
+	background-color:white;
+}
+
+
+
+.slick-next {
+    background-image: url('../Main-image/오른쪽.png');
+    background-size: 100% 100%;
+   	width: 20px; 
+    height: 20px;
+    content:"";
+
+}
+
+.slick-prev {
+    background-image:url('../Main-image/왼쪽.png');
+    background-size: 100% 100%;
+   	width: 20px; 
+    height: 20px;
+    content:"";
+}
+
+
+
+
+/* 리뷰 & 등급*/
+
+.ratingbox{
+    width: 500px;
+    text-align: center;
+    padding-top:50px;
+    padding-bottom:50px;
+    font-size:5rem;
+    font-weight:400;
+    margin:0 auto;
+}
+
+
+.review-title{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    padding-top:50px;
+    /* padding-bottom:50px; */
+}
+
+
+/* 평점 & 댓글입력 구역 */
+.comment-area{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    margin-top: 70px;
+    /* background-color: lightcoral; */
+}
+
+
+/* 사용자 별점 */
+.comment-area .comment-rating{
+    width:80px;
+    height: 40px;
+}
+.comment-area .comment-rating .comment-select{
+    width:109%;
+    height: 100%;
+}
+
+
+/* 댓글입력 */
+.comment-area .comment-textarea{
+    width: 100%;
+    height: 100%;
+    /* background-color: lightsalmon; */
+}
+
+
+
+.comment-area .comment-textarea textarea::placeholder{
+    font-size: large;
+    font-weight:600;
+
+}
+.comment-area .comment-textarea textarea:nth-child(1){
+    width: 100%;
+    height: 20%;
+    resize: none;
+    box-sizing: border-box;
+    border:1px solid black;
+    border-radius: 5px;
+
+}
+.comment-area .comment-textarea textarea:nth-child(2){
+    width: 100%;
+    height: 50%;
+    resize: none;
+    font-size: medium;
+    font-weight:500;
+    box-sizing: border-box;
+    border:1px solid black;
+    border-radius: 5px;
+
+}
+
+
+.comment-area .comment-textarea .comment-btngroup{
+    float:right;
+}
+
+.comment-area .comment-textarea .comment-btngroup button{
+    width: 90px;
+    height: 40px;
+    color:white;
+    font-size: medium;
+    font-weight: 500;
+    border-style: none;
+    background-color: #565c46;
+}
+
+
+
+#review-display{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+
+#review-display .pr-review{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    border-bottom:2px solid #565c46;
+}
+
+
+/* 리뷰 헤더 */
+#review-display .pr-review .pr-review-header .pr-rating{
+ font-size:30px;
+}
+
+
+/* 리뷰 푸터 */
+#review-display .pr-review .pr-review-footer{
+    width: 100%;
+    margin-bottom:50px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* 좋아요 & 싫어요 */
+#review-display .pr-review .pr-review-footer .emotion{
+  width:200px;
+  height: 50px;
+}
+#review-display .pr-review .pr-review-footer .emotion span{
+  font-size:medium;
+  font-weight: bold;
+  margin-left:5px;
+  margin-right: 5px;
+  }
+#review-display .pr-review .pr-review-footer .emotion img{
+    width: 25px;
+    height: 25px;
+}
+
+
+/* 작성자 & 작성날짜 */
+#review-display .pr-review  .pr-review-footer .user {
+    width:200px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    /* margin-bottom:10px; */
+}
+#review-display .pr-review .pr-review-footer .user ul{
+    position: absolute;
+    bottom: 0;
+    padding:0;
+    margin:0;
     list-style: none;
+    
+    
 }

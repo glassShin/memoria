@@ -1,0 +1,94 @@
+@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&family=Old+Standard+TT:ital@1&family=Playfair+Display&display=swap');
+
+
+/* 전체영역 */
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.stn{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.content{
+	position: absolute;
+	top: 10em;
+	width: 100%;
+	flex-grow: 1;
+}
+
+
+button[type="button"]{
+    cursor: pointer;
+}
+
+
+.banner-sentence{
+text-align: center;
+font-size: large;
+}
+
+
+.banner-img{
+    text-align: center;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.best {
+	font-family: 'batang';
+}
+
+/* 상품영역 */
+.flex-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap:100px;
+    flex-grow: 1;
+	padding-top: 60px;
+	width: 90%;
+	margin: 0 20px 0 120px;
+    
+}
+
+.list-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-item .item-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.list-item .item-img img{
+    width: 90px;
+    height: 200px;
+}
+
+.list-item .item-btn button[type="button"]{
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #565c46;
+    color:white;
+}
+
+.footer-all {
+	position: relative;
+	top: 100em;
+	
+
+}
+

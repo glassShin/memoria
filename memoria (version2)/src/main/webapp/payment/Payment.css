@@ -1,0 +1,295 @@
+@charset "UTF-8";
+
+/* 기본css */
+html,body{
+    margin: 0 auto;
+}
+
+/* 배송지 정보 */
+.total{
+   position: absolute;
+   top: 15em;
+   width: 100%;
+}
+
+/* 왼쪽 요소 */
+.left-content{
+   width: 50%;
+   float: left;
+   left: 3em;
+   box-sizing: border-box;
+    position: relative;
+    font-size: 13px;
+}
+
+.delivery-info{
+   position: relative;
+   left: 2em;
+   width: 580px;
+   font-size: 16px;
+   margin-bottom: 20px;
+   padding-bottom: 20px;
+   border-bottom: 2px solid #565c46;
+}
+.delivery-p {
+   position: relative;
+   left: 2.5em;
+   padding-bottom: 15px;
+}
+#errmsg {
+	 position: relative;
+   left: 2.5em;
+   padding-bottom: 15px;
+	font-weight: bold;
+	color : red;
+	margin-top : -15px;
+}
+
+ul>li {
+   padding-top: 3px;
+   padding-bottom: 5px;
+}
+
+.delivery-ul {
+   list-style: none;
+}
+
+.delivery-li {
+   font-size: 13px;
+}
+
+/* 기본 입력란 */
+.u_line {
+   width: 580px;
+   height: 50px;
+   border: none;
+   border-bottom: 1px solid #565c46;
+}
+
+/* 우편번호 입력란 */
+.u_code{
+   width: 330px;  
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #565c46;
+    margin-top : 15px;
+    
+}
+
+.u_detailaddr {
+	width: 285px;  
+    height: 50px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #565c46;
+}
+
+.code_btn{
+   position: relative;
+   top : 2px;
+   left : 45px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: #565c46;  
+}
+
+/* 결제방법 */
+.pay {
+   position: relative;
+   left: 40px;
+   top: 7em;
+   padding-bottom: 10px;
+   font-size: 13px;
+}
+.pay-p {
+   font-size: 16px;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+   border-bottom: 2px solid #565c46;
+}
+
+/* footer */
+.footer-all {
+   position: relative;
+   top: 220%;
+}
+
+/* ----------------------------------------- */
+/* 장바구니 전체 div */
+.p-box {
+   position: relative;
+   transform: translate(15%, 0%);
+   float: right;
+   width: 50%;
+}
+
+.order-p{
+   font-size: 16px;
+   padding-bottom: 10px;
+}
+
+/*productList & payGroup공통 속성  */
+.pgroup{ 
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   gap: 100px;
+   -webkit-box-pack: justify;
+   height: 100%;
+}
+
+.p__ul{
+  list-style: none;
+}
+
+.basket-header {
+   height : 30px;
+   padding: 15px 0 15px; 
+   margin: 0;  
+   list-style : none;
+   border-top: 1px solid #565c46;
+   border-bottom: 1px solid #565c46;
+}
+
+.basket-header > li[class^="header"] {
+   float : left;
+   left : 1px;
+   margin: 0 40px 0;
+   font-size : 13px;
+   font-weight: bold;
+}
+
+.basket-header > li.header-price {
+   margin-left : 160px;
+}
+
+/* 게제상품 리스트 */
+.productList {
+   display: inline-block;
+   position: relative;
+   width: 580px;
+   box-sizing: border-box;
+   border-bottom: 1.5px solid #565c46;
+}
+
+.basket-product {
+   padding-bottom: 10px; 
+   bottom: 20px;
+   margin: 0;
+   font-size : 15px;
+   font-weight: bold;
+}
+
+/* 상품리스트 */
+.innerList {
+   width: 680px;
+   height: 100%;
+   padding: 5px;
+}
+
+.paymentList-ul {
+   list-style: none;
+   padding: 0px;
+   display: flex;
+   align-items: center;
+}
+
+.paymentList-ul>li {
+   display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product_info {
+   display: inline;
+   margin-right: 35px;
+}
+
+.product_info>span {
+   display: block;
+}
+
+/* 버튼 */
+.qu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.qu:hover {
+   text-decoration: underline;
+}
+
+/* 상품이름 */
+.product-KName,
+.product-EName  {
+   display: block;
+   text-align: center;
+   margin: 0 20px 0;
+   font-size: 13px;
+   width: 120px;
+}
+
+.paymentList-ul > li > span{
+   margin: 0 50px 0 30px;
+   font-size: 13px;
+}
+
+.paymentList-ul > li > button {
+   margin-left : 65px;
+}
+
+.paymentList-ul > li > img {
+   float : left;
+   width: 70px;
+   height: 150px;
+}
+
+.pay_btn{
+   position: relative;
+    top: 10em;
+    left: 50px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    background-color: #565c46; 
+}
+
+
+@media screen and (max-width: 1000px) {
+    .left-content {
+        width: 100%;
+    }
+    
+    /* 오른쪽 요소가 왼쪽 밑으로 */
+    .p-box {
+        width: 100%;
+        top: 10em;
+        right: 5em;
+        float: none; 
+    }
+    
+    .pay_btn {
+       top: 15em;
+    }
+    
+    .pay-p {
+       width: 580px;
+    }
+    
+    .delivery-info {
+       width: 580px;
+    }
+    
+}

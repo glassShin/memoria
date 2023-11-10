@@ -24,6 +24,9 @@
 	</div>
 
 <!-- 공통footer -->
-<%@include file = "../../Footer/Footer.jsp" %>
+<div class="footer-all">
+		<%@include file="../../Footer/Footer.jsp"%>
+	</div>	
+
 </body>
 </html>

@@ -1,0 +1,195 @@
+@charset "EUC-KR";
+
+html,body{
+    height: 100%;
+    margin:0;
+    padding:0;
+ }
+ 
+ 
+ 
+ 
+ main{
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     height: 100%;
+ }
+ 
+ a{
+     text-decoration: none;
+     font-weight: 500;
+ }
+ 
+ a:link{
+     color:white;
+ }
+ 
+ a:visited{
+     color: white;
+ }
+ button{
+     cursor: pointer;
+ }
+ 
+ 
+ 
+ /* 관리자 입력 & 확인 */
+ .manager-section{
+     position: relative;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap:200px;
+ }
+ 
+ 
+ /* 닫기 버튼 */
+ .manager-section .exitBtn{
+ position: absolute;
+ top:0;
+ right: 0;
+ margin-top:10px;
+ margin-right:10px;
+ cursor: pointer;
+ }
+ .manager-section .exitBtn img{
+     width: 20px;
+     height: 20px;
+ }
+ 
+ 
+ 
+ 
+ /* 네비게이션 */
+ .sidebar{
+     width:300px;
+     background-color: #929c79;
+ }
+ .sidebar ul{
+     display: flex;
+     flex-direction: column;
+     gap:50px;
+     padding:30px;
+     list-style: none;
+     color: white;
+ }
+ 
+ .sidebar ul li{
+     padding-bottom: 10px;
+     border-bottom:1px solid white;
+ }
+ 
+ 
+ 
+ 
+ /* 고객조회 문구 */
+ .manager-section p{
+    position: absolute;
+    left: 0;
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+
+  .manager-section .customer-search select{
+    border-radius: 5px;
+    height: 36px;
+  }
+ 
+ 
+ 
+ 
+ /* 고객 정보 조회 */
+ .customer-search{
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+ }
+ 
+ .customer-search input[type="text"]{
+     height: 30px;
+     margin-top: 80px;
+     border-radius: 5px;
+     outline: #d9d9d9;
+ }
+ 
+ .customer-search button[type="button"]{
+     height: 35px;
+     background-color:#929c79 ;
+     border-style: none;
+     border-radius: 5px;
+     font-weight: bold;
+     color: white;
+     box-sizing: content-box;
+ }
+ 
+ 
+ 
+ 
+ /* 고객 테이블 */
+ .customer-tb{
+     position: absolute;
+     width: 100%;
+     height: 80%;
+     bottom:0;
+     /* background-color: lightgreen; */
+ }
+ .customer-tb::-webkit-scrollbar{
+    display: none;
+ }
+ 
+ .customer-tb table{
+     width:100%;
+     border:2px solid #d9d9d9;
+     border-collapse: collapse;
+     text-align: center;
+ }
+ 
+ .customer-tb table tr{
+     border:2px solid #d9d9d9;
+     height: 50px;
+ }
+ .customer-tb table tr:nth-child(even){
+    background-color:#f0f0f0 ;
+}
+ 
+
+
+ /* 정보수정 버튼 */
+ .customer-tb tr td .info-rewrite{
+     width: 80px;
+     height: 40px;
+     border-radius: 5px;
+     border-style: none;
+     color:white;
+     background-color:#929c79;
+ }
+
+ .customer-tb tr td .info-rewrite:hover{
+     background-color:  #838c6d;
+  }
+  .customer-tb tr td .info-rewrite:active{
+     background-color:  #757d61;
+  }
+ 
+ 
+  /* 삭제버튼 */
+  .customer-tb tr th .customer-delete{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;;
+    border-style:none;
+    color:white;
+    background-color: #f54242;
+  }
+  .customer-tb tr th .customer-delete:hover{
+    background-color: #d93b3b;
+  }
+  .customer-tb tr th .customer-delete:active{
+    background-color: #c23434;
+  }
+
