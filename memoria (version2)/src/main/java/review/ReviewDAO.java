@@ -60,5 +60,40 @@ public class ReviewDAO extends JDBCConnect{
 		}
 		return result;
 	}
+	
+	public boolean reviewDelCheck(String reviewid,String email) {
+		boolean result = false;
+		String sql = "select memberemail from review where reviewid=? and memberemail=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, reviewid);
+			psmt.setString(2, email);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				result = true;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public boolean reviewDelete(String reviewid) {
+		boolean result = false;
+		String sql = "delete from review where reviewid=?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, reviewid);
+			result = psmt.executeUpdate() == 1 ? true : false;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
 
 }

@@ -28,7 +28,6 @@
 	<jsp:include page="../header/Header.jsp" />
 
 	<main>
-
 		<%
     		String user = (String)session.getAttribute("user");
   			String pid = request.getParameter("pid");
@@ -45,8 +44,6 @@
   			new LogDAO().insertLog(user, pid);
   			}
   		%>
-		======= >>>>>>> branch 'memoria_test_branch' of
-		https://github.com/glassShin/memoria.git
 		<div class="img-info">
 
 			<div class="img-box">
@@ -238,10 +235,13 @@
 		</form>
 
 		<div id="review-display">
-        <%boolean reviewcheck = true;
+        <%
+        boolean heartwcheck = true;
+        boolean reviewcheck = true;
         for(ReviewDTO redto : reviewlist) { 
-        	reviewcheck = new HeartDAO().checkHeart(user, redto.getR_id());
-        	String imgsrc = reviewcheck ? "../image2/thumbUp_off.png" : "../image2/thumbUp_on.png";
+        	reviewcheck = new ReviewDAO().reviewDelCheck(redto.getR_id(), user);
+        	heartwcheck = new HeartDAO().checkHeart(user, redto.getR_id());
+        	String imgsrc = heartwcheck ? "../image2/thumbUp_off.png" : "../image2/thumbUp_on.png";
         %>
         	
             <div class="pr-review">
@@ -261,6 +261,9 @@
                         <ul>
                             <li>작성자: <span class="writer"><%=redto.getEmail() %></span> </li>
                             <li>작성날짜: <span class="write-date"><%=redto.getDate() %></span></li>
+                            <%if(reviewcheck) {%>
+                            <li><a href="process/reviewDeleteProcess.jsp?reviewid=<%=redto.getR_id() %>&pid=<%=pid %>" onclick="return confirm('정말 삭제하시겠습니까 ?');">삭제</a></li>
+                            <%} %>
                         </ul>
                     </div>
                 </footer>
