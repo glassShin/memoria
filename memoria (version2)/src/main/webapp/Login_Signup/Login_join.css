@@ -14,6 +14,12 @@ body {
 	font-size: 13px;
 }
 
+
+button{
+	width:50px;
+	height:30px;
+	background-color: #565c46;  
+}
 /*신규회원, 기존회원  */
 /* 로그인 회원가입 전체구역 */
 #login_join {
