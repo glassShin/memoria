@@ -45,6 +45,8 @@
   			new LogDAO().insertLog(user, pid);
   			}
   		%>
+		======= >>>>>>> branch 'memoria_test_branch' of
+		https://github.com/glassShin/memoria.git
 		<div class="img-info">
 
 			<div class="img-box">
@@ -182,7 +184,7 @@
 			<div class="left arrow">
 				<img src="/detail_modify/arrow/left-arrow.png">
 			</div>
-			<script src="detailPage.js"></script>
+
 			<!-- <div class="recommend-slide"> -->
 				<%for(ProductDTO redto : recommlist) { %>
 
@@ -234,7 +236,7 @@
 				</div>
 			</div>
 		</form>
-		
+
 		<div id="review-display">
         <%boolean reviewcheck = true;
         for(ReviewDTO redto : reviewlist) { 
@@ -253,7 +255,7 @@
                 <p class="pr-review-main"><%=redto.getR_content() %></p>
                 <footer class="pr-review-footer">
                    <div class="emotion">
-                            <img src=<%=imgsrc %> class="good-img" onclick="clicklike('<%=redto.getR_id()%>');"> <span class="good"><%=redto.getR_like() %></span>
+                            <img src=<%=imgsrc %> class="good-img"> <span class="good"><%=redto.getR_like() %></span>
                     </div> 
                     <div class="user">
                         <ul>

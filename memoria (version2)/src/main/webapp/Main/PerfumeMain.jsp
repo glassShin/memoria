@@ -71,7 +71,8 @@ if(user == null) {
                     <%} %>
                 </div> 
             </div>
-               <script src="reviewLike.js"></script>
+          
+
 
             <!-- 상품이동 페이지 -->
             <div class="product-page">
