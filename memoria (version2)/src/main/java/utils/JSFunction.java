@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.JspWriter;
 
 public class JSFunction {
+	//test
     // 메시지 알림창을 띄운 후 명시한 URL로 이동합니다.
     public static void alertLocation(String msg, String url, JspWriter out) {
         try {
