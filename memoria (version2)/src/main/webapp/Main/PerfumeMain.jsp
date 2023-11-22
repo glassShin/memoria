@@ -25,7 +25,7 @@ String user = (String)session.getAttribute("user");
 if(user == null) {
 	list = dao.recommendlist("고급스러운");
 }else {
-	list = dao.recommendlist(user);
+	list = dao.recommendmainList(user);
 }
 
 %>
