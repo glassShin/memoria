@@ -458,6 +458,7 @@ button:active{
 #review-display .pr-review .pr-review-footer .emotion img{
     width: 25px;
     height: 25px;
+    cursor: pointer;
 }
 
 

@@ -16,7 +16,7 @@ ReviewDAO dao = new ReviewDAO();
 boolean result = dao.reviewDelete(reviewid);
 
 if(result) {
-	JSFunction.alertLocation("삭제 완료 되었습니다.", "../detailPage.jsp?pid" + pid, out);
+	JSFunction.alertLocation("삭제 완료 되었습니다.", "../detailPage.jsp?pid=" + pid, out);
 }else {
 	JSFunction.alertBack("리뷰 삭제에 실패했습니다. 다시 시도 해주세요.", out);
 }
