@@ -33,22 +33,17 @@ z-index: 1;
    margin-left : 15px;
 }
 #logobar > ul > li > i{
-<<<<<<< HEAD
-width : 16px;
-height : 16px;
-cursor : pointer;
-=======
+
 	width : 50px;
 	height : 50px;
 	cursor : pointer;
->>>>>>> branch 'memoria_test_branch' of https://github.com/glassShin/memoria.git
 }
 
 .logo > img{
     width: 120px;
     height: 30px;
     display : block;
-    margin-left : 50%;
+    margin-left : 47%;
 }
 
 /* 네비바 */
