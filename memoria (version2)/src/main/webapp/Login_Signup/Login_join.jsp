@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const formDataJson = sessionStorage.getItem('formData');
     if (formDataJson) {
     	const formData = JSON.parse(formDataJson);
-
+		//test shin
         // Set the form fields with the stored data
         document.forms['joinFrm'].mail.value = formData.mail;
         document.forms['joinFrm'].pass.value = formData.pass;
