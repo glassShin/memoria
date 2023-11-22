@@ -36,6 +36,7 @@
   			ArrayList<ProductDTO> recommlist = dao.recommendlist(dto.getType());
   			ReviewDAO reviewdao = new ReviewDAO();
   			ArrayList<ReviewDTO> reviewlist = reviewdao.selectReview(pid);
+  			boolean reviewchk = reviewdao.reviewcheck(pid,user);
   			int total = 0;
   			for(ReviewDTO gradetotal : reviewlist) {
   				total += gradetotal.getR_grade();
@@ -43,6 +44,7 @@
   			if(user!=null) {
   			new LogDAO().insertLog(user, pid);
   			}
+  			System.out.println(2 / reviewlist.size());
   		%>
 		<div class="img-info">
 
@@ -190,7 +192,7 @@
 
 					<div class="slide-item">
 						<img
-							src="../productimg/<%=redto.getImage()+".png" %>"
+							src="../productimg/<%=redto.getP_id() + ".png"%>"
 							alt="사진없음">
 						<h3><%=redto.getP_kname() %></h3>
 						<h5><%=redto.getP_ename() %></h5>
@@ -207,11 +209,11 @@
 			<%if(total == 0) { %>
 			<span class="p-rating"> <%=total%></span>/5
 			<%}else { %>
-			<span class="p-rating"> <%=total/recommlist.size()%></span>/5
+			<span class="p-rating"> <%=total / reviewlist.size()%></span>/5
 			<%} %>
 		</div>
-		<form method="post"
-			action="process/ReviewInsertProcess.jsp?pid=<%=pid%>">
+		<%if(reviewchk) { %>
+		<form method="post" action="process/ReviewInsertProcess.jsp?pid=<%=pid%>">
 			<div class="comment-area">
 				<div class="comment-rating">
 					<select class="comment-select" name="regrade">
@@ -233,7 +235,10 @@
 				</div>
 			</div>
 		</form>
-
+		<%}else {%>
+		 <span>-상품 구매 후 리뷰 작성 가능 합니다.-</span>
+		<%} %>
+		<script src="recommendcheck.js"></script>
 		<div id="review-display">
         <%
         boolean heartwcheck = true;
@@ -254,8 +259,9 @@
                
                 <p class="pr-review-main"><%=redto.getR_content() %></p>
                 <footer class="pr-review-footer">
-                   <div class="emotion">
-                            <img src=<%=imgsrc %> class="good-img"> <span class="good"><%=redto.getR_like() %></span>
+                   <div class="emotion emotion<%=redto.getR_id()%>">
+                            <img src=<%=imgsrc %> class="good-img" onclick="likeclick('<%=redto.getR_id()%>','<%=heartwcheck%>');"> <span class="good"><%=redto.getR_like() %></span>
+                            
                     </div> 
                     <div class="user">
                         <ul>
@@ -280,32 +286,6 @@
 
 
 	<script>
-
-
-    // 좋아요 & 싫어요
-    const reviews = document.querySelectorAll('.pr-review');
-
-        reviews.forEach(review => {
-            let goodImgClick = 0;
-            let badImgClick = 0;
-            let goodImg = review.querySelector('.good-img');
-            let badImg = review.querySelector('.bad-img');
-            let good = review.querySelector('.good');
-            let bad = review.querySelector('.bad');
-
-            goodImg.addEventListener('click', function() {
-                if (goodImgClick === 0) {
-                    goodImgClick = 1;
-                    badImgClick = 0;
-                    good.innerHTML = goodImgClick;
-                    bad.innerHTML = badImgClick;
-                } else {
-                    goodImgClick = 0;
-                    good.innerHTML = goodImgClick;
-                }
-            });
- 
-
 // 캐러셀(슬라이드)
 
 // slick.js

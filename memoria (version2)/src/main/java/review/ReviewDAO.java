@@ -95,5 +95,24 @@ public class ReviewDAO extends JDBCConnect{
 		return result;
 		
 	}
+	
+	public boolean reviewcheck(String pid,String user) {
+		boolean result = false;
+		String sql = "select * from order1 where orderid like ? and productid like ?";
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, user+"%");
+			psmt.setString(2, pid+"%");
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				result = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 
 }
