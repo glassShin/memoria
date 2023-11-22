@@ -21,13 +21,14 @@
 	ArrayList<CartListDTO> list = dao.cartSelect(email);
 	%>
 
-
-	<div id="positionset">
+	
+	<!-- 팝업창 수정 -->
+	<!-- <div id="positionset"> -->
 		<div id="udpatepopup">
 			<iframe src="OptionUpdate.jsp?" id='myFrame' width="500px"
 				height="330px"></iframe>
 		</div>
-	</div>
+	<!-- </div> -->
 
 	<main>
 		<div class="p-box">
@@ -56,7 +57,7 @@
 						</div>
 						<li><span class="price"><%=dto.getPrice()%></span></li>
 						<li><span class="stock"><%=dto.getCnt()%></span></li>
-						<li><button id="optionUpdate" class="optionUpdate"
+						<li><button id="optionUpdate" class="optionUpdate2"
 								onclick="openpopup('<%=dto.getProductid()%>','<%=dto.getCnt()%>','<%=dto.getCartid()%>')">옵션수정</button></li>
 						<li><span class="total"><%=dto.getPrice() * dto.getCnt()%></span></li>
 						<div class="close close-x"
