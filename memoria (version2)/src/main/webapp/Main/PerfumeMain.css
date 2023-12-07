@@ -101,15 +101,11 @@ body{
 }
 /* 업데이트 */
 
-
-
-
-
 /* 중간이미지 + 문장 */
 .image-moonjang{
    background-size: 100% 100%;
    position: absolute;
-   top: 67em;
+   top: 67.8em;
    width: 100%;
    height: 300px;
    z-index: 1;
@@ -195,7 +191,7 @@ body{
    border-radius: 20px;
    position: relative;
    top: 5em;
-   left: 58%;
+   left: 49em;
    height: 420px;
    width: 370px;
 }
@@ -206,7 +202,7 @@ body{
    position: relative;
    bottom: 15em;
    float: left;
-   left: 26%;
+   left: 350px;
 }
 /* 타이틀 */
 .l-Title{

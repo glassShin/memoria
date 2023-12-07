@@ -1,33 +1,13 @@
 <%@page import="product.ProductDAO"%>
-<%@page import="product.ProductDTO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
 <%
-String id = request.getParameter("id");
+String id = request.getParameter("productid");
+String type = request.getParameter("type");
+String val = request.getParameter("val");
+
+response.setContentType("text/plain;charset=UTF-8");
+response.setCharacterEncoding("UTF-8");
+
 ProductDAO dao = new ProductDAO();
-ProductDTO dto = dao.getproduct(id);
+dao.updateProduct(type, val, id);
+response.getWriter().write("success");
 %>
-
-<html>
-<head>
-<meta charset="UTF-8">
-<link href="admin.css" rel="stylesheet" type="text/css" />  
-<title>Insert title here</title>
-</head>
-<body>
-<jsp:include page="../header/Header.jsp" />
-
-
-<div>
-	<h1> 상품정보 변경</h1>
-	<table>
-		<tr>
-			<th>상품아이디</th>
-			<td><input type = "text" value="<%=dto.getP_id()%>"/></td>
-		</tr>
-	</table>
-</div>
-</body>
-</html>

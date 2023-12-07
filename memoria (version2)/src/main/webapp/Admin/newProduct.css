@@ -119,9 +119,9 @@ html,body{
      justify-content: center;
      align-items: center;
      position: relative;
-     bottom: 55px;
+     top : 50px;
      width: 710px;
-     height: 800px;
+     height: 500px;
      background-color: white;
      transform: translate(-7%,9%);
      border-radius: 10px;
@@ -166,12 +166,11 @@ html,body{
      margin-bottom:50px;
  }
  .manager-section .modal .btn-group button[type="button"]{
-
-     height: 50px;
+     height: 40px;
      border-radius:5px;
-     /* border-style:none ; */
+     border-style:none ; 
      font-size: medium;
-     font-weight: bold;
+
  }
  .manager-section .modal .btn-group button[type="button"]:first-child{
      margin-right: 10px;  
@@ -201,7 +200,6 @@ html,body{
  
  
  
- 
  /* 모달 테이블 */
  .manager-section .modal table{
      position: absolute;
@@ -212,6 +210,30 @@ html,body{
      border-collapse: collapse;
  }
 
+th{
+	width: 80px;
+}
+
+
+.capacity{
+	width: 200px;
+	text-align: center;
+}
+.ml{
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.md-stock {
+	display : inline;
+	width: 50px;
+	margin-left: 10px;
+	
+	
+}
+ 
+
+
  .manager-section .modal table tr ul{
     display: flex;
     flex-direction: row;
@@ -220,20 +242,20 @@ html,body{
     padding:0;
  }
 
- .manager-section .modal table tr ul li{
+/*  .manager-section .modal table tr ul li{
     height: 50px;
     width: 100px;
- }
+ } */
  
  
  
  /* 모달 테이블 정보수정 인풋 & 버튼 */
  .manager-section .modal table tr td input[type="text"]{
-   width:95%;
    height: 50px;
    border-style: none;
-   font-size:small;
+   font-size: 15px;
    background-color: white;
+   text-align: center;
  }
  .manager-section .modal table tr td button[type="button"]{
      width:70px;

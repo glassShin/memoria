@@ -6,6 +6,7 @@
 <%@page import="product.ProductInfoDTO"%>
 <%@page import="product.ProductDTO"%>
 <%@page import="product.ProductDAO"%>
+<%@page import="interest.InterestDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,11 +32,19 @@
 		<%
     		String user = (String)session.getAttribute("user");
   			String pid = request.getParameter("pid");
+  			
   			ProductDAO dao = new ProductDAO();
   			ProductInfoDTO dto = dao.getproductInfo(pid);
+  			
   			ArrayList<ProductDTO> recommlist = dao.recommendlist(dto.getType());
   			ReviewDAO reviewdao = new ReviewDAO();
   			ArrayList<ReviewDTO> reviewlist = reviewdao.selectReview(pid);
+  			
+  			InterestDAO interestdao = new InterestDAO();
+  			
+  			boolean interestchk = interestdao.checkInterest(user, pid);
+  			String interestaddr = interestchk ? "../image2/interestoff.png" : "../image2/intereston.png";
+  			
   			boolean reviewchk = reviewdao.reviewcheck(pid,user);
   			int total = 0;
   			for(ReviewDTO gradetotal : reviewlist) {
@@ -45,6 +54,7 @@
   			new LogDAO().insertLog(user, pid);
   			}
   		%>
+  		<script src="interestcheck.js"></script>
 		<div class="img-info">
 
 			<div class="img-box">
@@ -83,7 +93,10 @@
 						<%=dto.getInfo() %>
 					</p>
 				</div>
-
+				<div class="interest-btn">
+					<img src="<%=interestaddr %>" class="heart" width="20px" onclick="interestclick('<%=interestchk%>','<%=pid%>')">
+					<span>관심상품</span>
+				</div>
 				<div class="buy-btn">
 					<button type="button" id="moveCartbtn"
 						onclick="location.href='../addToCart/addToCart.jsp?productid=<%=dto.getPid()%>'">구매하기</button>

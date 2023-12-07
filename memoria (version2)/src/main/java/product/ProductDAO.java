@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+
 import common.JDBCConnect;
 import log.LogDAO;
 
@@ -298,6 +299,52 @@ public class ProductDAO extends JDBCConnect{
     		  }
     		  return bbs;
     }
+	
+	public void updateProduct(String type, String val, String id) {
+	    String sql = "update product set " + type + " = ? where productid like ?";
+	    
+	    if (type.equals("productprice")) {
+	        int price = Integer.parseInt(val);
+	        try {
+	            psmt = con.prepareStatement(sql);
+	            psmt.setInt(1, price);
+	            psmt.setString(2, id + "%");
+	            psmt.executeUpdate();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    } else {
+	        try {
+	            psmt = con.prepareStatement(sql);
+	            psmt.setString(1, val);
+	            psmt.setString(2, id + "%");
+	            psmt.executeUpdate();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	}
+	
+	public int[] getStock(String pid) {
+		int[] stock = new int[3];
+		int i = 0;
+		String sql = "select productstock from product where productid like ?";
+		
+		try {
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, pid+"%");
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				stock[i++] = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return stock;
+	}
 
 	
 	public boolean deleteProduct(String id) {
