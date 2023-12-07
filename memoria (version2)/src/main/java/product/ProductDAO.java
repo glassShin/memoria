@@ -91,7 +91,7 @@ public class ProductDAO extends JDBCConnect{
 	
 	public ArrayList<ProductDTO> getProductList() {
 		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
-		String sql = "select * from product where productml='50ml'";
+		String sql = "select * from product where productml='50ml' and productbrand = 'memoria'";
 		try {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -320,6 +320,7 @@ public class ProductDAO extends JDBCConnect{
 		
 		return false;
 	}
+	
 	
 	public void close() { 
 		try {            

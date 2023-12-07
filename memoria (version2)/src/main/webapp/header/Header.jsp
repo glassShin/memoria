@@ -1,9 +1,16 @@
+<%@page import="product.ProductDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="product.ProductDAO"%>
 <%@ page language="java"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <%
 String role = (String)session.getAttribute("role");
 String user = (String)session.getAttribute("user");
+
+ProductDAO daoHeader = new ProductDAO();
+
+List<ProductDTO> listProduct = daoHeader.getProductList();
 %>
 
 <html>
@@ -133,6 +140,43 @@ margin-top : 100px;
    to{
    top : 60px;
    }
+ }
+ 
+/* search */ 
+#searchBar {
+            display: none;
+            border: none;
+            z-index:2;
+        }
+#searchIcon {
+            cursor: pointer;
+        }
+
+/*search result*/
+
+.searchBarResult{
+	border-style: solid;
+	border-radius: 15px;
+	z-index:5;
+}
+.list-item {
+        display: none;
+   		margin-right: 100px;
+  		margin-left: 80%;
+    }
+.list-item > .item-name{
+	float : right;
+	margin-right: 10px;
+	font-size: 15px
+}
+.list-item > .item-price{
+	float : right;
+	
+}
+.list-item > .item-img >img{
+	float : right;
+	width: 5%;
+    height: 5%;
 }
 
 </style>
@@ -165,15 +209,29 @@ margin-top : 100px;
    <li>
    <%}%>
    <li>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"  >
         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
       </svg>
    </li>
-   <li>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-      </svg>
-   </li>
+   
+   <!--  search bar -->
+<li id="searchIcon" onclick="toggleSearchBar()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+    </svg>
+</li>
+
+
+<li>
+<form method = "get" id="searchForm">
+    <input type="search" id="searchBar" name = "searchWord" placeholder="상품이름 입력하세요..." onblur="hideSearchBar()" onkeyup="search()">
+</form>
+</li>
+
+
+
+
+   
    <%if(role!= null && role.equals("admin")){ %>
    <li onclick="location.href='../Admin/AdminPage.jsp'">
    <i class="fa-solid fa-user-tie" style="color: #000000"></i>
@@ -184,6 +242,7 @@ margin-top : 100px;
        <img alt="로고" src="../Main-image/로고.png" onclick="location.href='../Main/PerfumeMain.jsp'">
     </div>
 </div>
+
 <div id="navbar">
 <ul>
 <li onclick="location.href='../productList/productList_test.jsp'">향수</li>
@@ -196,6 +255,28 @@ margin-top : 100px;
 
 <!--메뉴바 생성 -->
 </header>
+
+<!--  result bar -->
+<div class =searchBarResult>
+<%
+      for(ProductDTO dto : listProduct) {
+   		%>
+      
+        <div class=list-item onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">
+            <div class="item-img">
+                 <img src="../productimg/<%=dto.getP_id()+".png"%>">
+            </div>
+            <div class="item-name">
+                <i class = "ename"><%=dto.getP_ename() %></i>
+                <i class = "kname"><%=dto.getP_kname() %></i>
+            </div>
+            <div class="item-price">
+                <h4>₩<%=dto.getP_price() %></h4>    
+            </div>
+        </div>
+        <%} %>
+</div>
+
 <script>
 var logobar = document.getElementById('logobar');
 var navbar = document.getElementById('navbar');
@@ -209,6 +290,64 @@ window.addEventListener("scroll",function(){
    }
    
 })
+
+function toggleSearchBar() {
+       var searchBar = document.getElementById("searchBar");
+       var searchIcon = document.getElementById("searchIcon");
+
+       if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+           searchBar.style.display = 'block';
+           searchIcon.style.opacity = 0;
+           search();
+       } else {
+           searchBar.style.display = 'none';
+           searchIcon.style.opacity = 1;
+       }
+   }
+   function hideSearchBar() {
+       var searchBar = document.getElementById("searchBar");
+       var searchIcon = document.getElementById("searchIcon");
+
+       searchBar.style.display = 'none';
+       searchIcon.style.opacity = 1;
+       
+       var searchbox = document.getElementById("searchBar").value.toUpperCase();
+	   var container = document.querySelector('.searchBarResult');
+	   var products = container.querySelectorAll('.list-item');
+       
+       products.forEach(function(product) {
+           product.style.display = "none";
+       });
+   }
+   
+   function search() {
+	    var searchbox = document.getElementById("searchBar").value.toUpperCase();
+	    var container = document.querySelector('.searchBarResult');
+	    var products = container.querySelectorAll('.list-item');
+
+	    products.forEach(function(product) {
+	        var itemName = product.querySelector('.item-name');
+	        var kname = itemName.querySelector('.kname').innerText;
+	        var ename = itemName.querySelector('.ename').innerText;
+
+	        if (kname.toUpperCase().indexOf(searchbox) > -1 || ename.toUpperCase().indexOf(searchbox) > -1 ) {
+	            product.style.display = "block";
+	        } else {
+	            product.style.display = "none";
+	        }
+
+	    });
+	    if (searchbox === "") {
+	        // If the search box is empty, hide all products
+	        products.forEach(function(product) {
+	            product.style.display = "none";
+	        });
+	    }
+
+	    console.log(searchbox);
+	}
+
+
 </script>
 </body>
 </html>

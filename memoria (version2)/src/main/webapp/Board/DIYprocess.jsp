@@ -20,7 +20,7 @@ ProductDTO dto = new ProductDTO();
 
 String type =dao.findType(mid);
 
-String id = userName +" DIY"+ml;
+String id = userName +"_DIY"+ml+"_"+top+"_"+mid+"_"+base;
 
 dto.setP_id(id);
 dto.setP_kname(userName + " DIY");
