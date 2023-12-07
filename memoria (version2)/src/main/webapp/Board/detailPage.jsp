@@ -44,7 +44,6 @@
   			if(user!=null) {
   			new LogDAO().insertLog(user, pid);
   			}
-  			System.out.println(2 / reviewlist.size());
   		%>
 		<div class="img-info">
 

@@ -54,18 +54,20 @@ ArrayList<OrderDTO> list = dao.orderSelect(payid);
 						<li class="header-order">주문일자</li>
 					</ul>
 					<div class="innerList">
-					<%for(OrderDTO dto : list) { %>
+					<%for(OrderDTO dto : list) {
+						String[] oid = dto.getO_id().split("_");
+						%>
 						<ul class="paymentList-ul">
 							<div class="order-date">
-								<li><span class="orderNumber"><%=dto.getO_id() %></span></li>
+								<li><span class="orderNumber"><%=oid[0] + "\n" + oid[1] %></span></li>
 							</div>
-							<li><img class="product-img1" src="../productimg/<%=dto.getProductid()+".png" %>"
-								alt="상품이미지"></li>
 							<div class="name">
-								<li><span class="product-Info"><%=dto.getProductid() %></span></li>
+							<li><img class="product-img1" src="../productimg/<%="April"+".png"%>"
+								alt="상품이미지">
+							<span class="product-Info"><%=dto.getProductid() %></span></li>
 							</div>
 							<li><span class="price"><%=dto.getProductprice() %></span></li>
-							<li><span class="price"><%=dto.getO_cnt() %></span></li>
+							<li><span class="number"><%=dto.getO_cnt() %></span></li>
 							<li><span class="price"><%=dto.getO_user() %></span></li>
 							<li><span class="price"><%=dto.getAddr() %></span></li>
 							<li><span class="price"><%=dto.getO_phone() %></span></li>
