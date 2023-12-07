@@ -89,7 +89,7 @@ if(user == null) {
                </div>
                <div class="product-moonjang-l">
                   <p class="l-Title">향수 사러가기</p>
-                  <p class="l-moonjang">테스트용 문장입니다.</p>
+                  <p class="l-moonjang">당신 만의 시그니처 향을 찾고 계시나요 ? <br> 아니면 특별한 누군가에게 줄 선물이 고민되시나요 ? <br> 지금부터 메모리아가 제안하는 완벽한 향을 만나보세요.</p>
                   <button  onclick="location.href='../productList/productList_test.jsp'" class="product-btn-l">보러가기</button>
                </div>
             </div>

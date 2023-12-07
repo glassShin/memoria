@@ -83,7 +83,21 @@ button:active{
     height: 100%;
 }
 
+ .interest-btn {
+ 		position : relative;
+        text-align: center; /* 이미지와 텍스트를 가운데 정렬할 수 있도록 설정 */
+    	right: 110px;
+		top: 230px
+    }
 
+.heart img {
+	display: block; /* 이미지를 블록 요소로 설정하여 다음 요소와 독립적으로 표시되도록 함 */
+	margin: 0 auto; /* 이미지를 수평으로 가운데 정렬 */
+}
+
+.interest-btn span {
+	display: block; /* span을 블록 요소로 설정하여 새로운 라인에서 표시되도록 함 */
+}
 
 /* 상품정보 & 설명 */
 .info-box{
@@ -107,15 +121,14 @@ button:active{
 
 }
 
-
-
 .info-box .buy-btn{
     width:100%;
     position: absolute;
+    left: 70px;
     bottom:0;
 }
 .info-box .buy-btn button[type="button"]{
-    width: 100%;
+    width: 220px;
     height: 70px;
     background-color: #565c46;
     color: white;

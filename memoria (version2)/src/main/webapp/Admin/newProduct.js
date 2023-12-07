@@ -1,29 +1,44 @@
-$(document).ready(function() {
-	$('.customer-delete').on('click', function() {
-		// 선택된 체크박스를 찾아서 처리
-		var selectedProducts = [];
-		$('input[name="customer-chk"]:checked').each(function() {
-			selectedProducts.push($(this).closest('tr').find('.product-name').text());
-		});
-		console.log(selectedProducts);
-		if (selectedProducts.length > 0) {
-			// 선택된 상품을 서버로 보내 삭제 요청
-			$.ajax({
-				type: 'POST',
-				url: 'deleteProduct.jsp', // 삭제를 처리할 서버 측 스크립트 경로로 변경
-				data: { selectedProducts: selectedProducts },
-				contentType: 'application/x-www-form-urlencoded',
-				success: function(response) {
-					if (response === 'success') {
-						// 삭제가 성공하면 페이지 리로드 또는 필요한 작업 수행
-						location.reload(); // 페이지 리로드 예시
-					} else {
-						alert('삭제 실패');
-					}
-				}
-			});
-		} else {
-			alert('선택된 상품이 없습니다.');
+function open_modal(id, ename, kname, price) {
+	
+	// 모달에 해당 행의 정보를 채워넣는 코드
+	$('.md-id').val(id);
+	$('.md-product').val(id);
+	$('.md-eng').val(ename);
+	$('.md-kr').val(kname);
+	$('.md-price').val(price);
+}
+
+function updateProduct(type) {
+	var id = $('.md-id').val();
+	var value = null;
+	var col = null;
+	if (type == 'id') {
+		value = $('.md-product').val();
+		col = 'productid';
+	} else if (type == 'ename') {
+		value = $('.md-eng').val();
+		col = 'productename';
+	} else if (type == 'kname') {
+		value = $('.md-kr').val();
+		col = 'productkname';
+	} else if (type == 'price') {
+		value = $('.md-price').val();
+		col = 'productprice';
+	} else if (type == 'stock') {
+		value = $('.md-stock').val();
+		col = 'productstock'
+	}
+
+	$.ajax({
+		type: 'POST',
+		url: 'updateProduct.jsp',
+		data: { productid: id, type: col, val: value },
+		success: function(response) {
+			if (response.trim() === 'success') {
+				alert('수정 성공');
+			} else {
+				alert('수정 실패')
+			}
 		}
-	});
-});
+	})
+}

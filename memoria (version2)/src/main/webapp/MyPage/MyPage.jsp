@@ -25,6 +25,7 @@ dto = new MemberDAO().getmember(email);
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="MyPage.jsp">회원 정보</a></li>
 				<li class="nav-li"><a href="Order.jsp">주문 내역</a></li>
+				<li class="nav-li"><a href="Wishlist.jsp">관심상품</a></li>
 			</ul>
 		</div>
 	</nav>

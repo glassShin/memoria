@@ -39,6 +39,7 @@ public class ProductDTO {
 		this.infomation = infomation;
 		this.p_ml = p_ml;
 	}
+	
 
 	public int getP_stock() {
 		return p_stock;
@@ -151,5 +152,4 @@ public class ProductDTO {
 	public void setP_ml(String p_ml) {
 		this.p_ml = p_ml;
 	}
-
 }
