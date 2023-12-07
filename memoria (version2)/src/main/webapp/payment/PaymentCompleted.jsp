@@ -29,13 +29,13 @@
 	color: #565c46;
 	background-color: white;
 }
-</style>
+</style> 
 </head>
 <body>
 	<div class="completed">
 	<img alt="" src="../image2/체크아이콘.png">
 	<p class="completed-msg">결제완료</p>
-	<button class="more">더보러가기</button>
+	<button class="more" onclick="location.href='../Main/PerfumeMain.jsp'">더보러가기</button>
 	</div>
 </body>
 </html>
