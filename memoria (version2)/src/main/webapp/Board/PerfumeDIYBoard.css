@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-html {
+ht {
 	height: 100%;
 }
 
@@ -96,7 +96,7 @@ form button{
 	width:50px;
 }
 
-.perfume_info{
+/* .perfume_info{
 	display:flex;
 	justify-content: center;
 	width:100%;
@@ -107,7 +107,7 @@ form button{
 	width:700px;
 	height:700px;
 }
-
+ */
 
 #perfuem-choice-area{
   display: flex;
@@ -250,17 +250,16 @@ p {
 	width: 200px;
 }
 
-.perfume_info {
-	position: relative;
-	top: 10em;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	
+#ml{
+	width:100px;
+	height:30px;
 }
 
-.perfume_info>img {
-	width: 800px;
+.perfume_info {
+	position:relative;
+	bottom:450px;
+	left:700px;
+	width: 500px;
 	height: 500px;
 }
 
