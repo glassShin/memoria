@@ -34,6 +34,7 @@ z-index: 1;
    margin-top: 10px;
 }
 #logobar > ul > li > i{
+
 	width : 50px;
 	height : 50px;
 	cursor : pointer;
@@ -45,6 +46,7 @@ z-index: 1;
     display : block;
     margin-left : 47%;
     margin-top: 10px;
+
 }
 
 /* 네비바 */

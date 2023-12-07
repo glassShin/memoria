@@ -33,14 +33,15 @@ public class LogDAO  extends JDBCConnect{
 	
 	public String recommendcate(String email) {
 		String result = null;
-		String sql = "select scentid,count(*)as '조회수' from product join log on product.productid = log.productid where memberemail=?"
-				+ " group by scentid ORDER BY COUNT(*) DESC";
+		String sql = "select type,count(*)as '조회수' from product join log on product.productid = log.productid where memberemail=?"
+				+ " group by type ORDER BY COUNT(*) DESC";
 		try {
 			psmt = con.prepareStatement(sql);
 			psmt.setString(1, email);
-			psmt.executeQuery();
+			rs = psmt.executeQuery();
 			if(rs.next()) {
 				result = rs.getString(1);
+					
 			}else {
 				result = new MemberDAO().checkcate(email);
 			}

@@ -14,6 +14,7 @@
 
 function openpopup(pid, cnt, cid) {
     var xhr = new XMLHttpRequest();
+            console.log("OptionUpdate.jsp?pid=" + pid + "&cnt=" + cnt + "&cid=" + cid);
     var url = "OptionUpdate.jsp?pid=" + pid + "&cnt=" + cnt + "&cid=" + cid;
     
     xhr.open("GET", url, true);
@@ -27,7 +28,9 @@ function openpopup(pid, cnt, cid) {
     
     xhr.send();
 
-    document.getElementById("positionset").style.display = "block";
+    document.getElementById("optionUpdate").addEventListener('click',function(){
+		document.getElementById("udpatepopup").style.visibility='visible'
+	})
 }
 
 function popupclose(elementId) {

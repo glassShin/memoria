@@ -175,13 +175,14 @@ public class ProductDAO extends JDBCConnect{
     	
     }
 	
-	public List<ProductDTO> recommendmainList(String email) {
-		List<ProductDTO> list = new ArrayList<ProductDTO>();
+	public ArrayList<ProductDTO> recommendmainList(String email) {
+		ArrayList<ProductDTO> list = new ArrayList<ProductDTO>();
 		String type = new LogDAO().recommendcate(email);
-		String sql = "select * from product where productml='50ml' and type="+type;
+		String sql = "select * from product where productml='50ml' and type=?";
 		try {
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, type);
+			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
 				ProductDTO dto = new ProductDTO();
