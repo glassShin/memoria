@@ -88,7 +88,7 @@ footer {
 </style>
 </head>
 <body>
-	<section class="stn"></section>
+	<!-- <section class="stn"></section> -->
 	<footer>
 		<div class="company">
 

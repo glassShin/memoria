@@ -56,8 +56,11 @@ if(user == null) {
             
         
                <!-- <h1 class="multiple-items-h1">추천향수</h1> -->
-            <div class="recommend-area"> 
-                <div class="multiple-items">
+            <div class="recommend-area">
+            	<div class="L-arrow arrow">
+            		<img src=../Main-image/왼쪽.png>
+            	</div>
+                <!-- <div class="multiple-items"> -->
                 <%for(ProductDTO dto : list) {
                 	
                 %>
@@ -69,7 +72,10 @@ if(user == null) {
                         <button type="button" class="card-btn" onclick="location.href='../Board/detailPage.jsp?pid=<%=dto.getP_id()%>'">상품보기</button>
                     </div>
                     <%} %>
-                </div> 
+                <!-- </div>  -->
+                <div class="R-arrow arrow">
+                	<img src=../Main-image/오른쪽.png>
+            	</div>
             </div>
           
 
@@ -104,15 +110,23 @@ if(user == null) {
    </div>  
    
    <script>
+   
+   $('.L-arrow.').on('click',function(){
+       $('.recommend-area').css('transform','translate(0px)');
+     })
+   
+   $('.R-arrow').on('click',function(){
+       $('.recommend-area').css('transform','translate(1050px)');
+     })
 // slick.js
-    $('.multiple-items').slick({
+/*     $('.multiple-items').slick({
         slide: '.slide-item',
         infinite: false,
         arrows : true,
         slidesToShow: 4,
         slidesToScroll: 4,
         speed : 1000,
-    });
+    }); */
   		/*
   		var prevButton = document.querySelector('.slick-prev');
         var nextButton = document.querySelector('.slick-next');

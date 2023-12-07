@@ -30,14 +30,14 @@ body{
 
 
 /* 추천상품 슬라이드 */
-.multiple-items{
+/* .multiple-items{
    display: flex;
    justify-content: center;
    width: 100%;
    height: 100%;
    overflow-x:hidden ;
-}
-.multiple-items .slide-item{
+} */
+.slide-item{
    display: flex;
    flex-direction: column;
    flex-shrink: 0;
@@ -45,29 +45,29 @@ body{
    flex-wrap: nowrap;
    width: 200px;
    height:400px;
-   margin-left : 100px;
+   margin-left : 50px;
    /* background-color: lightpink; */
 }
-.multiple-items .slide-item img{
+.slide-item img{
    width: 100px;
    height: 250px;
    border-radius:5px;
 }
-.multiple-items .slide-item h3{
+.slide-item h3{
    margin: 10px 0 10px;
    font-family: 'Nanum Myeongjo';
 }
-.multiple-items .slide-item .E-name{
+.slide-item .E-name{
    font-size: 1rem;
    text-align: center;
    width: 150px;
 }
-.multiple-items .slide-item .K-name{
+.slide-item .K-name{
    font-size: 1rem;
    text-align: center;
    width: 150px;
 }
-.multiple-items .slide-item .card-btn{
+.slide-item .card-btn{
     border: 2px solid #565c46; /* 테두리 설정 */
     background-color: transparent; /* 배경색 설정 */
     width: 130px;
@@ -77,8 +77,8 @@ body{
 } 
 
 
-/* 슬릭 화살표 */
- .slick-arrow{
+/*화살표 */
+ .L-arrow img{
    width:30px;
    height: 30px;
    margin:auto 0;
@@ -87,21 +87,19 @@ body{
    /* background-color: rgba(86, 92, 70, 0); */
    background-color: rgba(86, 92, 70, 0);
 }
-
-.slick-next {
-   background-image: url('../Main-image/오른쪽.png');
-   background-size: 100% 100%;
-   width:20px;
-   height: 20px;
-   content:"";
+.R-arrow img{
+   width:30px;
+   height: 30px;
+   margin:auto 0;
+   border:none;
+   cursor: pointer;
+   /* background-color: rgba(86, 92, 70, 0); */
+   background-color: rgba(86, 92, 70, 0);
 }
-.slick-prev {
-   background-image:url('../Main-image/왼쪽.png');
-   background-size: 100% 100%;
-   width:20px;
-   height: 20px;
-   content:"";
+.arrow{
+	margin-top:100px;
 }
+/* 업데이트 */
 
 
 

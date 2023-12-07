@@ -28,15 +28,15 @@
 	.product_wrap{display: flex; gap: 50px; justify-content: space-between;}
 	.product_wrap .product_cart{width: 300px;}
 	.product_wrap .product_cart ul > li{padding: 10px 0; overflow: hidden;}
-	.product_wrap .product_cart ul > li + li{border-top: 1px solid #ddd;}
+	.product_wrap .product_cart ul > li + li{border-top: 1px solid #ddd;} 
 
 	/* 향수 */
 	.cont_perfume{display: flex; align-items: center; position:relative;}
-	.cont_perfume .inner{height: 100%;}
+	.cont_perfume .inner{height: 100%; margin:0;}
 	.perfume_box{display: flex; justify-content: space-between; align-items: center;}
 	.perfume_box .purfume_choice{display: flex; flex-direction: column; background: #fff; width: 300px; height: 600px; border: 1px solid #ddd; position: relative;}
 	.perfume_box .purfume_choice:hover .choice_item{opacity: .3;}
-	.perfume_box .purfume_choice .choice_item{display: flex; flex: 1; justify-content: center; align-items: center;}
+	.perfume_box .purfume_choice .choice_item{display: flex; flex: 1; justify-content: center; align-items: center; width:100%;}
 	.perfume_box .purfume_choice .choice_item + .choice_item{border-top: 1px solid #ddd;}
 	+
 	
@@ -44,7 +44,7 @@
 	.perfume_box .purfume_choice .choice_item ul > li{width: 25%; display: flex; justify-content: center; align-items: center;}
 	.perfume_box .purfume_choice .choice_item ul > li > a{width: 90px; height: 90px; border-radius: 50px; border: 1px solid #ddd; display: flex; justify-content: center; align-items: center; text-align: center;}
 	.perfume_box .purfume_choice .choice_item .menu{display: none; position: absolute; left: 100%; top: 0; width: 500px; height: 600px; padding-left: 15px;}
-	.perfume_box .purfume_choice .choice_item .menu:before{content: ""; display: inline-block; background: #fff; position: absolute; top: 100px; left: 10px; width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid #ddd; border-width: 0 0 1px 1px;}
+	.perfume_box .purfume_choice .choice_item .menu:before{content: ""; display: inline-block; background: #fff; position: absolute; top: 100px; left: 10px; width: 10px; height: 10px; transform: rotate(45deg); border: 1px solid #ddd; border-width: 0 0 1px 1px}
 	.perfume_box .purfume_choice .choice_item .menu2:before{top: 296px;}
 	.perfume_box .purfume_choice .choice_item .menu3:before{top: 496px;}
 	.perfume_box .purfume_choice .choice_item:hover{box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 10%); opacity: 1;}
@@ -86,9 +86,9 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 		</ul>
 	</div>
 
-			<div class="perfume_info">
-					<img src="../image2/향수노트.jpg" alt="비어있음">
-				</div>
+			
+		
+				
 
 
 	<section class="cont_perfume">
@@ -167,6 +167,8 @@ section은 ul, ul은 li로 바꾸고 묶어주기  -->
 			</div>
 		</div>
 	</section>
+	
+	<img src="../image2/향수노트.jpg" alt="비어있음" class="perfume_info">
 
 
  <!-- 페이지 푸터 위치 조정(%값) -->

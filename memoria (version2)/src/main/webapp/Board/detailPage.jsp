@@ -180,7 +180,7 @@
 
 		<div class="recommend-outline-box">
 			<div class="left arrow">
-				<img src="/detail_modify/arrow/left-arrow.png">
+				<img src="../Main-image/왼쪽.png">
 			</div>
 
 			<!-- <div class="recommend-slide"> -->
@@ -201,6 +201,9 @@
 				</div>
 				<%} %>
 			<!-- </div> -->
+			<div class="right arrow">
+				<img src="../Main-image/오른쪽.png">
+			</div>
 		</div>
 
 		<div class="review-title">리뷰</div>
@@ -235,7 +238,7 @@
 			</div>
 		</form>
 		<%}else {%>
-		 <span>-상품 구매 후 리뷰 작성 가능 합니다.-</span>
+		 <!-- <span>-상품 구매 후 리뷰 작성 가능 합니다.-</span> -->
 		<%} %>
 		<script src="recommendcheck.js"></script>
 		<div id="review-display">
@@ -286,24 +289,29 @@
 
 	<script>
 // 캐러셀(슬라이드)
-
+	  $('.left').on('click',function(){
+       $('.recommend-area').css('transform','translate(0px)');
+     })
+     $('.right').on('click',function(){
+       $('.recommend-area').css('transform','translate(1200px)');
+     })
 // slick.js
-    $('.multiple-items').slick({
+  /*   $('.multiple-items').slick({
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 3,
     speed : 1000,
-    dots: false
+    dots: false */
     //   prevArrow : "<button type='button' class='slick-prev'>Previous</button> ",
     //   nextArrow : "<button type='button' class='slick-next'>Next</button>",
     });
 
      // 버튼 텍스트를 원하는 값으로 설정
-    var prevButton = document.querySelector('.slick-prev');
-    var nextButton = document.querySelector('.slick-next');
+ /*    var prevButton = document.querySelector('.slick-prev');
+    var nextButton = document.querySelector('.slick-next'); */
 
-    prevButton.textContent ='';
-    nextButton.textContent = ''; 
+ /*    prevButton.textContent ='';
+    nextButton.textContent = '';  */
 </script>
 
 
